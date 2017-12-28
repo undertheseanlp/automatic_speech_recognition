@@ -1,0 +1,157 @@
+Current configuration:
+[NAME]		[DEFLT]	[VALUE]
+-dest_meanfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_untied/means
+-dest_mixwfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_untied/mixture_weights
+-dest_moddeffn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_architecture/huanluyen_diadiem.untied.mdef
+-dest_tmatfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_untied/transition_matrices
+-dest_ts2cbfn		.cont.
+-dest_varfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_untied/variances
+-example	no	no
+-fullvar	no	no
+-help		no	no
+-src_meanfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont/means
+-src_mixwfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont/mixture_weights
+-src_moddeffn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_architecture/huanluyen_diadiem.ci.mdef
+-src_tmatfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont/transition_matrices
+-src_ts2cbfn		.cont.
+-src_varfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont/variances
+
+INFO: main.c(261): Reading src /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_architecture/huanluyen_diadiem.ci.mdef
+INFO: model_def_io.c(573): Model definition info:
+INFO: model_def_io.c(574): 28 total models defined (28 base, 0 tri)
+INFO: model_def_io.c(575): 112 total states
+INFO: model_def_io.c(576): 84 total tied states
+INFO: model_def_io.c(577): 84 total tied CI states
+INFO: model_def_io.c(578): 28 total tied transition matrices
+INFO: model_def_io.c(579): 4 max state/model
+INFO: model_def_io.c(580): 4 min state/model
+INFO: main.c(278): Generating continous ts2cb mapping
+INFO: main.c(299): Reading src /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont/mixture_weights
+INFO: s3mixw_io.c(117): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont/mixture_weights [84x1x1 array]
+INFO: main.c(309): Reading src /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont/transition_matrices
+INFO: s3tmat_io.c(118): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont/transition_matrices [28x3x4 array]
+INFO: main.c(318): Reading src /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont/means
+INFO: s3gau_io.c(169): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont/means [84x1x1 array]
+INFO: main.c(342): Reading src /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont/variances
+INFO: s3gau_io.c(169): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont/variances [84x1x1 array]
+INFO: main.c(391): Reading dest /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_architecture/huanluyen_diadiem.untied.mdef
+INFO: model_def_io.c(573): Model definition info:
+INFO: model_def_io.c(574): 70 total models defined (28 base, 42 tri)
+INFO: model_def_io.c(575): 280 total states
+INFO: model_def_io.c(576): 210 total tied states
+INFO: model_def_io.c(577): 84 total tied CI states
+INFO: model_def_io.c(578): 28 total tied transition matrices
+INFO: model_def_io.c(579): 4 max state/model
+INFO: model_def_io.c(580): 4 min state/model
+INFO: main.c(407): Generating continous ts2cb mapping
+INFO: main.c(431): Calculating initial model parameters
+INFO: main.c(439): Alloc 28x3x4 dest tmat
+INFO: main.c(450): Alloc 210x1x1 dest mixw
+INFO: main.c(463): Alloc 210x1x1 dest mean and var
+         A <- A         : [tm     0 +=     0]
+[mx     0(0) +=     0] [mg     0(0) <-     0] [mx     1(1) +=     1] [mg     1(1) <-     1] [mx     2(2) +=     2] [mg     2(2) <-     2] 
+        AJ <- AJ        : [tm     1 +=     1]
+[mx     3(0) +=     3] [mg     3(0) <-     3] [mx     4(1) +=     4] [mg     4(1) <-     4] [mx     5(2) +=     5] [mg     5(2) <-     5] 
+        AS <- AS        : [tm     2 +=     2]
+[mx     6(0) +=     6] [mg     6(0) <-     6] [mx     7(1) +=     7] [mg     7(1) <-     7] [mx     8(2) +=     8] [mg     8(2) <-     8] 
+         C <- C         : [tm     3 +=     3]
+[mx     9(0) +=     9] [mg     9(0) <-     9] [mx    10(1) +=    10] [mg    10(1) <-    10] [mx    11(2) +=    11] [mg    11(2) <-    11] 
+        CH <- CH        : [tm     4 +=     4]
+[mx    12(0) +=    12] [mg    12(0) <-    12] [mx    13(1) +=    13] [mg    13(1) <-    13] [mx    14(2) +=    14] [mg    14(2) <-    14] 
+        DD <- DD        : [tm     5 +=     5]
+[mx    15(0) +=    15] [mg    15(0) <-    15] [mx    16(1) +=    16] [mg    16(1) <-    16] [mx    17(2) +=    17] [mg    17(2) <-    17] 
+         E <- E         : [tm     6 +=     6]
+[mx    18(0) +=    18] [mg    18(0) <-    18] [mx    19(1) +=    19] [mg    19(1) <-    19] [mx    20(2) +=    20] [mg    20(2) <-    20] 
+        EE <- EE        : [tm     7 +=     7]
+[mx    21(0) +=    21] [mg    21(0) <-    21] [mx    22(1) +=    22] [mg    22(1) <-    22] [mx    23(2) +=    23] [mg    23(2) <-    23] 
+         F <- F         : [tm     8 +=     8]
+[mx    24(0) +=    24] [mg    24(0) <-    24] [mx    25(1) +=    25] [mg    25(1) <-    25] [mx    26(2) +=    26] [mg    26(2) <-    26] 
+         I <- I         : [tm     9 +=     9]
+[mx    27(0) +=    27] [mg    27(0) <-    27] [mx    28(1) +=    28] [mg    28(1) <-    28] [mx    29(2) +=    29] [mg    29(2) <-    29] 
+         K <- K         : [tm    10 +=    10]
+[mx    30(0) +=    30] [mg    30(0) <-    30] [mx    31(1) +=    31] [mg    31(1) <-    31] [mx    32(2) +=    32] [mg    32(2) <-    32] 
+        KH <- KH        : [tm    11 +=    11]
+[mx    33(0) +=    33] [mg    33(0) <-    33] [mx    34(1) +=    34] [mg    34(1) <-    34] [mx    35(2) +=    35] [mg    35(2) <-    35] 
+         L <- L         : [tm    12 +=    12]
+[mx    36(0) +=    36] [mg    36(0) <-    36] [mx    37(1) +=    37] [mg    37(1) <-    37] [mx    38(2) +=    38] [mg    38(2) <-    38] 
+         M <- M         : [tm    13 +=    13]
+[mx    39(0) +=    39] [mg    39(0) <-    39] [mx    40(1) +=    40] [mg    40(1) <-    40] [mx    41(2) +=    41] [mg    41(2) <-    41] 
+         N <- N         : [tm    14 +=    14]
+[mx    42(0) +=    42] [mg    42(0) <-    42] [mx    43(1) +=    43] [mg    43(1) <-    43] [mx    44(2) +=    44] [mg    44(2) <-    44] 
+        NG <- NG        : [tm    15 +=    15]
+[mx    45(0) +=    45] [mg    45(0) <-    45] [mx    46(1) +=    46] [mg    46(1) <-    46] [mx    47(2) +=    47] [mg    47(2) <-    47] 
+         O <- O         : [tm    16 +=    16]
+[mx    48(0) +=    48] [mg    48(0) <-    48] [mx    49(1) +=    49] [mg    49(1) <-    49] [mx    50(2) +=    50] [mg    50(2) <-    50] 
+        OO <- OO        : [tm    17 +=    17]
+[mx    51(0) +=    51] [mg    51(0) <-    51] [mx    52(1) +=    52] [mg    52(1) <-    52] [mx    53(2) +=    53] [mg    53(2) <-    53] 
+       OWR <- OWR       : [tm    18 +=    18]
+[mx    54(0) +=    54] [mg    54(0) <-    54] [mx    55(1) +=    55] [mg    55(1) <-    55] [mx    56(2) +=    56] [mg    56(2) <-    56] 
+        PH <- PH        : [tm    19 +=    19]
+[mx    57(0) +=    57] [mg    57(0) <-    57] [mx    58(1) +=    58] [mg    58(1) <-    58] [mx    59(2) +=    59] [mg    59(2) <-    59] 
+         R <- R         : [tm    20 +=    20]
+[mx    60(0) +=    60] [mg    60(0) <-    60] [mx    61(1) +=    61] [mg    61(1) <-    61] [mx    62(2) +=    62] [mg    62(2) <-    62] 
+         S <- S         : [tm    21 +=    21]
+[mx    63(0) +=    63] [mg    63(0) <-    63] [mx    64(1) +=    64] [mg    64(1) <-    64] [mx    65(2) +=    65] [mg    65(2) <-    65] 
+       SIL <- SIL       : [tm    22 +=    22]
+[mx    66(0) +=    66] [mg    66(0) <-    66] [mx    67(1) +=    67] [mg    67(1) <-    67] [mx    68(2) +=    68] [mg    68(2) <-    68] 
+         T <- T         : [tm    23 +=    23]
+[mx    69(0) +=    69] [mg    69(0) <-    69] [mx    70(1) +=    70] [mg    70(1) <-    70] [mx    71(2) +=    71] [mg    71(2) <-    71] 
+        TR <- TR        : [tm    24 +=    24]
+[mx    72(0) +=    72] [mg    72(0) <-    72] [mx    73(1) +=    73] [mg    73(1) <-    73] [mx    74(2) +=    74] [mg    74(2) <-    74] 
+        US <- US        : [tm    25 +=    25]
+[mx    75(0) +=    75] [mg    75(0) <-    75] [mx    76(1) +=    76] [mg    76(1) <-    76] [mx    77(2) +=    77] [mg    77(2) <-    77] 
+         X <- X         : [tm    26 +=    26]
+[mx    78(0) +=    78] [mg    78(0) <-    78] [mx    79(1) +=    79] [mg    79(1) <-    79] [mx    80(2) +=    80] [mg    80(2) <-    80] 
+         Y <- Y         : [tm    27 +=    27]
+[mx    81(0) +=    81] [mg    81(0) <-    81] [mx    82(1) +=    82] [mg    82(1) <-    82] [mx    83(2) +=    83] [mg    83(2) <-    83] 
+   A C F i <- A         : [mx    84(0) +=     0] [mg    84(0) <-     0] [mx    85(1) +=     1] [mg    85(1) <-     1] [mx    86(2) +=     2] [mg    86(2) <-     2] 
+   A K R e <- A         : [mx    87(0) +=     0] [mg    87(0) <-     0] [mx    88(1) +=     1] [mg    88(1) <-     1] [mx    89(2) +=     2] [mg    89(2) <-     2] 
+   A M Y b <- A         : [mx    90(0) +=     0] [mg    90(0) <-     0] [mx    91(1) +=     1] [mg    91(1) <-     1] [mx    92(2) +=     2] [mg    92(2) <-     2] 
+   A R O i <- A         : [mx    93(0) +=     0] [mg    93(0) <-     0] [mx    94(1) +=     1] [mg    94(1) <-     1] [mx    95(2) +=     2] [mg    95(2) <-     2] 
+ A X SIL e <- A         : [mx    96(0) +=     0] [mg    96(0) <-     0] [mx    97(1) +=     1] [mg    97(1) <-     1] [mx    98(2) +=     2] [mg    98(2) <-     2] 
+  AJ L I i <- AJ        : [mx    99(0) +=     3] [mg    99(0) <-     3] [mx   100(1) +=     4] [mg   100(1) <-     4] [mx   101(2) +=     5] [mg   101(2) <-     5] 
+  AJ S N i <- AJ        : [mx   102(0) +=     3] [mg   102(0) <-     3] [mx   103(1) +=     4] [mg   103(1) <-     4] [mx   104(2) +=     5] [mg   104(2) <-     5] 
+ AJ TR M i <- AJ        : [mx   105(0) +=     3] [mg   105(0) <-     3] [mx   106(1) +=     4] [mg   106(1) <-     4] [mx   107(2) +=     5] [mg   107(2) <-     5] 
+AS KH CH i <- AS        : [mx   108(0) +=     6] [mg   108(0) <-     6] [mx   109(1) +=     7] [mg   109(1) <-     7] [mx   110(2) +=     8] [mg   110(2) <-     8] 
+  AS M T i <- AS        : [mx   111(0) +=     6] [mg   111(0) <-     6] [mx   112(1) +=     7] [mg   112(1) <-     7] [mx   113(2) +=     8] [mg   113(2) <-     8] 
+ C SIL A b <- C         : [mx   114(0) +=     9] [mg   114(0) <-     9] [mx   115(1) +=    10] [mg   115(1) <-    10] [mx   116(2) +=    11] [mg   116(2) <-    11] 
+ CH AS S e <- CH        : [mx   117(0) +=    12] [mg   117(0) <-    12] [mx   118(1) +=    13] [mg   118(1) <-    13] [mx   119(2) +=    14] [mg   119(2) <-    14] 
+DD SIL US b <- DD        : [mx   120(0) +=    15] [mg   120(0) <-    15] [mx   121(1) +=    16] [mg   121(1) <-    16] [mx   122(2) +=    17] [mg   122(2) <-    17] 
+ E K SIL e <- E         : [mx   123(0) +=    18] [mg   123(0) <-    18] [mx   124(1) +=    19] [mg   124(1) <-    19] [mx   125(2) +=    20] [mg   125(2) <-    20] 
+EE PH SIL e <- EE        : [mx   126(0) +=    21] [mg   126(0) <-    21] [mx   127(1) +=    22] [mg   127(1) <-    22] [mx   128(2) +=    23] [mg   128(2) <-    23] 
+  EE T M i <- EE        : [mx   129(0) +=    21] [mg   129(0) <-    21] [mx   130(1) +=    22] [mg   130(1) <-    22] [mx   131(2) +=    23] [mg   131(2) <-    23] 
+  F A PH e <- F         : [mx   132(0) +=    24] [mg   132(0) <-    24] [mx   133(1) +=    25] [mg   133(1) <-    25] [mx   134(2) +=    26] [mg   134(2) <-    26] 
+I AJ SIL e <- I         : [mx   135(0) +=    27] [mg   135(0) <-    27] [mx   136(1) +=    28] [mg   136(1) <-    28] [mx   137(2) +=    29] [mg   137(2) <-    29] 
+   K O E b <- K         : [mx   138(0) +=    30] [mg   138(0) <-    30] [mx   139(1) +=    31] [mg   139(1) <-    31] [mx   140(2) +=    32] [mg   140(2) <-    32] 
+ K SIL A b <- K         : [mx   141(0) +=    30] [mg   141(0) <-    30] [mx   142(1) +=    31] [mg   142(1) <-    31] [mx   143(2) +=    32] [mg   143(2) <-    32] 
+KH SIL AS b <- KH        : [mx   144(0) +=    33] [mg   144(0) <-    33] [mx   145(1) +=    34] [mg   145(1) <-    34] [mx   146(2) +=    35] [mg   146(2) <-    35] 
+KH SIL OO b <- KH        : [mx   147(0) +=    33] [mg   147(0) <-    33] [mx   148(1) +=    34] [mg   148(1) <-    34] [mx   149(2) +=    35] [mg   149(2) <-    35] 
+L OWR AJ b <- L         : [mx   150(0) +=    36] [mg   150(0) <-    36] [mx   151(1) +=    37] [mg   151(1) <-    37] [mx   152(2) +=    38] [mg   152(2) <-    38] 
+  M AJ A e <- M         : [mx   153(0) +=    39] [mg   153(0) <-    39] [mx   154(1) +=    40] [mg   154(1) <-    40] [mx   155(2) +=    41] [mg   155(2) <-    41] 
+M EE SIL e <- M         : [mx   156(0) +=    39] [mg   156(0) <-    39] [mx   157(1) +=    40] [mg   157(1) <-    40] [mx   158(2) +=    41] [mg   158(2) <-    41] 
+M SIL AS b <- M         : [mx   159(0) +=    39] [mg   159(0) <-    39] [mx   160(1) +=    40] [mg   160(1) <-    40] [mx   161(2) +=    41] [mg   161(2) <-    41] 
+N AJ SIL e <- N         : [mx   162(0) +=    42] [mg   162(0) <-    42] [mx   163(1) +=    43] [mg   163(1) <-    43] [mx   164(2) +=    44] [mg   164(2) <-    44] 
+NG OO SIL e <- NG        : [mx   165(0) +=    45] [mg   165(0) <-    45] [mx   166(1) +=    46] [mg   166(1) <-    46] [mx   167(2) +=    47] [mg   167(2) <-    47] 
+NG US SIL e <- NG        : [mx   168(0) +=    45] [mg   168(0) <-    45] [mx   169(1) +=    46] [mg   169(1) <-    46] [mx   170(2) +=    47] [mg   170(2) <-    47] 
+   O A K e <- O         : [mx   171(0) +=    48] [mg   171(0) <-    48] [mx   172(1) +=    49] [mg   172(1) <-    49] [mx   173(2) +=    50] [mg   173(2) <-    50] 
+OO KH NG i <- OO        : [mx   174(0) +=    51] [mg   174(0) <-    51] [mx   175(1) +=    52] [mg   175(1) <-    52] [mx   176(2) +=    53] [mg   176(2) <-    53] 
+OWR TR L e <- OWR       : [mx   177(0) +=    54] [mg   177(0) <-    54] [mx   178(1) +=    55] [mg   178(1) <-    55] [mx   179(2) +=    56] [mg   179(2) <-    56] 
+ PH F EE b <- PH        : [mx   180(0) +=    57] [mg   180(0) <-    57] [mx   181(1) +=    58] [mg   181(1) <-    58] [mx   182(2) +=    59] [mg   182(2) <-    59] 
+   R A A b <- R         : [mx   183(0) +=    60] [mg   183(0) <-    60] [mx   184(1) +=    61] [mg   184(1) <-    61] [mx   185(2) +=    62] [mg   185(2) <-    62] 
+ S CH AJ b <- S         : [mx   186(0) +=    63] [mg   186(0) <-    63] [mx   187(1) +=    64] [mg   187(1) <-    64] [mx   188(2) +=    65] [mg   188(2) <-    65] 
+  T AS X e <- T         : [mx   189(0) +=    69] [mg   189(0) <-    69] [mx   190(1) +=    70] [mg   190(1) <-    70] [mx   191(2) +=    71] [mg   191(2) <-    71] 
+  T Y EE b <- T         : [mx   192(0) +=    69] [mg   192(0) <-    69] [mx   193(1) +=    70] [mg   193(1) <-    70] [mx   194(2) +=    71] [mg   194(2) <-    71] 
+TR SIL AJ b <- TR        : [mx   195(0) +=    72] [mg   195(0) <-    72] [mx   196(1) +=    73] [mg   196(1) <-    73] [mx   197(2) +=    74] [mg   197(2) <-    74] 
+TR SIL OWR b <- TR        : [mx   198(0) +=    72] [mg   198(0) <-    72] [mx   199(1) +=    73] [mg   199(1) <-    73] [mx   200(2) +=    74] [mg   200(2) <-    74] 
+US DD NG i <- US        : [mx   201(0) +=    75] [mg   201(0) <-    75] [mx   202(1) +=    76] [mg   202(1) <-    76] [mx   203(2) +=    77] [mg   203(2) <-    77] 
+   X T A b <- X         : [mx   204(0) +=    78] [mg   204(0) <-    78] [mx   205(1) +=    79] [mg   205(1) <-    79] [mx   206(2) +=    80] [mg   206(2) <-    80] 
+   Y A T e <- Y         : INFO: main.c(529): Writing dest /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_untied/transition_matrices
+INFO: s3tmat_io.c(176): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_untied/transition_matrices [28x3x4 array]
+INFO: main.c(540): Writing dest /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_untied/mixture_weights
+INFO: s3mixw_io.c(233): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_untied/mixture_weights [210x1x1 array]
+INFO: main.c(549): Writing dest /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_untied/means
+INFO: s3gau_io.c(228): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_untied/means [210x1x1 array]
+INFO: main.c(561): Writing dest /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_untied/variances
+INFO: s3gau_io.c(228): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_untied/variances [210x1x1 array]
+[mx   207(0) +=    81] [mg   207(0) <-    81] [mx   208(1) +=    82] [mg   208(1) <-    82] [mx   209(2) +=    83] [mg   209(2) <-    83] 
+Thu Dec 28 16:10:15 2017

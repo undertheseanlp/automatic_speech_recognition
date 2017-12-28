@@ -1,0 +1,24 @@
+Current configuration:
+[NAME]		[DEFLT]	[VALUE]
+-example	no	no
+-help		no	no
+-mixwfn			/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont_flatinitial/mixture_weights
+-moddeffn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_architecture/huanluyen_diadiem.ci.mdef
+-ndensity	256	1
+-nstream	4	1
+-tmatfn			/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont_flatinitial/transition_matrices
+-topo			/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_architecture/huanluyen_diadiem.topology
+
+INFO: model_def_io.c(573): Model definition info:
+INFO: model_def_io.c(574): 28 total models defined (28 base, 0 tri)
+INFO: model_def_io.c(575): 112 total states
+INFO: model_def_io.c(576): 84 total tied states
+INFO: model_def_io.c(577): 84 total tied CI states
+INFO: model_def_io.c(578): 28 total tied transition matrices
+INFO: model_def_io.c(579): 4 max state/model
+INFO: model_def_io.c(580): 4 min state/model
+INFO: s3tmat_io.c(176): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont_flatinitial/transition_matrices [28x3x4 array]
+INFO: s3mixw_io.c(233): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont_flatinitial/mixture_weights [84x1x1 array]
+main.c(83): Reading model definition file /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_architecture/huanluyen_diadiem.ci.mdef
+main.c(90): 28 models defined
+Thu Dec 28 16:09:59 2017
