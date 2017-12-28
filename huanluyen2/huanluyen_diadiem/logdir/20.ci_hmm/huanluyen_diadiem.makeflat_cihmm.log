@@ -21,4 +21,4 @@ INFO: s3tmat_io.c(176): Wrote /home/rain/PycharmProjects/underthesea/automatic_s
 INFO: s3mixw_io.c(233): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont_flatinitial/mixture_weights [84x1x1 array]
 main.c(83): Reading model definition file /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_architecture/huanluyen_diadiem.ci.mdef
 main.c(90): 28 models defined
-Thu Dec 28 16:09:59 2017
+Thu Dec 28 16:25:28 2017

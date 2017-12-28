@@ -47,4 +47,4 @@ INFO: mk_mdef_gen.c(645): The rest of the triphones occur more than three times
 INFO: mk_mdef_gen.c(646): Count threshold is 1
 INFO: mk_mdef_gen.c(897): 28 n_base, 42 n_tri
 INFO: mk_mdef_gen.c(969): Wrote mdef file /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_architecture/huanluyen_diadiem.untied.mdef
-Thu Dec 28 16:10:15 2017
+Thu Dec 28 16:25:43 2017

@@ -231,4 +231,4 @@ INFO: main.c(151): output n_density == 2
 INFO: s3gau_io.c(228): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_initial/means [210x1x2 array]
 INFO: s3gau_io.c(228): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_initial/variances [210x1x2 array]
 
-Thu Dec 28 16:10:33 2017
+Thu Dec 28 16:26:00 2017

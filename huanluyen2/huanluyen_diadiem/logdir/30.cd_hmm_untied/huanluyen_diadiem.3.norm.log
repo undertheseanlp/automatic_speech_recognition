@@ -29,6 +29,6 @@ INFO: s3mixw_io.c(233): Wrote /home/rain/PycharmProjects/underthesea/automatic_s
 INFO: s3tmat_io.c(176): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_untied/transition_matrices [28x3x4 array]
 INFO: s3gau_io.c(228): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_untied/means [210x1x1 array]
 INFO: s3gau_io.c(228): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_untied/variances [210x1x1 array]
-Thu Dec 28 16:10:22 2017
+Thu Dec 28 16:25:50 2017
 Current Overall Likelihood Per Frame = -155.861739550111
 Convergence ratio = 0.107571287123818
