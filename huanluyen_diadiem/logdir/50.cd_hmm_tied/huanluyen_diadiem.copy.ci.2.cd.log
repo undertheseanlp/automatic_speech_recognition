@@ -1,22 +1,22 @@
 Current configuration:
 [NAME]		[DEFLT]	[VALUE]
--dest_meanfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_initial/means
--dest_mixwfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_initial/mixture_weights
--dest_moddeffn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_architecture/huanluyen_diadiem.200.mdef
--dest_tmatfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_initial/transition_matrices
+-dest_meanfn		./model_parameters/huanluyen_diadiem.cd_cont_initial/means
+-dest_mixwfn		./model_parameters/huanluyen_diadiem.cd_cont_initial/mixture_weights
+-dest_moddeffn		./model_architecture/huanluyen_diadiem.200.mdef
+-dest_tmatfn		./model_parameters/huanluyen_diadiem.cd_cont_initial/transition_matrices
 -dest_ts2cbfn		.cont.
--dest_varfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_initial/variances
+-dest_varfn		./model_parameters/huanluyen_diadiem.cd_cont_initial/variances
 -example	no	no
 -fullvar	no	no
 -help		no	no
--src_meanfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont/means
--src_mixwfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont/mixture_weights
--src_moddeffn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_architecture/huanluyen_diadiem.ci.mdef
--src_tmatfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont/transition_matrices
+-src_meanfn		./model_parameters/huanluyen_diadiem.ci_cont/means
+-src_mixwfn		./model_parameters/huanluyen_diadiem.ci_cont/mixture_weights
+-src_moddeffn		./model_architecture/huanluyen_diadiem.ci.mdef
+-src_tmatfn		./model_parameters/huanluyen_diadiem.ci_cont/transition_matrices
 -src_ts2cbfn		.cont.
--src_varfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont/variances
+-src_varfn		./model_parameters/huanluyen_diadiem.ci_cont/variances
 
-INFO: main.c(261): Reading src /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_architecture/huanluyen_diadiem.ci.mdef
+INFO: main.c(261): Reading src ./model_architecture/huanluyen_diadiem.ci.mdef
 INFO: model_def_io.c(573): Model definition info:
 INFO: model_def_io.c(574): 28 total models defined (28 base, 0 tri)
 INFO: model_def_io.c(575): 112 total states
@@ -26,15 +26,15 @@ INFO: model_def_io.c(578): 28 total tied transition matrices
 INFO: model_def_io.c(579): 4 max state/model
 INFO: model_def_io.c(580): 4 min state/model
 INFO: main.c(278): Generating continous ts2cb mapping
-INFO: main.c(299): Reading src /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont/mixture_weights
-INFO: s3mixw_io.c(117): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont/mixture_weights [84x1x1 array]
-INFO: main.c(309): Reading src /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont/transition_matrices
-INFO: s3tmat_io.c(118): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont/transition_matrices [28x3x4 array]
-INFO: main.c(318): Reading src /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont/means
-INFO: s3gau_io.c(169): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont/means [84x1x1 array]
-INFO: main.c(342): Reading src /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont/variances
-INFO: s3gau_io.c(169): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont/variances [84x1x1 array]
-INFO: main.c(391): Reading dest /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_architecture/huanluyen_diadiem.200.mdef
+INFO: main.c(299): Reading src ./model_parameters/huanluyen_diadiem.ci_cont/mixture_weights
+INFO: s3mixw_io.c(117): Read ./model_parameters/huanluyen_diadiem.ci_cont/mixture_weights [84x1x1 array]
+INFO: main.c(309): Reading src ./model_parameters/huanluyen_diadiem.ci_cont/transition_matrices
+INFO: s3tmat_io.c(118): Read ./model_parameters/huanluyen_diadiem.ci_cont/transition_matrices [28x3x4 array]
+INFO: main.c(318): Reading src ./model_parameters/huanluyen_diadiem.ci_cont/means
+INFO: s3gau_io.c(169): Read ./model_parameters/huanluyen_diadiem.ci_cont/means [84x1x1 array]
+INFO: main.c(342): Reading src ./model_parameters/huanluyen_diadiem.ci_cont/variances
+INFO: s3gau_io.c(169): Read ./model_parameters/huanluyen_diadiem.ci_cont/variances [84x1x1 array]
+INFO: main.c(391): Reading dest ./model_architecture/huanluyen_diadiem.200.mdef
 INFO: model_def_io.c(573): Model definition info:
 INFO: model_def_io.c(574): 486 total models defined (28 base, 458 tri)
 INFO: model_def_io.c(575): 1944 total states
@@ -561,13 +561,13 @@ US DD NG i <- US        : [mx   201(0) +=    75] [mg   201(0) <-    75] [mx   20
  Y A SIL e <- Y         : 
    Y A T e <- Y         : 
   Y A TR e <- Y         : 
-   Y A X e <- Y         : INFO: main.c(529): Writing dest /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_initial/transition_matrices
-INFO: s3tmat_io.c(176): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_initial/transition_matrices [28x3x4 array]
-INFO: main.c(540): Writing dest /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_initial/mixture_weights
-INFO: s3mixw_io.c(233): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_initial/mixture_weights [210x1x1 array]
-INFO: main.c(549): Writing dest /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_initial/means
-INFO: s3gau_io.c(228): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_initial/means [210x1x1 array]
-INFO: main.c(561): Writing dest /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_initial/variances
-INFO: s3gau_io.c(228): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_initial/variances [210x1x1 array]
+   Y A X e <- Y         : INFO: main.c(529): Writing dest ./model_parameters/huanluyen_diadiem.cd_cont_initial/transition_matrices
+INFO: s3tmat_io.c(176): Wrote ./model_parameters/huanluyen_diadiem.cd_cont_initial/transition_matrices [28x3x4 array]
+INFO: main.c(540): Writing dest ./model_parameters/huanluyen_diadiem.cd_cont_initial/mixture_weights
+INFO: s3mixw_io.c(233): Wrote ./model_parameters/huanluyen_diadiem.cd_cont_initial/mixture_weights [210x1x1 array]
+INFO: main.c(549): Writing dest ./model_parameters/huanluyen_diadiem.cd_cont_initial/means
+INFO: s3gau_io.c(228): Wrote ./model_parameters/huanluyen_diadiem.cd_cont_initial/means [210x1x1 array]
+INFO: main.c(561): Writing dest ./model_parameters/huanluyen_diadiem.cd_cont_initial/variances
+INFO: s3gau_io.c(228): Wrote ./model_parameters/huanluyen_diadiem.cd_cont_initial/variances [210x1x1 array]
 
-Thu Dec 28 17:47:59 2017
+Fri Dec 29 09:15:43 2017

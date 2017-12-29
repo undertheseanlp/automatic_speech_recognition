@@ -1,22 +1,22 @@
 Current configuration:
 [NAME]		[DEFLT]	[VALUE]
--dcountfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_200/mixture_weights
+-dcountfn		./model_parameters/huanluyen_diadiem.cd_cont_200/mixture_weights
 -example	no	no
 -fullvar	no	no
 -help		no	no
--inmeanfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_200/means
--inmixwfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_200/mixture_weights
--invarfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_200/variances
+-inmeanfn		./model_parameters/huanluyen_diadiem.cd_cont_200/means
+-inmixwfn		./model_parameters/huanluyen_diadiem.cd_cont_200/mixture_weights
+-invarfn		./model_parameters/huanluyen_diadiem.cd_cont_200/variances
 -ninc		1	2
--outmeanfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_initial/means
--outmixwfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_initial/mixture_weights
--outvarfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_initial/variances
+-outmeanfn		./model_parameters/huanluyen_diadiem.cd_cont_initial/means
+-outmixwfn		./model_parameters/huanluyen_diadiem.cd_cont_initial/mixture_weights
+-outvarfn		./model_parameters/huanluyen_diadiem.cd_cont_initial/variances
 
-INFO: main.c(86): Reading mixing weight file /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_200/mixture_weights.
-INFO: s3mixw_io.c(117): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_200/mixture_weights [210x1x2 array]
-INFO: s3gau_io.c(169): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_200/means [210x1x2 array]
-INFO: s3gau_io.c(169): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_200/variances [210x1x2 array]
-INFO: s3gau_io.c(553): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_200/mixture_weights [210x1x2 array]
+INFO: main.c(86): Reading mixing weight file ./model_parameters/huanluyen_diadiem.cd_cont_200/mixture_weights.
+INFO: s3mixw_io.c(117): Read ./model_parameters/huanluyen_diadiem.cd_cont_200/mixture_weights [210x1x2 array]
+INFO: s3gau_io.c(169): Read ./model_parameters/huanluyen_diadiem.cd_cont_200/means [210x1x2 array]
+INFO: s3gau_io.c(169): Read ./model_parameters/huanluyen_diadiem.cd_cont_200/variances [210x1x2 array]
+INFO: s3gau_io.c(553): Read ./model_parameters/huanluyen_diadiem.cd_cont_200/mixture_weights [210x1x2 array]
 INFO: main.c(151): output n_density == 4
 0:0(4.69e+03)1(4.54e+03)
 1:1(5.88e+03)0(4.02e+03)
@@ -227,8 +227,8 @@ INFO: main.c(151): output n_density == 4
 206:0(2.86e+03)1(2.83e+03)
 207:1(1.53e+03)0(1.16e+03)
 208:1(2.58e+03)0(1.70e+03)
-209:1(9.26e+02)0(5.15e+02)INFO: s3mixw_io.c(233): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_initial/mixture_weights [210x1x4 array]
-INFO: s3gau_io.c(228): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_initial/means [210x1x4 array]
-INFO: s3gau_io.c(228): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_initial/variances [210x1x4 array]
+209:1(9.26e+02)0(5.15e+02)INFO: s3mixw_io.c(233): Wrote ./model_parameters/huanluyen_diadiem.cd_cont_initial/mixture_weights [210x1x4 array]
+INFO: s3gau_io.c(228): Wrote ./model_parameters/huanluyen_diadiem.cd_cont_initial/means [210x1x4 array]
+INFO: s3gau_io.c(228): Wrote ./model_parameters/huanluyen_diadiem.cd_cont_initial/variances [210x1x4 array]
 
-Thu Dec 28 17:48:23 2017
+Fri Dec 29 09:16:08 2017

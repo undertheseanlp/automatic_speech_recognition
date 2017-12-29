@@ -1,22 +1,22 @@
 Current configuration:
 [NAME]		[DEFLT]	[VALUE]
--cpopsfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_architecture/huanluyen_diadiem.cpmeanvar
+-cpopsfn		./model_architecture/huanluyen_diadiem.cpmeanvar
 -example	no	no
 -help		no	no
 -ifullgaufn		
--igaufn			/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont_flatinitial/globalmean
+-igaufn			model_parameters/huanluyen_diadiem.ci_cont_flatinitial/globalmean
 -imixwfn		
 -itmatfn		
 -ncbout			84
 -nmixwout		0
 -ntmatout		0
 -ofullgaufn		
--ogaufn			/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont_flatinitial/means
+-ogaufn			model_parameters/huanluyen_diadiem.ci_cont_flatinitial/means
 -omixwfn		
 -otmatfn		
 
-INFO: s3gau_io.c(169): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont_flatinitial/globalmean [1x1x1 array]
-INFO: s3gau_io.c(228): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont_flatinitial/means [84x1x1 array]
+INFO: s3gau_io.c(169): Read model_parameters/huanluyen_diadiem.ci_cont_flatinitial/globalmean [1x1x1 array]
+INFO: s3gau_io.c(228): Wrote model_parameters/huanluyen_diadiem.ci_cont_flatinitial/means [84x1x1 array]
 gau 0 <= 0
 gau 1 <= 0
 gau 2 <= 0
@@ -101,4 +101,4 @@ gau 80 <= 0
 gau 81 <= 0
 gau 82 <= 0
 gau 83 <= 0
-Thu Dec 28 17:47:33 2017
+Fri Dec 29 09:15:17 2017

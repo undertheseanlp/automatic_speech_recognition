@@ -1,8 +1,8 @@
 Current configuration:
 [NAME]		[DEFLT]	[VALUE]
--dictfn			/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/etc/huanluyen_diadiem.dic
+-dictfn			./etc/huanluyen_diadiem.dic
 -example	no	no
--fdictfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/etc/huanluyen_diadiem.filler
+-fdictfn		./etc/huanluyen_diadiem.filler
 -help		no	no
 -ignorewpos	no	no
 -inCDmdef		
@@ -11,27 +11,27 @@ Current configuration:
 -maxtriphones	100000	100000
 -minocc		1	1
 -n_state_pm	3	3
--oalltphnmdef		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_architecture/huanluyen_diadiem.alltriphones.mdef
+-oalltphnmdef		./model_architecture/huanluyen_diadiem.alltriphones.mdef
 -ocimdef		
 -ocountfn		
 -ountiedmdef		
--phnlstfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_architecture/huanluyen_diadiem.phonelist
+-phnlstfn		./model_architecture/huanluyen_diadiem.phonelist
 -triphnlstfn		
 
-INFO: main.c(94): Will write alltriphone mdef file /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_architecture/huanluyen_diadiem.alltriphones.mdef
+INFO: main.c(94): Will write alltriphone mdef file ./model_architecture/huanluyen_diadiem.alltriphones.mdef
 INFO: mk_mdef_gen.c(189): 0 single word triphones in input phone list
 INFO: mk_mdef_gen.c(190): 0 word beginning triphones in input phone list
 INFO: mk_mdef_gen.c(191): 0 word internal triphones in input phone list
 INFO: mk_mdef_gen.c(192): 0 word ending triphones in input phone list
-INFO: mk_mdef_gen.c(280): Reading dict /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/etc/huanluyen_diadiem.dic
-INFO: mk_mdef_gen.c(322): 16 words in dict /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/etc/huanluyen_diadiem.dic
-INFO: mk_mdef_gen.c(280): Reading dict /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/etc/huanluyen_diadiem.filler
-INFO: mk_mdef_gen.c(322): 3 words in dict /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/etc/huanluyen_diadiem.filler
+INFO: mk_mdef_gen.c(280): Reading dict ./etc/huanluyen_diadiem.dic
+INFO: mk_mdef_gen.c(322): 16 words in dict ./etc/huanluyen_diadiem.dic
+INFO: mk_mdef_gen.c(280): Reading dict ./etc/huanluyen_diadiem.filler
+INFO: mk_mdef_gen.c(322): 3 words in dict ./etc/huanluyen_diadiem.filler
 INFO: mk_mdef_gen.c(442): 19 words in dictionary
 INFO: mk_mdef_gen.c(443): 0 unique single word triphones in dictionary
 INFO: mk_mdef_gen.c(444): 224 unique word beginning triphones in dictionary
 INFO: mk_mdef_gen.c(445): 10 unique word internal triphones in dictionary
 INFO: mk_mdef_gen.c(446): 224 unique word ending triphones in dictionary
 INFO: mk_mdef_gen.c(897): 28 n_base, 458 n_tri
-INFO: mk_mdef_gen.c(969): Wrote mdef file /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_architecture/huanluyen_diadiem.alltriphones.mdef
-Thu Dec 28 17:47:59 2017
+INFO: mk_mdef_gen.c(969): Wrote mdef file ./model_architecture/huanluyen_diadiem.alltriphones.mdef
+Fri Dec 29 09:15:43 2017

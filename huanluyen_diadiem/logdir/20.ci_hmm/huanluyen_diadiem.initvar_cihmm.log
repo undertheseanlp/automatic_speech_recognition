@@ -1,14 +1,14 @@
 Current configuration:
 [NAME]		[DEFLT]		[VALUE]
--accumdir			/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/bwaccumdir/huanluyen_diadiem_buff_1
+-accumdir			./bwaccumdir/huanluyen_diadiem_buff_1
 -agc		none		none
 -agcthresh	2.0		2.000000e+00
--cepdir				/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/feat
+-cepdir				./feat
 -cepext		mfc		mfc
 -ceplen		13		13
 -cmn		live		current
 -cmninit	40,3,-1		40,3,-1
--ctlfn				/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/etc/huanluyen_diadiem_train.fileids
+-ctlfn				./etc/huanluyen_diadiem_train.fileids
 -dictfn				
 -example	no		no
 -fdictfn			
@@ -18,7 +18,7 @@ Current configuration:
 -lda				
 -ldadim		0		0
 -lsnfn				
--meanfn				/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont_flatinitial/globalmean
+-meanfn				model_parameters/huanluyen_diadiem.ci_cont_flatinitial/globalmean
 -moddeffn			
 -npart				1
 -nskip				0
@@ -34,7 +34,7 @@ Current configuration:
 INFO: feat.c(715): Initializing feature stream to type: '1s_c_d_dd', ceplen=13, CMN='batch', VARNORM='no', AGC='none'
 INFO: corpus.c(1062): Will process all remaining utts starting at 0
 INFO: init_gau.c(145): Computing 1x1x1 variance estimates
-INFO: s3gau_io.c(169): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont_flatinitial/globalmean [1x1x1 array]
+INFO: s3gau_io.c(169): Read model_parameters/huanluyen_diadiem.ci_cont_flatinitial/globalmean [1x1x1 array]
 INFO: cmn.c(133): CMN: 53.22 -17.64 -1.66  8.63 -22.18  6.34 -11.61 11.93 -10.11  7.64 -10.42  0.89 -0.61 
 INFO: cmn.c(133): CMN: 58.06 -6.48 -5.40  5.57 -34.17 -2.83 -6.89 -4.13 -1.38 -4.02 -0.87 -8.27 -5.02 
 INFO: cmn.c(133): CMN: 52.11  2.01 -7.85 -5.29 -24.81  3.73 -12.37 -1.39 -13.84 -2.40 -3.09 -3.66  2.67 
@@ -4956,5 +4956,5 @@ INFO: cmn.c(133): CMN: 52.11 -17.13 -14.18 -17.42 -21.03 -2.95 -4.27 -6.17 -3.12
 INFO: cmn.c(133): CMN: 58.60 -10.24 -10.78 -3.55 -8.69 -10.64 -19.87 -8.58 -9.84 -0.02 -10.43  2.69 -4.28 
 INFO: cmn.c(133): CMN: 57.40 -6.26 -25.55  4.02 -28.36 -6.16 -7.21 -9.93 -2.48 -5.90 -7.07 -3.58 -0.45 
 INFO: cmn.c(133): CMN: 50.64 -2.68 -20.12 -3.94 -15.97 -8.99 -13.98 -15.41  6.26 -4.24 -6.93 -6.71 -4.94 
-INFO: s3gau_io.c(485): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/bwaccumdir/huanluyen_diadiem_buff_1/gauden_counts with vars (2pass) [1x1x1 vector arrays]
-Thu Dec 28 17:47:33 2017
+INFO: s3gau_io.c(485): Wrote ./bwaccumdir/huanluyen_diadiem_buff_1/gauden_counts with vars (2pass) [1x1x1 vector arrays]
+Fri Dec 29 09:15:17 2017

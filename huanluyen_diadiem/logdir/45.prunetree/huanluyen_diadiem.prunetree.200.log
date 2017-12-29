@@ -3,14 +3,14 @@ Current configuration:
 -allphones	no	no
 -example	no	no
 -help		no	no
--itreedir		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/trees/huanluyen_diadiem.unpruned
+-itreedir		./trees/huanluyen_diadiem.unpruned
 -minocc		0.0	0.000000e+00
--moddeffn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_architecture/huanluyen_diadiem.alltriphones.mdef
+-moddeffn		./model_architecture/huanluyen_diadiem.alltriphones.mdef
 -nseno			200
--otreedir		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/trees/huanluyen_diadiem.200
--psetfn			/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_architecture/huanluyen_diadiem.tree_questions
+-otreedir		./trees/huanluyen_diadiem.200
+-psetfn			./model_architecture/huanluyen_diadiem.tree_questions
 
-INFO: main.c(76): Reading: /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_architecture/huanluyen_diadiem.alltriphones.mdef
+INFO: main.c(76): Reading: ./model_architecture/huanluyen_diadiem.alltriphones.mdef
 INFO: model_def_io.c(573): Model definition info:
 INFO: model_def_io.c(574): 486 total models defined (28 base, 458 tri)
 INFO: model_def_io.c(575): 1944 total states
@@ -19,7 +19,7 @@ INFO: model_def_io.c(577): 84 total tied CI states
 INFO: model_def_io.c(578): 28 total tied transition matrices
 INFO: model_def_io.c(579): 4 max state/model
 INFO: model_def_io.c(580): 4 min state/model
-INFO: main.c(82): Reading: /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_architecture/huanluyen_diadiem.tree_questions
+INFO: main.c(82): Reading: ./model_architecture/huanluyen_diadiem.tree_questions
 INFO: main.c(185): A-0	5 [0 < 0.000000e+00]
 INFO: main.c(185): A-1	5 [0 < 0.000000e+00]
 INFO: main.c(185): A-2	5 [0 < 0.000000e+00]
@@ -185,4 +185,4 @@ INFO: main.c(386): X-2	1
 INFO: main.c(386): Y-0	1
 INFO: main.c(386): Y-1	1
 INFO: main.c(386): Y-2	1
-Thu Dec 28 17:47:59 2017
+Fri Dec 29 09:15:43 2017

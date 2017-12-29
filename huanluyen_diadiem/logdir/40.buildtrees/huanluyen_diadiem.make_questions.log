@@ -3,19 +3,19 @@ Current configuration:
 -example	no			no
 -fullvar	no			no
 -help		no			no
--meanfn					/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont/means
--mixwfn					/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont/mixture_weights
--moddeffn				/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_architecture/huanluyen_diadiem.ci.mdef
+-meanfn					./model_parameters/huanluyen_diadiem.ci_cont/means
+-mixwfn					./model_parameters/huanluyen_diadiem.ci_cont/mixture_weights
+-moddeffn				./model_architecture/huanluyen_diadiem.ci.mdef
 -niter		0			1
 -npermute	6			12
 -qstperstt	8			20
--questfn				/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_architecture/huanluyen_diadiem.tree_questions
+-questfn				./model_architecture/huanluyen_diadiem.tree_questions
 -tempfn		/tmp/TEMP.QUESTS	/tmp/TEMP.QUESTS
 -type					.cont.
 -varfloor	1.0e-08			1.000000e-08
--varfn					/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont/variances
+-varfn					./model_parameters/huanluyen_diadiem.ci_cont/variances
 
-INFO: main.c(792): Reading: /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_architecture/huanluyen_diadiem.ci.mdef
+INFO: main.c(792): Reading: ./model_architecture/huanluyen_diadiem.ci.mdef
 INFO: model_def_io.c(573): Model definition info:
 INFO: model_def_io.c(574): 28 total models defined (28 base, 0 tri)
 INFO: model_def_io.c(575): 112 total states
@@ -24,15 +24,15 @@ INFO: model_def_io.c(577): 84 total tied CI states
 INFO: model_def_io.c(578): 28 total tied transition matrices
 INFO: model_def_io.c(579): 4 max state/model
 INFO: model_def_io.c(580): 4 min state/model
-INFO: main.c(811): Reading: /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont/mixture_weights
-INFO: s3mixw_io.c(117): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont/mixture_weights [84x1x1 array]
-INFO: s3gau_io.c(169): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont/means [84x1x1 array]
-INFO: s3gau_io.c(169): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.ci_cont/variances [84x1x1 array]
+INFO: main.c(811): Reading: ./model_parameters/huanluyen_diadiem.ci_cont/mixture_weights
+INFO: s3mixw_io.c(117): Read ./model_parameters/huanluyen_diadiem.ci_cont/mixture_weights [84x1x1 array]
+INFO: s3gau_io.c(169): Read ./model_parameters/huanluyen_diadiem.ci_cont/means [84x1x1 array]
+INFO: s3gau_io.c(169): Read ./model_parameters/huanluyen_diadiem.ci_cont/variances [84x1x1 array]
 INFO: main.c(1109): Done building questions using state 0
 INFO: main.c(1110):  21 questions from state 0
 INFO: main.c(1109): Done building questions using state 1
 INFO: main.c(1110):  21 questions from state 1
 INFO: main.c(1109): Done building questions using state 2
 INFO: main.c(1110):  21 questions from state 2
-INFO: main.c(1115): Stored questions in /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_architecture/huanluyen_diadiem.tree_questions
-Thu Dec 28 17:47:58 2017
+INFO: main.c(1115): Stored questions in ./model_architecture/huanluyen_diadiem.tree_questions
+Fri Dec 29 09:15:42 2017

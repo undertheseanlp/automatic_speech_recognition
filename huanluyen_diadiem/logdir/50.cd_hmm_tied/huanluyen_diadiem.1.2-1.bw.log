@@ -3,22 +3,22 @@ Current configuration:
 [NAME]		[DEFLT]		[VALUE]
 -2passvar	no		yes
 -abeam		1e-100		1.000000e-90
--accumdir			/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/bwaccumdir/huanluyen_diadiem_buff_1
+-accumdir			./bwaccumdir/huanluyen_diadiem_buff_1
 -agc		none		none
 -agcthresh	2.0		2.000000e+00
 -bbeam		1e-100		1.000000e-10
 -cb2mllrfn	.1cls.		.1cls.
--cepdir				/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/feat
+-cepdir				./feat
 -cepext		mfc		mfc
 -ceplen		13		13
 -ckptintv			0
 -cmn		live		current
 -cmninit	40,3,-1		40,3,-1
--ctlfn				/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/etc/huanluyen_diadiem_train.fileids
+-ctlfn				./etc/huanluyen_diadiem_train.fileids
 -diagfull	no		no
--dictfn				/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/etc/huanluyen_diadiem.dic
+-dictfn				./etc/huanluyen_diadiem.dic
 -example	no		no
--fdictfn			/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/etc/huanluyen_diadiem.filler
+-fdictfn			./etc/huanluyen_diadiem.filler
 -feat		1s_c_d_dd	1s_c_d_dd
 -fullvar	no		no
 -help		no		no
@@ -27,17 +27,17 @@ Current configuration:
 -latext				
 -lda				
 -ldadim		0		0
--lsnfn				/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/etc/huanluyen_diadiem_train.transcription
+-lsnfn				./etc/huanluyen_diadiem_train.transcription
 -lw		11.5		1.150000e+01
 -maxuttlen	0		0
--meanfn				/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_200/means
+-meanfn				./model_parameters/huanluyen_diadiem.cd_cont_200/means
 -meanreest	yes		yes
--mixwfn				/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_200/mixture_weights
+-mixwfn				./model_parameters/huanluyen_diadiem.cd_cont_200/mixture_weights
 -mixwreest	yes		yes
 -mllrmat			
 -mmie		no		no
 -mmie_type	rand		rand
--moddeffn			/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_architecture/huanluyen_diadiem.200.mdef
+-moddeffn			./model_architecture/huanluyen_diadiem.200.mdef
 -mwfloor	0.00001		1.000000e-05
 -npart				1
 -nskip				0
@@ -53,19 +53,19 @@ Current configuration:
 -spthresh	0.0		0.000000e+00
 -svspec				
 -timing		yes		no
--tmatfn				/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_200/transition_matrices
+-tmatfn				./model_parameters/huanluyen_diadiem.cd_cont_200/transition_matrices
 -tmatreest	yes		yes
 -topn		4		1
 -tpfloor	0.0001		1.000000e-05
 -ts2cbfn			.cont.
 -varfloor	0.00001		1.000000e-04
--varfn				/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_200/variances
+-varfn				./model_parameters/huanluyen_diadiem.cd_cont_200/variances
 -varnorm	no		no
 -varreest	yes		yes
 -viterbi	no		no
 
 INFO: feat.c(715): Initializing feature stream to type: '1s_c_d_dd', ceplen=13, CMN='batch', VARNORM='no', AGC='none'
-INFO: main.c(318): Reading /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_architecture/huanluyen_diadiem.200.mdef
+INFO: main.c(318): Reading ./model_architecture/huanluyen_diadiem.200.mdef
 INFO: model_def_io.c(573): Model definition info:
 INFO: model_def_io.c(574): 486 total models defined (28 base, 458 tri)
 INFO: model_def_io.c(575): 1944 total states
@@ -74,11 +74,11 @@ INFO: model_def_io.c(577): 84 total tied CI states
 INFO: model_def_io.c(578): 28 total tied transition matrices
 INFO: model_def_io.c(579): 4 max state/model
 INFO: model_def_io.c(580): 4 min state/model
-INFO: s3mixw_io.c(117): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_200/mixture_weights [210x1x1 array]
-INFO: s3tmat_io.c(118): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_200/transition_matrices [28x3x4 array]
+INFO: s3mixw_io.c(117): Read ./model_parameters/huanluyen_diadiem.cd_cont_200/mixture_weights [210x1x1 array]
+INFO: s3tmat_io.c(118): Read ./model_parameters/huanluyen_diadiem.cd_cont_200/transition_matrices [28x3x4 array]
 INFO: mod_inv.c(301): inserting tprob floor 1.000000e-05 and renormalizing
-INFO: s3gau_io.c(169): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_200/means [210x1x1 array]
-INFO: s3gau_io.c(169): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_200/variances [210x1x1 array]
+INFO: s3gau_io.c(169): Read ./model_parameters/huanluyen_diadiem.cd_cont_200/means [210x1x1 array]
+INFO: s3gau_io.c(169): Read ./model_parameters/huanluyen_diadiem.cd_cont_200/variances [210x1x1 array]
 INFO: gauden.c(176): 210 total mgau
 INFO: gauden.c(150): 1 feature streams (|0|=39 )
 INFO: gauden.c(187): 1 total densities
@@ -88,10 +88,10 @@ INFO: main.c(431): Will reestimate mixing weights.
 INFO: main.c(433): Will reestimate means.
 INFO: main.c(435): Will reestimate variances.
 INFO: main.c(443): Will reestimate transition matrices
-INFO: main.c(456): Reading main dictionary: /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/etc/huanluyen_diadiem.dic
-INFO: lexicon.c(221): 16 entries added from /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/etc/huanluyen_diadiem.dic
-INFO: main.c(466): Reading filler dictionary: /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/etc/huanluyen_diadiem.filler
-INFO: lexicon.c(221): 3 entries added from /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/etc/huanluyen_diadiem.filler
+INFO: main.c(456): Reading main dictionary: ./etc/huanluyen_diadiem.dic
+INFO: lexicon.c(221): 16 entries added from ./etc/huanluyen_diadiem.dic
+INFO: main.c(466): Reading filler dictionary: ./etc/huanluyen_diadiem.filler
+INFO: lexicon.c(221): 3 entries added from ./etc/huanluyen_diadiem.filler
 INFO: corpus.c(1062): Will process all remaining utts starting at 0
 INFO: main.c(665): Reestimation: Baum-Welch
 INFO: cmn.c(133): CMN: 53.22 -17.64 -1.66  8.63 -22.18  6.34 -11.61 11.93 -10.11  7.64 -10.42  0.89 -0.61 
@@ -9951,8 +9951,8 @@ INFO: cmn.c(133): CMN: 50.64 -2.68 -20.12 -3.94 -15.97 -8.99 -13.98 -15.41  6.26
 utt>  4920              TROWRLAJI496  118    0    28 12  2 4 4.302359e-12 -1.606752e+02 -1.895967e+04
 overall> stats 602949 (-0) -1.559159e+02 -9.400932e+07
 
-INFO: s3mixw_io.c(233): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/bwaccumdir/huanluyen_diadiem_buff_1/mixw_counts [210x1x1 array]
-INFO: s3tmat_io.c(176): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/bwaccumdir/huanluyen_diadiem_buff_1/tmat_counts [28x3x4 array]
-INFO: s3gau_io.c(485): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/bwaccumdir/huanluyen_diadiem_buff_1/gauden_counts with means with vars (2pass) [210x1x1 vector arrays]
-INFO: main.c(999): Counts saved to /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/bwaccumdir/huanluyen_diadiem_buff_1
-Thu Dec 28 17:48:03 2017
+INFO: s3mixw_io.c(233): Wrote ./bwaccumdir/huanluyen_diadiem_buff_1/mixw_counts [210x1x1 array]
+INFO: s3tmat_io.c(176): Wrote ./bwaccumdir/huanluyen_diadiem_buff_1/tmat_counts [28x3x4 array]
+INFO: s3gau_io.c(485): Wrote ./bwaccumdir/huanluyen_diadiem_buff_1/gauden_counts with means with vars (2pass) [210x1x1 vector arrays]
+INFO: main.c(999): Counts saved to ./bwaccumdir/huanluyen_diadiem_buff_1
+Fri Dec 29 09:15:48 2017

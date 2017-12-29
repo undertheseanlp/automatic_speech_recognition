@@ -1441,4 +1441,938 @@ span.status {
 <p class='result'>pocketsphinx_batch <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/logdir/decode/huanluyen_diadiem-1-1.log">Log File</a></p><span class='status completed'>completed</span>
 <p>        Aligning results to find error rate</p>
 <p class='result'>SENTENCE ERROR: 0.0% (0/80)   WORD ERROR RATE: 0.0% (0/160)</p>
+<p class='result'><hr>
+<h3>MODULE: 000 Computing feature from audio files	(2017-12-29 09:12)</h3>
+<p class='audio files'>Extracting features from  segments starting at  (part 1 of 1) </p>
+<p class='result'>sphinx_fe <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/000.comp_feat/huanluyen_diadiem.train-1-1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='audio files'>Extracting features from  segments starting at  (part 1 of 1) </p>
+<p class='result'>sphinx_fe <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/000.comp_feat/huanluyen_diadiem.test-1-1.log">Log File</a></p><span class='status completed'>completed</span>
+<p>Feature extraction is done</p>
+<hr>
+<h3>MODULE: 00 verify training files	(2017-12-29 09:12)</h3>
+<p class='phase'>Phase 1: Checking to see if the dict and filler dict agrees with the phonelist file.</p>
+<p class='result'>Found 19 words using 28 phones</p>
+<span class='status passed'>passed</span>
+<p class='phase'>Phase 2: Checking to make sure there are not duplicate entries in the dictionary</p>
+<span class='status passed'>passed</span>
+<p class='phase'>Phase 3: Check general format for the fileids file; utterance length (must be positive); files exist</p>
+<span class='status passed'>passed</span>
+<p class='phase'>Phase 4: Checking number of lines in the transcript file should match lines in fileids file</p>
+<span class='status passed'>passed</span>
+<p class='phase'>Phase 5: Determine amount of training data, see if n_tied_states seems reasonable.</p>
+<p class='result'>Estimated Total Hours Training: 1.67485833333333</p>
+<p class='result'>This is a small amount of data, no comment at this time</p>
+<span class='status WARNING'>WARNING</span>
+<p class='phase'>Phase 6: Checking that all the words in the transcript are in the dictionary</p>
+<p class='result'>Words in dictionary: 16</p>
+<p class='result'>Words in filler dictionary: 3</p>
+<span class='status passed'>passed</span>
+<p class='phase'>Phase 7: Checking that all the phones in the transcript are in the phonelist, and all phones in the phonelist appear at least once</p>
+<span class='status passed'>passed</span>
+<hr>
+<h3>MODULE: 0000 train grapheme-to-phoneme model	(2017-12-29 09:12)</h3>
+<p>Skipped (set $CFG_G2P_MODEL = 'yes' to enable)</p>
+<hr>
+<h3>MODULE: 01 Train LDA transformation	(2017-12-29 09:12)</h3>
+<p>Skipped (set $CFG_LDA_MLLT = 'yes' to enable)</p>
+<hr>
+<h3>MODULE: 02 Train MLLT transformation	(2017-12-29 09:12)</h3>
+<p>Skipped (set $CFG_LDA_MLLT = 'yes' to enable)</p>
+<hr>
+<h3>MODULE: 05 Vector Quantization	(2017-12-29 09:12)</h3>
+<p>Skipped for continuous models</p>
+<hr>
+<h3>MODULE: 10 Training Context Independent models for forced alignment and VTLN	(2017-12-29 09:12)</h3>
+<p>Skipped:  $ST::CFG_FORCEDALIGN set to 'no' in sphinx_train.cfg</p>
+<p>Skipped:  $ST::CFG_VTLN set to 'no' in sphinx_train.cfg</p>
+<hr>
+<h3>MODULE: 11 Force-aligning transcripts	(2017-12-29 09:12)</h3>
+<p>Skipped:  $ST::CFG_FORCEDALIGN set to 'no' in sphinx_train.cfg</p>
+<hr>
+<h3>MODULE: 12 Force-aligning data for VTLN	(2017-12-29 09:12)</h3>
+<p>Skipped:  $ST::CFG_VTLN set to 'no' in sphinx_train.cfg</p>
+<hr>
+<h3>MODULE: 20 Training Context Independent models	(2017-12-29 09:12)</h3>
+<p class='phase'>Phase 1: Cleaning up directories:</p>
+<span class='progress'>	accumulator...</span>
+<span class='progress'>logs...</span>
+<span class='progress'>qmanager...</span>
+<span class='progress'>models...
+</span>
+<span class='status completed'>completed</span>
+<p class='phase'>Phase 2: Flat initialize</p>
+<p class='result'>mk_mdef_gen <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/20.ci_hmm/huanluyen_diadiem.make_ci_mdef_fromphonelist.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>mk_flat <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/20.ci_hmm/huanluyen_diadiem.makeflat_cihmm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>init_gau <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/20.ci_hmm/huanluyen_diadiem.initmean_cihmm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>norm <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/20.ci_hmm/huanluyen_diadiem.normmean_cihmm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>init_gau <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/20.ci_hmm/huanluyen_diadiem.initvar_cihmm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>norm <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/20.ci_hmm/huanluyen_diadiem.normvar_cihmm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>cp_parm <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/20.ci_hmm/huanluyen_diadiem.cpmean_cihmm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>cp_parm <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/20.ci_hmm/huanluyen_diadiem.cpvar_cihmm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='phase'>Phase 3: Forward-Backward</p>
+<p class='result'>Baum welch starting for 1 Gaussian(s), iteration: 1 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/20.ci_hmm/huanluyen_diadiem.1.1-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 1</p>
+<p class='result'>norm <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/20.ci_hmm/huanluyen_diadiem.1.1.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -161.631497854711</p>
+<p class='result'>Baum welch starting for 1 Gaussian(s), iteration: 2 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/20.ci_hmm/huanluyen_diadiem.1.2-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 2</p>
+<p class='result'>norm <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/20.ci_hmm/huanluyen_diadiem.1.2.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -158.750391824184</p>
+<p class='result'>Convergence Ratio = 2.88110603052687</p>
+<p class='result'>Baum welch starting for 1 Gaussian(s), iteration: 3 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/20.ci_hmm/huanluyen_diadiem.1.3-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 3</p>
+<p class='result'>norm <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/20.ci_hmm/huanluyen_diadiem.1.3.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -157.177688328532</p>
+<p class='result'>Convergence Ratio = 1.57270349565206</p>
+<p class='result'>Baum welch starting for 1 Gaussian(s), iteration: 4 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/20.ci_hmm/huanluyen_diadiem.1.4-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 4</p>
+<p class='result'>norm <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/20.ci_hmm/huanluyen_diadiem.1.4.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -156.56080365006</p>
+<p class='result'>Convergence Ratio = 0.616884678472047</p>
+<p class='result'>Baum welch starting for 1 Gaussian(s), iteration: 5 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/20.ci_hmm/huanluyen_diadiem.1.5-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 5</p>
+<p class='result'>norm <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/20.ci_hmm/huanluyen_diadiem.1.5.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -156.369809055161</p>
+<p class='result'>Convergence Ratio = 0.19099459489945</p>
+<p class='result'>Baum welch starting for 1 Gaussian(s), iteration: 6 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/20.ci_hmm/huanluyen_diadiem.1.6-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 6</p>
+<p class='result'>norm <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/20.ci_hmm/huanluyen_diadiem.1.6.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -156.296635370487</p>
+<p class='result'>Training completed after 6 iterations</p>
+<hr>
+<h3>MODULE: 30 Training Context Dependent models	(2017-12-29 09:12)</h3>
+<p class='phase'>Phase 1: Cleaning up directories:</p>
+<span class='progress'>	accumulator...</span>
+<span class='progress'>logs...</span>
+<span class='progress'>qmanager...
+</span>
+<span class='status completed'>completed</span>
+<p class='phase'>Phase 2: Initialization</p>
+<p class='result'>mk_mdef_gen <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/30.cd_hmm_untied/huanluyen_diadiem.make_alltriphonelist.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>init_mixw <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/30.cd_hmm_untied/huanluyen_diadiem.copycitocd.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='phase'>Phase 3: Forward-Backward</p>
+<p class='result'>Baum welch starting for iteration: 1 (1 of 1) </p>
+<p class='result'>bw <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/30.cd_hmm_untied/huanluyen_diadiem.1-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 1</p>
+<p class='result'>norm <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/30.cd_hmm_untied/huanluyen_diadiem.1.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -156.261076807491</p>
+<p class='result'>Baum welch starting for iteration: 2 (1 of 1) </p>
+<p class='result'>bw <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/30.cd_hmm_untied/huanluyen_diadiem.2-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 2</p>
+<p class='result'>norm <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/30.cd_hmm_untied/huanluyen_diadiem.2.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -155.969310837235</p>
+<p class='result'>Convergence Ratio = 0.291765970256023</p>
+<p class='result'>Baum welch starting for iteration: 3 (1 of 1) </p>
+<p class='result'>bw <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/30.cd_hmm_untied/huanluyen_diadiem.3-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 3</p>
+<p class='result'>norm <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/30.cd_hmm_untied/huanluyen_diadiem.3.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -155.861739550111</p>
+<p class='result'>Convergence Ratio = 0.107571287123818</p>
+<p class='result'>Baum welch starting for iteration: 4 (1 of 1) </p>
+<p class='result'>bw <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/30.cd_hmm_untied/huanluyen_diadiem.4-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 4</p>
+<p class='result'>norm <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/30.cd_hmm_untied/huanluyen_diadiem.4.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -155.821918603398</p>
+<p class='result'>Training completed after 4 iterations</p>
+<hr>
+<h3>MODULE: 40 Build Trees	(2017-12-29 09:13)</h3>
+<p class='phase'>Phase 1: Cleaning up old log files...</p>
+<p class='phase'>Phase 2: Make Questions</p>
+<p class='result'>make_quests <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.make_questions.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='phase'>Phase 3: Tree building</p>
+<p class='result'>Processing each phone with each state</p>
+<p class='result'>A 0 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.A.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>A 1 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.A.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>A 2 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.A.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>AJ 0 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.AJ.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>AJ 1 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.AJ.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>AJ 2 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.AJ.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>AS 0 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.AS.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>AS 1 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.AS.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>AS 2 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.AS.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>C 0 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.C.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>C 1 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.C.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>C 2 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.C.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>CH 0 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.CH.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>CH 1 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.CH.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>CH 2 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.CH.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>DD 0 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.DD.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>DD 1 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.DD.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>DD 2 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.DD.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>E 0 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.E.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>E 1 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.E.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>E 2 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.E.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>EE 0 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.EE.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>EE 1 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.EE.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>EE 2 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.EE.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>F 0 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.F.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>F 1 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.F.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>F 2 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.F.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>I 0 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.I.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>I 1 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.I.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>I 2 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.I.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>K 0 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.K.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>K 1 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.K.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>K 2 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.K.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>KH 0 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.KH.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>KH 1 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.KH.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>KH 2 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.KH.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>L 0 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.L.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>L 1 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.L.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>L 2 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.L.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>M 0 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.M.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>M 1 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.M.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>M 2 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.M.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>N 0 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.N.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>N 1 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.N.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>N 2 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.N.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>NG 0 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.NG.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>NG 1 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.NG.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>NG 2 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.NG.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>O 0 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.O.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>O 1 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.O.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>O 2 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.O.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>OO 0 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.OO.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>OO 1 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.OO.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>OO 2 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.OO.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>OWR 0 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.OWR.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>OWR 1 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.OWR.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>OWR 2 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.OWR.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>PH 0 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.PH.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>PH 1 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.PH.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>PH 2 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.PH.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>R 0 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.R.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>R 1 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.R.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>R 2 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.R.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>S 0 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.S.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>S 1 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.S.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>S 2 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.S.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Skipping SIL</p>
+<p class='result'>T 0 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.T.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>T 1 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.T.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>T 2 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.T.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>TR 0 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.TR.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>TR 1 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.TR.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>TR 2 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.TR.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>US 0 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.US.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>US 1 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.US.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>US 2 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.US.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>X 0 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.X.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>X 1 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.X.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>X 2 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.X.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Y 0 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.Y.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Y 1 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.Y.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Y 2 </p>
+<p class='result'>bldtree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/40.buildtrees/huanluyen_diadiem.buildtree.Y.2.log">Log File</a></p><span class='status completed'>completed</span>
+<hr>
+<h3>MODULE: 45 Prune Trees	(2017-12-29 09:13)</h3>
+<p class='result'>mk_mdef_gen <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/45.prunetree/huanluyen_diadiem.build.alltriphones.mdef.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='phase'>Phase 1: Tree Pruning</p>
+<p class='result'>prunetree <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/45.prunetree/huanluyen_diadiem.prunetree.200.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='phase'>Phase 2: State Tying</p>
+<p class='result'>tiestate <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/45.prunetree/huanluyen_diadiem.tiestate.200.log">Log File</a></p><span class='status completed'>completed</span>
+<hr>
+<h3>MODULE: 50 Training Context dependent models	(2017-12-29 09:13)</h3>
+<p class='phase'>Phase 1: Cleaning up directories:</p>
+<span class='progress'>	accumulator...</span>
+<span class='progress'>logs...</span>
+<span class='progress'>qmanager...
+</span>
+<span class='status completed'>completed</span>
+<p class='phase'>Phase 2: Copy CI to CD initialize</p>
+<p class='result'>init_mixw <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.copy.ci.2.cd.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='phase'>Phase 3: Forward-Backward</p>
+<p class='result'>Baum welch starting for 1 Gaussian(s), iteration: 1 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.1.1-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 1</p>
+<p class='result'>norm <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.1.1.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -156.261076807491</p>
+<p class='result'>Baum welch starting for 1 Gaussian(s), iteration: 2 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.1.2-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 2</p>
+<p class='result'>norm <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.1.2.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -155.915873481837</p>
+<p class='result'>Convergence Ratio = 0.345203325654239</p>
+<p class='result'>Baum welch starting for 1 Gaussian(s), iteration: 3 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.1.3-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 3</p>
+<p class='result'>norm <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.1.3.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -155.848886058356</p>
+<p class='result'>Split Gaussians, increase by 1</p>
+<p class='result'>inc_comp <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.split_gaussians.1.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -155.848886058356</p>
+<p class='result'>Convergence Ratio = 0.0669874234804979</p>
+<p class='result'>Baum welch starting for 2 Gaussian(s), iteration: 1 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.2.1-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 1</p>
+<p class='result'>norm <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.2.1.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -156.126289288149</p>
+<p class='result'>Baum welch starting for 2 Gaussian(s), iteration: 2 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.2.2-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 2</p>
+<p class='result'>norm <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.2.2.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -155.700150427316</p>
+<p class='result'>Convergence Ratio = 0.426138860832594</p>
+<p class='result'>Baum welch starting for 2 Gaussian(s), iteration: 3 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.2.3-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 3</p>
+<p class='result'>norm <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.2.3.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -155.453031682613</p>
+<p class='result'>Convergence Ratio = 0.247118744702703</p>
+<p class='result'>Baum welch starting for 2 Gaussian(s), iteration: 4 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.2.4-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 4</p>
+<p class='result'>norm <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.2.4.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -155.245369011309</p>
+<p class='result'>Convergence Ratio = 0.207662671303581</p>
+<p class='result'>Baum welch starting for 2 Gaussian(s), iteration: 5 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.2.5-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 5</p>
+<p class='result'>norm <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.2.5.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -155.127365664426</p>
+<p class='result'>Convergence Ratio = 0.118003346883</p>
+<p class='result'>Baum welch starting for 2 Gaussian(s), iteration: 6 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.2.6-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 6</p>
+<p class='result'>norm <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.2.6.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -155.053047604358</p>
+<p class='result'>Split Gaussians, increase by 2</p>
+<p class='result'>inc_comp <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.split_gaussians.2.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -155.053047604358</p>
+<p class='result'>Convergence Ratio = 0.0743180600680944</p>
+<p class='result'>Baum welch starting for 4 Gaussian(s), iteration: 1 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.4.1-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 1</p>
+<p class='result'>norm <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.4.1.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -155.313616906239</p>
+<p class='result'>Baum welch starting for 4 Gaussian(s), iteration: 2 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.4.2-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 2</p>
+<p class='result'>norm <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.4.2.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -154.910614330565</p>
+<p class='result'>Convergence Ratio = 0.403002575673725</p>
+<p class='result'>Baum welch starting for 4 Gaussian(s), iteration: 3 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.4.3-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 3</p>
+<p class='result'>norm <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.4.3.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -154.738460466806</p>
+<p class='result'>Convergence Ratio = 0.172153863759348</p>
+<p class='result'>Baum welch starting for 4 Gaussian(s), iteration: 4 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.4.4-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 4</p>
+<p class='result'>norm <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.4.4.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -154.584566853913</p>
+<p class='result'>Convergence Ratio = 0.153893612892972</p>
+<p class='result'>Baum welch starting for 4 Gaussian(s), iteration: 5 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.4.5-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 5</p>
+<p class='result'>norm <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.4.5.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -154.486930072029</p>
+<p class='result'>Split Gaussians, increase by 4</p>
+<p class='result'>inc_comp <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.split_gaussians.4.4.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -154.486930072029</p>
+<p class='result'>Convergence Ratio = 0.0976367818836934</p>
+<p class='result'>Baum welch starting for 8 Gaussian(s), iteration: 1 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.8.1-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 1</p>
+<p class='result'>norm <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.8.1.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -154.73909070253</p>
+<p class='result'>Baum welch starting for 8 Gaussian(s), iteration: 2 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.8.2-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 2</p>
+<p class='result'>norm <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.8.2.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -154.338625654906</p>
+<p class='result'>Convergence Ratio = 0.400465047623868</p>
+<p class='result'>Baum welch starting for 8 Gaussian(s), iteration: 3 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.8.3-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 3</p>
+<p class='result'>norm <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.8.3.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -154.196922127742</p>
+<p class='result'>Convergence Ratio = 0.141703527163855</p>
+<p class='result'>Baum welch starting for 8 Gaussian(s), iteration: 4 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.8.4-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 4</p>
+<p class='result'>norm <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.8.4.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -154.069614511343</p>
+<p class='result'>Convergence Ratio = 0.127307616398582</p>
+<p class='result'>Baum welch starting for 8 Gaussian(s), iteration: 5 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.8.5-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 5</p>
+<p class='result'>norm <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/50.cd_hmm_tied/huanluyen_diadiem.8.5.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -153.981016636565</p>
+<p>Training for 8 Gaussian(s) completed after 5 iterations</p>
+<hr>
+<h3>MODULE: 60 Lattice Generation	(2017-12-29 09:14)</h3>
+<p>Skipped:  $ST::CFG_MMIE set to 'no' in sphinx_train.cfg</p>
+<hr>
+<h3>MODULE: 61 Lattice Pruning	(2017-12-29 09:14)</h3>
+<p>Skipped:  $ST::CFG_MMIE set to 'no' in sphinx_train.cfg</p>
+<hr>
+<h3>MODULE: 62 Lattice Format Conversion	(2017-12-29 09:14)</h3>
+<p>Skipped:  $ST::CFG_MMIE set to 'no' in sphinx_train.cfg</p>
+<hr>
+<h3>MODULE: 65 MMIE Training	(2017-12-29 09:14)</h3>
+<p>Skipped:  $ST::CFG_MMIE set to 'no' in sphinx_train.cfg</p>
+<hr>
+<h3>MODULE: 90 deleted interpolation	(2017-12-29 09:14)</h3>
+<p>Skipped for continuous models</p>
+<hr>
+<h3>MODULE: DECODE Decoding using models previously trained	(2017-12-29 09:14)</h3>
+<p class='result'>Decoding 80 segments starting at 0 (part 1 of 1) </p>
+<p class='result'>pocketsphinx_batch <a href="file:///home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen_diadiem/logdir/decode/huanluyen_diadiem-1-1.log">Log File</a></p><span class='status completed'>completed</span>
+<p>        Aligning results to find error rate</p>
+<p class='result'>SENTENCE ERROR: 0.0% (0/80)   WORD ERROR RATE: 0.0% (0/160)</p>
+<p class='result'><hr>
+<h3>MODULE: 000 Computing feature from audio files	(2017-12-29 09:15)</h3>
+<p class='audio files'>Extracting features from  segments starting at  (part 1 of 1) </p>
+<p class='result'>sphinx_fe <a href="file:///./logdir/000.comp_feat/huanluyen_diadiem.train-1-1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='audio files'>Extracting features from  segments starting at  (part 1 of 1) </p>
+<p class='result'>sphinx_fe <a href="file:///./logdir/000.comp_feat/huanluyen_diadiem.test-1-1.log">Log File</a></p><span class='status completed'>completed</span>
+<p>Feature extraction is done</p>
+<hr>
+<h3>MODULE: 00 verify training files	(2017-12-29 09:15)</h3>
+<p class='phase'>Phase 1: Checking to see if the dict and filler dict agrees with the phonelist file.</p>
+<p class='result'>Found 19 words using 28 phones</p>
+<span class='status passed'>passed</span>
+<p class='phase'>Phase 2: Checking to make sure there are not duplicate entries in the dictionary</p>
+<span class='status passed'>passed</span>
+<p class='phase'>Phase 3: Check general format for the fileids file; utterance length (must be positive); files exist</p>
+<span class='status passed'>passed</span>
+<p class='phase'>Phase 4: Checking number of lines in the transcript file should match lines in fileids file</p>
+<span class='status passed'>passed</span>
+<p class='phase'>Phase 5: Determine amount of training data, see if n_tied_states seems reasonable.</p>
+<p class='result'>Estimated Total Hours Training: 1.67485833333333</p>
+<p class='result'>This is a small amount of data, no comment at this time</p>
+<span class='status WARNING'>WARNING</span>
+<p class='phase'>Phase 6: Checking that all the words in the transcript are in the dictionary</p>
+<p class='result'>Words in dictionary: 16</p>
+<p class='result'>Words in filler dictionary: 3</p>
+<span class='status passed'>passed</span>
+<p class='phase'>Phase 7: Checking that all the phones in the transcript are in the phonelist, and all phones in the phonelist appear at least once</p>
+<span class='status passed'>passed</span>
+<hr>
+<h3>MODULE: 0000 train grapheme-to-phoneme model	(2017-12-29 09:15)</h3>
+<p>Skipped (set $CFG_G2P_MODEL = 'yes' to enable)</p>
+<hr>
+<h3>MODULE: 01 Train LDA transformation	(2017-12-29 09:15)</h3>
+<p>Skipped (set $CFG_LDA_MLLT = 'yes' to enable)</p>
+<hr>
+<h3>MODULE: 02 Train MLLT transformation	(2017-12-29 09:15)</h3>
+<p>Skipped (set $CFG_LDA_MLLT = 'yes' to enable)</p>
+<hr>
+<h3>MODULE: 05 Vector Quantization	(2017-12-29 09:15)</h3>
+<p>Skipped for continuous models</p>
+<hr>
+<h3>MODULE: 10 Training Context Independent models for forced alignment and VTLN	(2017-12-29 09:15)</h3>
+<p>Skipped:  $ST::CFG_FORCEDALIGN set to 'no' in sphinx_train.cfg</p>
+<p>Skipped:  $ST::CFG_VTLN set to 'no' in sphinx_train.cfg</p>
+<hr>
+<h3>MODULE: 11 Force-aligning transcripts	(2017-12-29 09:15)</h3>
+<p>Skipped:  $ST::CFG_FORCEDALIGN set to 'no' in sphinx_train.cfg</p>
+<hr>
+<h3>MODULE: 12 Force-aligning data for VTLN	(2017-12-29 09:15)</h3>
+<p>Skipped:  $ST::CFG_VTLN set to 'no' in sphinx_train.cfg</p>
+<hr>
+<h3>MODULE: 20 Training Context Independent models	(2017-12-29 09:15)</h3>
+<p class='phase'>Phase 1: Cleaning up directories:</p>
+<span class='progress'>	accumulator...</span>
+<span class='progress'>logs...</span>
+<span class='progress'>qmanager...</span>
+<span class='progress'>models...
+</span>
+<span class='status completed'>completed</span>
+<p class='phase'>Phase 2: Flat initialize</p>
+<p class='result'>mk_mdef_gen <a href="file:///./logdir/20.ci_hmm/huanluyen_diadiem.make_ci_mdef_fromphonelist.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>mk_flat <a href="file:///./logdir/20.ci_hmm/huanluyen_diadiem.makeflat_cihmm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>init_gau <a href="file:///./logdir/20.ci_hmm/huanluyen_diadiem.initmean_cihmm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>norm <a href="file:///./logdir/20.ci_hmm/huanluyen_diadiem.normmean_cihmm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>init_gau <a href="file:///./logdir/20.ci_hmm/huanluyen_diadiem.initvar_cihmm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>norm <a href="file:///./logdir/20.ci_hmm/huanluyen_diadiem.normvar_cihmm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>cp_parm <a href="file:///./logdir/20.ci_hmm/huanluyen_diadiem.cpmean_cihmm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>cp_parm <a href="file:///./logdir/20.ci_hmm/huanluyen_diadiem.cpvar_cihmm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='phase'>Phase 3: Forward-Backward</p>
+<p class='result'>Baum welch starting for 1 Gaussian(s), iteration: 1 (1 of 1)</p>
+<p class='result'>bw <a href="file:///./logdir/20.ci_hmm/huanluyen_diadiem.1.1-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 1</p>
+<p class='result'>norm <a href="file:///./logdir/20.ci_hmm/huanluyen_diadiem.1.1.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -161.631497854711</p>
+<p class='result'>Baum welch starting for 1 Gaussian(s), iteration: 2 (1 of 1)</p>
+<p class='result'>bw <a href="file:///./logdir/20.ci_hmm/huanluyen_diadiem.1.2-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 2</p>
+<p class='result'>norm <a href="file:///./logdir/20.ci_hmm/huanluyen_diadiem.1.2.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -158.750391824184</p>
+<p class='result'>Convergence Ratio = 2.88110603052687</p>
+<p class='result'>Baum welch starting for 1 Gaussian(s), iteration: 3 (1 of 1)</p>
+<p class='result'>bw <a href="file:///./logdir/20.ci_hmm/huanluyen_diadiem.1.3-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 3</p>
+<p class='result'>norm <a href="file:///./logdir/20.ci_hmm/huanluyen_diadiem.1.3.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -157.177688328532</p>
+<p class='result'>Convergence Ratio = 1.57270349565206</p>
+<p class='result'>Baum welch starting for 1 Gaussian(s), iteration: 4 (1 of 1)</p>
+<p class='result'>bw <a href="file:///./logdir/20.ci_hmm/huanluyen_diadiem.1.4-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 4</p>
+<p class='result'>norm <a href="file:///./logdir/20.ci_hmm/huanluyen_diadiem.1.4.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -156.56080365006</p>
+<p class='result'>Convergence Ratio = 0.616884678472047</p>
+<p class='result'>Baum welch starting for 1 Gaussian(s), iteration: 5 (1 of 1)</p>
+<p class='result'>bw <a href="file:///./logdir/20.ci_hmm/huanluyen_diadiem.1.5-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 5</p>
+<p class='result'>norm <a href="file:///./logdir/20.ci_hmm/huanluyen_diadiem.1.5.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -156.369809055161</p>
+<p class='result'>Convergence Ratio = 0.19099459489945</p>
+<p class='result'>Baum welch starting for 1 Gaussian(s), iteration: 6 (1 of 1)</p>
+<p class='result'>bw <a href="file:///./logdir/20.ci_hmm/huanluyen_diadiem.1.6-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 6</p>
+<p class='result'>norm <a href="file:///./logdir/20.ci_hmm/huanluyen_diadiem.1.6.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -156.296635370487</p>
+<p class='result'>Training completed after 6 iterations</p>
+<hr>
+<h3>MODULE: 30 Training Context Dependent models	(2017-12-29 09:15)</h3>
+<p class='phase'>Phase 1: Cleaning up directories:</p>
+<span class='progress'>	accumulator...</span>
+<span class='progress'>logs...</span>
+<span class='progress'>qmanager...
+</span>
+<span class='status completed'>completed</span>
+<p class='phase'>Phase 2: Initialization</p>
+<p class='result'>mk_mdef_gen <a href="file:///./logdir/30.cd_hmm_untied/huanluyen_diadiem.make_alltriphonelist.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>init_mixw <a href="file:///./logdir/30.cd_hmm_untied/huanluyen_diadiem.copycitocd.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='phase'>Phase 3: Forward-Backward</p>
+<p class='result'>Baum welch starting for iteration: 1 (1 of 1) </p>
+<p class='result'>bw <a href="file:///./logdir/30.cd_hmm_untied/huanluyen_diadiem.1-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 1</p>
+<p class='result'>norm <a href="file:///./logdir/30.cd_hmm_untied/huanluyen_diadiem.1.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -156.261076807491</p>
+<p class='result'>Baum welch starting for iteration: 2 (1 of 1) </p>
+<p class='result'>bw <a href="file:///./logdir/30.cd_hmm_untied/huanluyen_diadiem.2-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 2</p>
+<p class='result'>norm <a href="file:///./logdir/30.cd_hmm_untied/huanluyen_diadiem.2.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -155.969310837235</p>
+<p class='result'>Convergence Ratio = 0.291765970256023</p>
+<p class='result'>Baum welch starting for iteration: 3 (1 of 1) </p>
+<p class='result'>bw <a href="file:///./logdir/30.cd_hmm_untied/huanluyen_diadiem.3-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 3</p>
+<p class='result'>norm <a href="file:///./logdir/30.cd_hmm_untied/huanluyen_diadiem.3.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -155.861739550111</p>
+<p class='result'>Convergence Ratio = 0.107571287123818</p>
+<p class='result'>Baum welch starting for iteration: 4 (1 of 1) </p>
+<p class='result'>bw <a href="file:///./logdir/30.cd_hmm_untied/huanluyen_diadiem.4-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 4</p>
+<p class='result'>norm <a href="file:///./logdir/30.cd_hmm_untied/huanluyen_diadiem.4.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -155.821918603398</p>
+<p class='result'>Training completed after 4 iterations</p>
+<hr>
+<h3>MODULE: 40 Build Trees	(2017-12-29 09:15)</h3>
+<p class='phase'>Phase 1: Cleaning up old log files...</p>
+<p class='phase'>Phase 2: Make Questions</p>
+<p class='result'>make_quests <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.make_questions.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='phase'>Phase 3: Tree building</p>
+<p class='result'>Processing each phone with each state</p>
+<p class='result'>A 0 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.A.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>A 1 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.A.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>A 2 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.A.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>AJ 0 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.AJ.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>AJ 1 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.AJ.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>AJ 2 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.AJ.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>AS 0 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.AS.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>AS 1 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.AS.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>AS 2 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.AS.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>C 0 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.C.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>C 1 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.C.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>C 2 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.C.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>CH 0 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.CH.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>CH 1 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.CH.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>CH 2 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.CH.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>DD 0 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.DD.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>DD 1 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.DD.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>DD 2 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.DD.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>E 0 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.E.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>E 1 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.E.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>E 2 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.E.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>EE 0 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.EE.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>EE 1 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.EE.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>EE 2 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.EE.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>F 0 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.F.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>F 1 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.F.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>F 2 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.F.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>I 0 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.I.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>I 1 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.I.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>I 2 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.I.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>K 0 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.K.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>K 1 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.K.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>K 2 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.K.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>KH 0 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.KH.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>KH 1 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.KH.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>KH 2 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.KH.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>L 0 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.L.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>L 1 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.L.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>L 2 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.L.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>M 0 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.M.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>M 1 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.M.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>M 2 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.M.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>N 0 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.N.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>N 1 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.N.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>N 2 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.N.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>NG 0 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.NG.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>NG 1 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.NG.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>NG 2 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.NG.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>O 0 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.O.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>O 1 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.O.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>O 2 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.O.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>OO 0 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.OO.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>OO 1 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.OO.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>OO 2 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.OO.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>OWR 0 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.OWR.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>OWR 1 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.OWR.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>OWR 2 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.OWR.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>PH 0 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.PH.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>PH 1 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.PH.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>PH 2 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.PH.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>R 0 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.R.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>R 1 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.R.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>R 2 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.R.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>S 0 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.S.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>S 1 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.S.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>S 2 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.S.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Skipping SIL</p>
+<p class='result'>T 0 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.T.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>T 1 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.T.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>T 2 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.T.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>TR 0 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.TR.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>TR 1 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.TR.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>TR 2 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.TR.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>US 0 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.US.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>US 1 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.US.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>US 2 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.US.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>X 0 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.X.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>X 1 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.X.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>X 2 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.X.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Y 0 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.Y.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Y 1 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.Y.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Y 2 </p>
+<p class='result'>bldtree <a href="file:///./logdir/40.buildtrees/huanluyen_diadiem.buildtree.Y.2.log">Log File</a></p><span class='status completed'>completed</span>
+<hr>
+<h3>MODULE: 45 Prune Trees	(2017-12-29 09:15)</h3>
+<p class='result'>mk_mdef_gen <a href="file:///./logdir/45.prunetree/huanluyen_diadiem.build.alltriphones.mdef.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='phase'>Phase 1: Tree Pruning</p>
+<p class='result'>prunetree <a href="file:///./logdir/45.prunetree/huanluyen_diadiem.prunetree.200.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='phase'>Phase 2: State Tying</p>
+<p class='result'>tiestate <a href="file:///./logdir/45.prunetree/huanluyen_diadiem.tiestate.200.log">Log File</a></p><span class='status completed'>completed</span>
+<hr>
+<h3>MODULE: 50 Training Context dependent models	(2017-12-29 09:15)</h3>
+<p class='phase'>Phase 1: Cleaning up directories:</p>
+<span class='progress'>	accumulator...</span>
+<span class='progress'>logs...</span>
+<span class='progress'>qmanager...
+</span>
+<span class='status completed'>completed</span>
+<p class='phase'>Phase 2: Copy CI to CD initialize</p>
+<p class='result'>init_mixw <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.copy.ci.2.cd.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='phase'>Phase 3: Forward-Backward</p>
+<p class='result'>Baum welch starting for 1 Gaussian(s), iteration: 1 (1 of 1)</p>
+<p class='result'>bw <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.1.1-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 1</p>
+<p class='result'>norm <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.1.1.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -156.261076807491</p>
+<p class='result'>Baum welch starting for 1 Gaussian(s), iteration: 2 (1 of 1)</p>
+<p class='result'>bw <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.1.2-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 2</p>
+<p class='result'>norm <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.1.2.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -155.915873481837</p>
+<p class='result'>Convergence Ratio = 0.345203325654239</p>
+<p class='result'>Baum welch starting for 1 Gaussian(s), iteration: 3 (1 of 1)</p>
+<p class='result'>bw <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.1.3-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 3</p>
+<p class='result'>norm <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.1.3.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -155.848886058356</p>
+<p class='result'>Split Gaussians, increase by 1</p>
+<p class='result'>inc_comp <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.split_gaussians.1.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -155.848886058356</p>
+<p class='result'>Convergence Ratio = 0.0669874234804979</p>
+<p class='result'>Baum welch starting for 2 Gaussian(s), iteration: 1 (1 of 1)</p>
+<p class='result'>bw <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.2.1-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 1</p>
+<p class='result'>norm <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.2.1.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -156.126289288149</p>
+<p class='result'>Baum welch starting for 2 Gaussian(s), iteration: 2 (1 of 1)</p>
+<p class='result'>bw <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.2.2-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 2</p>
+<p class='result'>norm <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.2.2.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -155.700150427316</p>
+<p class='result'>Convergence Ratio = 0.426138860832594</p>
+<p class='result'>Baum welch starting for 2 Gaussian(s), iteration: 3 (1 of 1)</p>
+<p class='result'>bw <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.2.3-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 3</p>
+<p class='result'>norm <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.2.3.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -155.453031682613</p>
+<p class='result'>Convergence Ratio = 0.247118744702703</p>
+<p class='result'>Baum welch starting for 2 Gaussian(s), iteration: 4 (1 of 1)</p>
+<p class='result'>bw <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.2.4-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 4</p>
+<p class='result'>norm <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.2.4.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -155.245369011309</p>
+<p class='result'>Convergence Ratio = 0.207662671303581</p>
+<p class='result'>Baum welch starting for 2 Gaussian(s), iteration: 5 (1 of 1)</p>
+<p class='result'>bw <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.2.5-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 5</p>
+<p class='result'>norm <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.2.5.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -155.127365664426</p>
+<p class='result'>Convergence Ratio = 0.118003346883</p>
+<p class='result'>Baum welch starting for 2 Gaussian(s), iteration: 6 (1 of 1)</p>
+<p class='result'>bw <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.2.6-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 6</p>
+<p class='result'>norm <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.2.6.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -155.053047604358</p>
+<p class='result'>Split Gaussians, increase by 2</p>
+<p class='result'>inc_comp <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.split_gaussians.2.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -155.053047604358</p>
+<p class='result'>Convergence Ratio = 0.0743180600680944</p>
+<p class='result'>Baum welch starting for 4 Gaussian(s), iteration: 1 (1 of 1)</p>
+<p class='result'>bw <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.4.1-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 1</p>
+<p class='result'>norm <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.4.1.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -155.313616906239</p>
+<p class='result'>Baum welch starting for 4 Gaussian(s), iteration: 2 (1 of 1)</p>
+<p class='result'>bw <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.4.2-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 2</p>
+<p class='result'>norm <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.4.2.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -154.910614330565</p>
+<p class='result'>Convergence Ratio = 0.403002575673725</p>
+<p class='result'>Baum welch starting for 4 Gaussian(s), iteration: 3 (1 of 1)</p>
+<p class='result'>bw <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.4.3-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 3</p>
+<p class='result'>norm <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.4.3.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -154.738460466806</p>
+<p class='result'>Convergence Ratio = 0.172153863759348</p>
+<p class='result'>Baum welch starting for 4 Gaussian(s), iteration: 4 (1 of 1)</p>
+<p class='result'>bw <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.4.4-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 4</p>
+<p class='result'>norm <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.4.4.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -154.584566853913</p>
+<p class='result'>Convergence Ratio = 0.153893612892972</p>
+<p class='result'>Baum welch starting for 4 Gaussian(s), iteration: 5 (1 of 1)</p>
+<p class='result'>bw <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.4.5-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 5</p>
+<p class='result'>norm <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.4.5.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -154.486930072029</p>
+<p class='result'>Split Gaussians, increase by 4</p>
+<p class='result'>inc_comp <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.split_gaussians.4.4.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -154.486930072029</p>
+<p class='result'>Convergence Ratio = 0.0976367818836934</p>
+<p class='result'>Baum welch starting for 8 Gaussian(s), iteration: 1 (1 of 1)</p>
+<p class='result'>bw <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.8.1-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 1</p>
+<p class='result'>norm <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.8.1.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -154.73909070253</p>
+<p class='result'>Baum welch starting for 8 Gaussian(s), iteration: 2 (1 of 1)</p>
+<p class='result'>bw <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.8.2-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 2</p>
+<p class='result'>norm <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.8.2.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -154.338625654906</p>
+<p class='result'>Convergence Ratio = 0.400465047623868</p>
+<p class='result'>Baum welch starting for 8 Gaussian(s), iteration: 3 (1 of 1)</p>
+<p class='result'>bw <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.8.3-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 3</p>
+<p class='result'>norm <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.8.3.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -154.196922127742</p>
+<p class='result'>Convergence Ratio = 0.141703527163855</p>
+<p class='result'>Baum welch starting for 8 Gaussian(s), iteration: 4 (1 of 1)</p>
+<p class='result'>bw <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.8.4-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 4</p>
+<p class='result'>norm <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.8.4.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -154.069614511343</p>
+<p class='result'>Convergence Ratio = 0.127307616398582</p>
+<p class='result'>Baum welch starting for 8 Gaussian(s), iteration: 5 (1 of 1)</p>
+<p class='result'>bw <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.8.5-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 5</p>
+<p class='result'>norm <a href="file:///./logdir/50.cd_hmm_tied/huanluyen_diadiem.8.5.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -153.981016636565</p>
+<p>Training for 8 Gaussian(s) completed after 5 iterations</p>
+<hr>
+<h3>MODULE: 60 Lattice Generation	(2017-12-29 09:17)</h3>
+<p>Skipped:  $ST::CFG_MMIE set to 'no' in sphinx_train.cfg</p>
+<hr>
+<h3>MODULE: 61 Lattice Pruning	(2017-12-29 09:17)</h3>
+<p>Skipped:  $ST::CFG_MMIE set to 'no' in sphinx_train.cfg</p>
+<hr>
+<h3>MODULE: 62 Lattice Format Conversion	(2017-12-29 09:17)</h3>
+<p>Skipped:  $ST::CFG_MMIE set to 'no' in sphinx_train.cfg</p>
+<hr>
+<h3>MODULE: 65 MMIE Training	(2017-12-29 09:17)</h3>
+<p>Skipped:  $ST::CFG_MMIE set to 'no' in sphinx_train.cfg</p>
+<hr>
+<h3>MODULE: 90 deleted interpolation	(2017-12-29 09:17)</h3>
+<p>Skipped for continuous models</p>
+<hr>
+<h3>MODULE: DECODE Decoding using models previously trained	(2017-12-29 09:17)</h3>
+<p class='result'>Decoding 80 segments starting at 0 (part 1 of 1) </p>
+<p class='result'>pocketsphinx_batch <a href="file:///./logdir/decode/huanluyen_diadiem-1-1.log">Log File</a></p><span class='status completed'>completed</span>
+<p>        Aligning results to find error rate</p>
+<p class='result'>SENTENCE ERROR: 0.0% (0/80)   WORD ERROR RATE: 0.0% (0/160)</p>
 <p class='result'>
