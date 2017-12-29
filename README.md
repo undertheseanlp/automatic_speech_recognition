@@ -1,6 +1,6 @@
 # Vietnamese Speech Recognition
 
-Usage
+Cài đặt sphinx 4 theo hướng dẫn tại [Installing CMU-Sphinx on Ubuntu](http://jrmeyer.github.io/asr/2016/01/08/Installing-CMU-Sphinx-on-Ubuntu.html)
 
 * Install sphinx 4
 
