@@ -570,4 +570,4 @@ INFO: s3gau_io.c(228): Wrote /home/rain/PycharmProjects/underthesea/automatic_sp
 INFO: main.c(561): Writing dest /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_initial/variances
 INFO: s3gau_io.c(228): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_parameters/huanluyen_diadiem.cd_cont_initial/variances [210x1x1 array]
 
-Thu Dec 28 16:25:54 2017
+Thu Dec 28 17:47:59 2017

@@ -34,4 +34,4 @@ INFO: mk_mdef_gen.c(445): 10 unique word internal triphones in dictionary
 INFO: mk_mdef_gen.c(446): 224 unique word ending triphones in dictionary
 INFO: mk_mdef_gen.c(897): 28 n_base, 458 n_tri
 INFO: mk_mdef_gen.c(969): Wrote mdef file /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_architecture/huanluyen_diadiem.alltriphones.mdef
-Thu Dec 28 16:25:54 2017
+Thu Dec 28 17:47:59 2017

@@ -25,4 +25,4 @@ INFO: mk_mdef_gen.c(191): 0 word internal triphones in input phone list
 INFO: mk_mdef_gen.c(192): 0 word ending triphones in input phone list
 INFO: mk_mdef_gen.c(897): 28 n_base, 0 n_tri
 INFO: mk_mdef_gen.c(969): Wrote mdef file /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_architecture/huanluyen_diadiem.ci.mdef
-Thu Dec 28 16:25:28 2017
+Thu Dec 28 17:47:33 2017

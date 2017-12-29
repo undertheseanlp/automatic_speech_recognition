@@ -9955,4 +9955,4 @@ INFO: s3mixw_io.c(233): Wrote /home/rain/PycharmProjects/underthesea/automatic_s
 INFO: s3tmat_io.c(176): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/bwaccumdir/huanluyen_diadiem_buff_1/tmat_counts [28x3x4 array]
 INFO: s3gau_io.c(485): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/bwaccumdir/huanluyen_diadiem_buff_1/gauden_counts with means with vars (2pass) [210x1x1 vector arrays]
 INFO: main.c(999): Counts saved to /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/bwaccumdir/huanluyen_diadiem_buff_1
-Thu Dec 28 16:25:50 2017
+Thu Dec 28 17:47:55 2017

@@ -35,4 +35,4 @@ INFO: main.c(1110):  21 questions from state 1
 INFO: main.c(1109): Done building questions using state 2
 INFO: main.c(1110):  21 questions from state 2
 INFO: main.c(1115): Stored questions in /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/huanluyen2/huanluyen_diadiem/model_architecture/huanluyen_diadiem.tree_questions
-Thu Dec 28 16:25:53 2017
+Thu Dec 28 17:47:58 2017
