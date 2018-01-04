@@ -1,0 +1,38 @@
+Current configuration:
+[NAME]		[DEFLT]			[VALUE]
+-example	no			no
+-fullvar	no			no
+-help		no			no
+-meanfn					/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.ci_cont/means
+-mixwfn					/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.ci_cont/mixture_weights
+-moddeffn				/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.ci.mdef
+-niter		0			1
+-npermute	6			12
+-qstperstt	8			20
+-questfn				/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.tree_questions
+-tempfn		/tmp/TEMP.QUESTS	/tmp/TEMP.QUESTS
+-type					.cont.
+-varfloor	1.0e-08			1.000000e-08
+-varfn					/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.ci_cont/variances
+
+INFO: main.c(792): Reading: /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.ci.mdef
+INFO: model_def_io.c(573): Model definition info:
+INFO: model_def_io.c(574): 23 total models defined (23 base, 0 tri)
+INFO: model_def_io.c(575): 92 total states
+INFO: model_def_io.c(576): 69 total tied states
+INFO: model_def_io.c(577): 69 total tied CI states
+INFO: model_def_io.c(578): 23 total tied transition matrices
+INFO: model_def_io.c(579): 4 max state/model
+INFO: model_def_io.c(580): 4 min state/model
+INFO: main.c(811): Reading: /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.ci_cont/mixture_weights
+INFO: s3mixw_io.c(117): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.ci_cont/mixture_weights [69x1x1 array]
+INFO: s3gau_io.c(169): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.ci_cont/means [69x1x1 array]
+INFO: s3gau_io.c(169): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.ci_cont/variances [69x1x1 array]
+INFO: main.c(1109): Done building questions using state 0
+INFO: main.c(1110):  21 questions from state 0
+INFO: main.c(1109): Done building questions using state 1
+INFO: main.c(1110):  21 questions from state 1
+INFO: main.c(1109): Done building questions using state 2
+INFO: main.c(1110):  21 questions from state 2
+INFO: main.c(1115): Stored questions in /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.tree_questions
+Thu Jan  4 11:09:04 2018

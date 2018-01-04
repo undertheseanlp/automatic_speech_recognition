@@ -1,0 +1,117 @@
+Current configuration:
+[NAME]			[DEFLT]		[VALUE]
+-agc			none		none
+-agcthresh		2.0		2.000000e+00
+-allphone				
+-allphone_ci		yes		yes
+-alpha			0.97		9.700000e-01
+-ascale			20.0		2.000000e+01
+-aw			1		1
+-backtrace		no		no
+-beam			1e-48		1.000000e-48
+-bestpath		yes		yes
+-bestpathlw		9.5		9.500000e+00
+-ceplen			13		13
+-cmn			live		live
+-cmninit		40,3,-1		40,3,-1
+-compallsen		no		no
+-dict					etc/diadiem.dic
+-dictcase		no		no
+-dither			no		no
+-doublebw		no		no
+-ds			1		1
+-fdict					
+-feat			1s_c_d_dd	1s_c_d_dd
+-featparams				
+-fillprob		1e-8		1.000000e-08
+-frate			100		100
+-fsg					
+-fsgusealtpron		yes		yes
+-fsgusefiller		yes		yes
+-fwdflat		yes		yes
+-fwdflatbeam		1e-64		1.000000e-64
+-fwdflatefwid		4		4
+-fwdflatlw		8.5		8.500000e+00
+-fwdflatsfwin		25		25
+-fwdflatwbeam		7e-29		7.000000e-29
+-fwdtree		yes		yes
+-hmm					model_parameters/diadiem.cd_cont_200
+-input_endian		little		little
+-jsgf					
+-keyphrase				
+-kws					
+-kws_delay		10		10
+-kws_plp		1e-1		1.000000e-01
+-kws_threshold		1e-30		1.000000e-30
+-latsize		5000		5000
+-lda					
+-ldadim			0		0
+-lifter			0		0
+-lm					etc/diadiem.lm.dmp
+-lmctl					
+-lmname					
+-logbase		1.0001		1.000100e+00
+-logfn					yes
+-logspec		no		no
+-lowerf			133.33334	1.333333e+02
+-lpbeam			1e-40		1.000000e-40
+-lponlybeam		7e-29		7.000000e-29
+-lw			6.5		6.500000e+00
+-maxhmmpf		30000		30000
+-maxwpf			-1		-1
+-mdef					
+-mean					
+-mfclogdir				
+-min_endfr		0		0
+-mixw					
+-mixwfloor		0.0000001	1.000000e-07
+-mllr					
+-mmap			yes		yes
+-ncep			13		13
+-nfft			512		512
+-nfilt			40		40
+-nwpen			1.0		1.000000e+00
+-pbeam			1e-48		1.000000e-48
+-pip			1.0		1.000000e+00
+-pl_beam		1e-10		1.000000e-10
+-pl_pbeam		1e-10		1.000000e-10
+-pl_pip			1.0		1.000000e+00
+-pl_weight		3.0		3.000000e+00
+-pl_window		5		5
+-rawlogdir				
+-remove_dc		no		no
+-remove_noise		yes		yes
+-remove_silence		yes		yes
+-round_filters		yes		yes
+-samprate		16000		8.000000e+03
+-seed			-1		-1
+-sendump				
+-senlogdir				
+-senmgau				
+-silprob		0.005		5.000000e-03
+-smoothspec		no		no
+-svspec					
+-tmat					
+-tmatfloor		0.0001		1.000000e-04
+-topn			4		4
+-topn_beam		0		0
+-toprule				
+-transform		legacy		legacy
+-unit_area		yes		yes
+-upperf			6855.4976	6.855498e+03
+-uw			1.0		1.000000e+00
+-vad_postspeech		50		50
+-vad_prespeech		20		20
+-vad_startspeech	10		10
+-vad_threshold		3.0		3.000000e+00
+-var					
+-varfloor		0.0001		1.000000e-04
+-varnorm		no		no
+-verbose		no		no
+-warp_params				
+-warp_type		inverse_linear	inverse_linear
+-wbeam			7e-29		7.000000e-29
+-wip			0.65		6.500000e-01
+-wlen			0.025625	2.562500e-02
+
+ERROR: "fe_interface.c", line 273: Upper frequency 6855.5 is higher than samprate/2 (4000.0)

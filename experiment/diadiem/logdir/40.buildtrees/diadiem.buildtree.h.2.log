@@ -1,0 +1,85 @@
+Current configuration:
+[NAME]		[DEFLT]	[VALUE]
+-allphones	no	no
+-cntthresh	0.00001	1.000000e-05
+-csplitmax	100	2000
+-csplitmin	1	1
+-csplitthr	8e-4	0.000000e+00
+-example	no	no
+-fullvar	no	no
+-help		no	no
+-meanfn			/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_untied/means
+-mixwfn			/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_untied/mixture_weights
+-moddeffn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.untied.mdef
+-mwfloor	1e-4	1.000000e-08
+-phone			h
+-psetfn			/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.tree_questions
+-ssplitmax	5	7
+-ssplitmin	1	1
+-ssplitthr	8e-4	0.000000e+00
+-state			2
+-stwt			1.0,0.05,0.0,
+-treefn			/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/trees/diadiem.unpruned/h-2.dtree
+-ts2cbfn	.semi.	.cont.
+-varfloor	0.00001	1.000000e-05
+-varfn			/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_untied/variances
+
+INFO: main.c(223): Reading: /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.untied.mdef
+INFO: model_def_io.c(573): Model definition info:
+INFO: model_def_io.c(574): 82 total models defined (23 base, 59 tri)
+INFO: model_def_io.c(575): 328 total states
+INFO: model_def_io.c(576): 246 total tied states
+INFO: model_def_io.c(577): 69 total tied CI states
+INFO: model_def_io.c(578): 23 total tied transition matrices
+INFO: model_def_io.c(579): 4 max state/model
+INFO: model_def_io.c(580): 4 min state/model
+INFO: main.c(242): Building trees for [h c s e] through [h p e i]
+INFO: main.c(269): Covering states |[132 143]| == 12
+INFO: main.c(275): Reading: /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_untied/mixture_weights
+INFO: s3mixw_io.c(173): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_untied/mixture_weights [12x1x1 array]
+INFO: main.c(311): 4 of 4 models have observation count greater than 0.000010
+INFO: main.c(95): nrm stwt: 0.000 0.048 0.952 
+INFO: s3gau_io.c(169): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_untied/means [246x1x1 array]
+INFO: s3gau_io.c(169): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_untied/variances [246x1x1 array]
+INFO: main.c(549): Reading: /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.tree_questions
+INFO: main.c(588): 180 total simple questions (172 phone; 8 word bndry)
+INFO: main.c(590): 42 Left Only questions, and 42 Right Only questions
+INFO: dtree.c(1439): stop. leaf nodes are specific
+INFO: dtree.c(1478): Final simple tree
+|( QUESTION6 1 -1.302e+06 1.665e+04 5.473e+03
+|    ( - -6.394e+05 1 0)
+|    ( QUESTION0 1 -6.463e+05 5.540e+03 2.740e+03
+|        ( WDBNDRY_E 0 -4.784e+05 4.182e+03 2.070e+03
+|            ( - -1.969e+05 1 0)
+|            ( - -2.772e+05 1 0))
+|        ( - -1.624e+05 1 0)))
+s>    ( QUESTION6 1 -1.302e+06 1.665e+04 5.473e+03
+s>        ( - -6.394e+05 1 0)
+s>        ( QUESTION0 1 -6.463e+05 5.540e+03 2.740e+03
+s>            ( WDBNDRY_E 0 -4.784e+05 4.182e+03 2.070e+03
+s>                ( - -1.969e+05 1 0)
+s>                ( - -2.772e+05 1 0))
+s>            ( - -1.624e+05 1 0)))INFO: dtree.c(1315): Comp split 0
+INFO: dtree.c(1439): stop. leaf nodes are specific
+INFO: dtree.c(1478): Final simple tree
+|( QUESTION0 1 -6.463e+05 5.540e+03 2.740e+03
+|    ( WDBNDRY_E 0 -4.784e+05 4.182e+03 2.070e+03
+|        ( - -1.969e+05 1 0)
+|        ( - -2.772e+05 1 0))
+|    ( - -1.624e+05 1 0))
+s>    ( QUESTION0 1 -6.463e+05 5.540e+03 2.740e+03
+s>        ( WDBNDRY_E 0 -4.784e+05 4.182e+03 2.070e+03
+s>            ( - -1.969e+05 1 0)
+s>            ( - -2.772e+05 1 0))
+s>        ( - -1.624e+05 1 0))INFO: dtree.c(1315): Comp split 1
+INFO: dtree.c(1439): stop. leaf nodes are specific
+INFO: dtree.c(1478): Final simple tree
+|( WDBNDRY_E 0 -4.784e+05 4.182e+03 2.070e+03
+|    ( - -1.969e+05 1 0)
+|    ( - -2.772e+05 1 0))
+s>    ( WDBNDRY_E 0 -4.784e+05 4.182e+03 2.070e+03
+s>        ( - -1.969e+05 1 0)
+s>        ( - -2.772e+05 1 0))INFO: dtree.c(1315): Comp split 2
+INFO: dtree.c(1315): Comp split 3
+INFO: dtree.c(1318): stop. leaf nodes are specific
+Thu Jan  4 11:09:05 2018

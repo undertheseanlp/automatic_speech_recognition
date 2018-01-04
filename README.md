@@ -1,17 +1,5 @@
 # Vietnamese Speech Recognition
 
-## Môi trường
-
-* Ubuntu 16.04
-
-## Cài đặt
-
-Cài đặt sphinx 4 theo hướng dẫn tại [Installing CMU-Sphinx on Ubuntu](http://jrmeyer.github.io/asr/2016/01/08/Installing-CMU-Sphinx-on-Ubuntu.html)
-
-* Cài đặt sphinxbase
-* Cài đặt sphinxtrain
-* Cài đặt pocketsphinx
-* Cài đặt cmuclmtk
 
 ## Huấn luyện mô hình HMM
 
@@ -50,3 +38,23 @@ SAJN 1.520 2.210 1.000000
 </s> 2.220 2.290 1.000000
 ```
 
+## Môi trường
+
+* Ubuntu 16.04
+
+## Cài đặt
+
+Cài đặt sphinx 4 theo hướng dẫn tại [Installing CMU-Sphinx on Ubuntu](http://jrmeyer.github.io/asr/2016/01/08/Installing-CMU-Sphinx-on-Ubuntu.html)
+
+Cài đặt sphinxbase
+
+```
+git clone https://github.com/cmusphinx/sphinxbase.git
+cd sphinxbase
+git checkout 95d0574
+./autogen.sh
+
+```
+* Cài đặt sphinxtrain
+* Cài đặt pocketsphinx
+* Cài đặt cmuclmtk

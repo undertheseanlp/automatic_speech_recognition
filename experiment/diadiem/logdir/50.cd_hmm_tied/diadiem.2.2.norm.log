@@ -1,0 +1,34 @@
+Current configuration:
+[NAME]		[DEFLT]	[VALUE]
+-accumdir		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/bwaccumdir/diadiem_buff_1,
+-constE		3.0	3.000000e+00
+-dcountfn		
+-example	no	no
+-fullvar	no	no
+-help		no	no
+-inmeanfn		
+-inmixwfn		
+-invarfn		
+-meanfn			/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_200/means
+-mixwfn			/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_200/mixture_weights
+-mmie		no	no
+-oaccumdir		
+-regmatfn		
+-tiedvar	no	no
+-tmatfn			/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_200/transition_matrices
+-varfn			/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_200/variances
+
+INFO: main.c(207): Reading and accumulating counts from /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/bwaccumdir/diadiem_buff_1
+INFO: s3mixw_io.c(117): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/bwaccumdir/diadiem_buff_1/mixw_counts [246x1x2 array]
+INFO: s3tmat_io.c(118): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/bwaccumdir/diadiem_buff_1/tmat_counts [23x3x4 array]
+INFO: s3gau_io.c(386): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/bwaccumdir/diadiem_buff_1/gauden_counts with means with vars (2pass) [246x1x2 vector arrays]
+INFO: main.c(321): -2passvar yes
+INFO: main.c(391): Normalizing mean for n_mgau= 246, n_stream= 1, n_density= 2
+INFO: main.c(414): Normalizing var
+INFO: s3mixw_io.c(233): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_200/mixture_weights [246x1x2 array]
+INFO: s3tmat_io.c(176): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_200/transition_matrices [23x3x4 array]
+INFO: s3gau_io.c(228): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_200/means [246x1x2 array]
+INFO: s3gau_io.c(228): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_200/variances [246x1x2 array]
+Thu Jan  4 11:09:23 2018
+Current Overall Likelihood Per Frame = -155.248221657221
+Convergence ratio = 0.42449693091757
