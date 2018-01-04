@@ -1,8 +1,8 @@
 Current configuration:
 [NAME]		[DEFLT]	[VALUE]
--dictfn			/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/etc/diadiem.dic
+-dictfn			./etc/diadiem.dic
 -example	no	no
--fdictfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/etc/diadiem.filler
+-fdictfn		./etc/diadiem.filler
 -help		no	no
 -ignorewpos	no	no
 -inCDmdef		
@@ -11,27 +11,27 @@ Current configuration:
 -maxtriphones	100000	100000
 -minocc		1	1
 -n_state_pm	3	3
--oalltphnmdef		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.alltriphones.mdef
+-oalltphnmdef		./model_architecture/diadiem.alltriphones.mdef
 -ocimdef		
 -ocountfn		
 -ountiedmdef		
--phnlstfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.phonelist
+-phnlstfn		./model_architecture/diadiem.phonelist
 -triphnlstfn		
 
-INFO: main.c(94): Will write alltriphone mdef file /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.alltriphones.mdef
+INFO: main.c(94): Will write alltriphone mdef file ./model_architecture/diadiem.alltriphones.mdef
 INFO: mk_mdef_gen.c(189): 0 single word triphones in input phone list
 INFO: mk_mdef_gen.c(190): 0 word beginning triphones in input phone list
 INFO: mk_mdef_gen.c(191): 0 word internal triphones in input phone list
 INFO: mk_mdef_gen.c(192): 0 word ending triphones in input phone list
-INFO: mk_mdef_gen.c(280): Reading dict /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/etc/diadiem.dic
-INFO: mk_mdef_gen.c(322): 16 words in dict /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/etc/diadiem.dic
-INFO: mk_mdef_gen.c(280): Reading dict /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/etc/diadiem.filler
-INFO: mk_mdef_gen.c(322): 3 words in dict /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/etc/diadiem.filler
+INFO: mk_mdef_gen.c(280): Reading dict ./etc/diadiem.dic
+INFO: mk_mdef_gen.c(322): 16 words in dict ./etc/diadiem.dic
+INFO: mk_mdef_gen.c(280): Reading dict ./etc/diadiem.filler
+INFO: mk_mdef_gen.c(322): 3 words in dict ./etc/diadiem.filler
 INFO: mk_mdef_gen.c(442): 19 words in dictionary
 INFO: mk_mdef_gen.c(443): 0 unique single word triphones in dictionary
 INFO: mk_mdef_gen.c(444): 182 unique word beginning triphones in dictionary
 INFO: mk_mdef_gen.c(445): 30 unique word internal triphones in dictionary
 INFO: mk_mdef_gen.c(446): 180 unique word ending triphones in dictionary
 INFO: mk_mdef_gen.c(897): 23 n_base, 392 n_tri
-INFO: mk_mdef_gen.c(969): Wrote mdef file /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.alltriphones.mdef
-Thu Jan  4 11:09:05 2018
+INFO: mk_mdef_gen.c(969): Wrote mdef file ./model_architecture/diadiem.alltriphones.mdef
+Thu Jan  4 15:58:37 2018

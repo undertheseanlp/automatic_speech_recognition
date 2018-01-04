@@ -1,22 +1,22 @@
 Current configuration:
 [NAME]		[DEFLT]	[VALUE]
--dcountfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_200/mixture_weights
+-dcountfn		./model_parameters/diadiem.cd_cont_200/mixture_weights
 -example	no	no
 -fullvar	no	no
 -help		no	no
--inmeanfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_200/means
--inmixwfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_200/mixture_weights
--invarfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_200/variances
+-inmeanfn		./model_parameters/diadiem.cd_cont_200/means
+-inmixwfn		./model_parameters/diadiem.cd_cont_200/mixture_weights
+-invarfn		./model_parameters/diadiem.cd_cont_200/variances
 -ninc		1	4
--outmeanfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_initial/means
--outmixwfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_initial/mixture_weights
--outvarfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_initial/variances
+-outmeanfn		./model_parameters/diadiem.cd_cont_initial/means
+-outmixwfn		./model_parameters/diadiem.cd_cont_initial/mixture_weights
+-outvarfn		./model_parameters/diadiem.cd_cont_initial/variances
 
-INFO: main.c(86): Reading mixing weight file /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_200/mixture_weights.
-INFO: s3mixw_io.c(117): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_200/mixture_weights [246x1x4 array]
-INFO: s3gau_io.c(169): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_200/means [246x1x4 array]
-INFO: s3gau_io.c(169): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_200/variances [246x1x4 array]
-INFO: s3gau_io.c(553): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_200/mixture_weights [246x1x4 array]
+INFO: main.c(86): Reading mixing weight file ./model_parameters/diadiem.cd_cont_200/mixture_weights.
+INFO: s3mixw_io.c(117): Read ./model_parameters/diadiem.cd_cont_200/mixture_weights [246x1x4 array]
+INFO: s3gau_io.c(169): Read ./model_parameters/diadiem.cd_cont_200/means [246x1x4 array]
+INFO: s3gau_io.c(169): Read ./model_parameters/diadiem.cd_cont_200/variances [246x1x4 array]
+INFO: s3gau_io.c(553): Read ./model_parameters/diadiem.cd_cont_200/mixture_weights [246x1x4 array]
 INFO: main.c(151): output n_density == 8
 0:1(1.15e+04)3(9.28e+03)2(8.25e+03)0(6.89e+03)
 1:1(1.05e+04)3(8.98e+03)2(7.79e+03)0(6.26e+03)
@@ -263,8 +263,8 @@ INFO: main.c(151): output n_density == 8
 242:1(1.64e+03)3(1.55e+03)2(1.11e+03)0(9.97e+02)
 243:3(8.30e+02)1(7.49e+02)2(7.16e+02)0(6.39e+02)
 244:0(7.81e+02)2(7.51e+02)1(6.34e+02)3(5.40e+02)
-245:2(3.15e+02)1(3.12e+02)3(2.20e+02)0(2.09e+02)INFO: s3mixw_io.c(233): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_initial/mixture_weights [246x1x8 array]
-INFO: s3gau_io.c(228): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_initial/means [246x1x8 array]
-INFO: s3gau_io.c(228): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_initial/variances [246x1x8 array]
+245:2(3.15e+02)1(3.12e+02)3(2.20e+02)0(2.09e+02)INFO: s3mixw_io.c(233): Wrote ./model_parameters/diadiem.cd_cont_initial/mixture_weights [246x1x8 array]
+INFO: s3gau_io.c(228): Wrote ./model_parameters/diadiem.cd_cont_initial/means [246x1x8 array]
+INFO: s3gau_io.c(228): Wrote ./model_parameters/diadiem.cd_cont_initial/variances [246x1x8 array]
 
-Thu Jan  4 11:10:06 2018
+Thu Jan  4 15:59:37 2018

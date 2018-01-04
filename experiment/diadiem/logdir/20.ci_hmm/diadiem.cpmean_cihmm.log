@@ -1,22 +1,22 @@
 Current configuration:
 [NAME]		[DEFLT]	[VALUE]
--cpopsfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.cpmeanvar
+-cpopsfn		./model_architecture/diadiem.cpmeanvar
 -example	no	no
 -help		no	no
 -ifullgaufn		
--igaufn			/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.ci_cont_flatinitial/globalmean
+-igaufn			model_parameters/diadiem.ci_cont_flatinitial/globalmean
 -imixwfn		
 -itmatfn		
 -ncbout			69
 -nmixwout		0
 -ntmatout		0
 -ofullgaufn		
--ogaufn			/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.ci_cont_flatinitial/means
+-ogaufn			model_parameters/diadiem.ci_cont_flatinitial/means
 -omixwfn		
 -otmatfn		
 
-INFO: s3gau_io.c(169): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.ci_cont_flatinitial/globalmean [1x1x1 array]
-INFO: s3gau_io.c(228): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.ci_cont_flatinitial/means [69x1x1 array]
+INFO: s3gau_io.c(169): Read model_parameters/diadiem.ci_cont_flatinitial/globalmean [1x1x1 array]
+INFO: s3gau_io.c(228): Wrote model_parameters/diadiem.ci_cont_flatinitial/means [69x1x1 array]
 gau 0 <= 0
 gau 1 <= 0
 gau 2 <= 0
@@ -86,4 +86,4 @@ gau 65 <= 0
 gau 66 <= 0
 gau 67 <= 0
 gau 68 <= 0
-Thu Jan  4 11:08:33 2018
+Thu Jan  4 15:58:06 2018

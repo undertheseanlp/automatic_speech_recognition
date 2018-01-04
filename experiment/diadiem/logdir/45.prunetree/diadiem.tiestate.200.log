@@ -3,10 +3,10 @@ Current configuration:
 -allphones	no	no
 -example	no	no
 -help		no	no
--imoddeffn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.alltriphones.mdef
--omoddeffn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.200.mdef
--psetfn			/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.tree_questions
--treedir		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/trees/diadiem.200
+-imoddeffn		./model_architecture/diadiem.alltriphones.mdef
+-omoddeffn		./model_architecture/diadiem.200.mdef
+-psetfn			./model_architecture/diadiem.tree_questions
+-treedir		./trees/diadiem.200
 
 INFO: model_def_io.c(573): Model definition info:
 INFO: model_def_io.c(574): 415 total models defined (23 base, 392 tri)
@@ -16,7 +16,7 @@ INFO: model_def_io.c(577): 69 total tied CI states
 INFO: model_def_io.c(578): 23 total tied transition matrices
 INFO: model_def_io.c(579): 4 max state/model
 INFO: model_def_io.c(580): 4 min state/model
-INFO: main.c(93): Reading: /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.tree_questions
+INFO: main.c(93): Reading: ./model_architecture/diadiem.tree_questions
 INFO: main.c(124): a-0: offset 69
 INFO: main.c(124): a-1: offset 79
 INFO: main.c(124): a-2: offset 89
@@ -84,4 +84,4 @@ INFO: main.c(124): y-0: offset 243
 INFO: main.c(124): y-1: offset 244
 INFO: main.c(124): y-2: offset 245
 INFO: main.c(145): n_seno= 246
-Thu Jan  4 11:09:05 2018
+Thu Jan  4 15:58:37 2018

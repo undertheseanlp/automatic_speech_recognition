@@ -1,22 +1,22 @@
 Current configuration:
 [NAME]		[DEFLT]	[VALUE]
--dest_meanfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_initial/means
--dest_mixwfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_initial/mixture_weights
--dest_moddeffn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.200.mdef
--dest_tmatfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_initial/transition_matrices
+-dest_meanfn		./model_parameters/diadiem.cd_cont_initial/means
+-dest_mixwfn		./model_parameters/diadiem.cd_cont_initial/mixture_weights
+-dest_moddeffn		./model_architecture/diadiem.200.mdef
+-dest_tmatfn		./model_parameters/diadiem.cd_cont_initial/transition_matrices
 -dest_ts2cbfn		.cont.
--dest_varfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_initial/variances
+-dest_varfn		./model_parameters/diadiem.cd_cont_initial/variances
 -example	no	no
 -fullvar	no	no
 -help		no	no
--src_meanfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.ci_cont/means
--src_mixwfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.ci_cont/mixture_weights
--src_moddeffn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.ci.mdef
--src_tmatfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.ci_cont/transition_matrices
+-src_meanfn		./model_parameters/diadiem.ci_cont/means
+-src_mixwfn		./model_parameters/diadiem.ci_cont/mixture_weights
+-src_moddeffn		./model_architecture/diadiem.ci.mdef
+-src_tmatfn		./model_parameters/diadiem.ci_cont/transition_matrices
 -src_ts2cbfn		.cont.
--src_varfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.ci_cont/variances
+-src_varfn		./model_parameters/diadiem.ci_cont/variances
 
-INFO: main.c(261): Reading src /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.ci.mdef
+INFO: main.c(261): Reading src ./model_architecture/diadiem.ci.mdef
 INFO: model_def_io.c(573): Model definition info:
 INFO: model_def_io.c(574): 23 total models defined (23 base, 0 tri)
 INFO: model_def_io.c(575): 92 total states
@@ -26,15 +26,15 @@ INFO: model_def_io.c(578): 23 total tied transition matrices
 INFO: model_def_io.c(579): 4 max state/model
 INFO: model_def_io.c(580): 4 min state/model
 INFO: main.c(278): Generating continous ts2cb mapping
-INFO: main.c(299): Reading src /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.ci_cont/mixture_weights
-INFO: s3mixw_io.c(117): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.ci_cont/mixture_weights [69x1x1 array]
-INFO: main.c(309): Reading src /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.ci_cont/transition_matrices
-INFO: s3tmat_io.c(118): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.ci_cont/transition_matrices [23x3x4 array]
-INFO: main.c(318): Reading src /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.ci_cont/means
-INFO: s3gau_io.c(169): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.ci_cont/means [69x1x1 array]
-INFO: main.c(342): Reading src /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.ci_cont/variances
-INFO: s3gau_io.c(169): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.ci_cont/variances [69x1x1 array]
-INFO: main.c(391): Reading dest /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.200.mdef
+INFO: main.c(299): Reading src ./model_parameters/diadiem.ci_cont/mixture_weights
+INFO: s3mixw_io.c(117): Read ./model_parameters/diadiem.ci_cont/mixture_weights [69x1x1 array]
+INFO: main.c(309): Reading src ./model_parameters/diadiem.ci_cont/transition_matrices
+INFO: s3tmat_io.c(118): Read ./model_parameters/diadiem.ci_cont/transition_matrices [23x3x4 array]
+INFO: main.c(318): Reading src ./model_parameters/diadiem.ci_cont/means
+INFO: s3gau_io.c(169): Read ./model_parameters/diadiem.ci_cont/means [69x1x1 array]
+INFO: main.c(342): Reading src ./model_parameters/diadiem.ci_cont/variances
+INFO: s3gau_io.c(169): Read ./model_parameters/diadiem.ci_cont/variances [69x1x1 array]
+INFO: main.c(391): Reading dest ./model_architecture/diadiem.200.mdef
 INFO: model_def_io.c(573): Model definition info:
 INFO: model_def_io.c(574): 415 total models defined (23 base, 392 tri)
 INFO: model_def_io.c(575): 1660 total states
@@ -485,13 +485,13 @@ INFO: main.c(463): Alloc 246x1x1 dest mean and var
    y a r e <- y         : 
    y a s e <- y         : 
    y a t e <- y         : 
-   y a x e <- y         : INFO: main.c(529): Writing dest /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_initial/transition_matrices
-INFO: s3tmat_io.c(176): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_initial/transition_matrices [23x3x4 array]
-INFO: main.c(540): Writing dest /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_initial/mixture_weights
-INFO: s3mixw_io.c(233): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_initial/mixture_weights [246x1x1 array]
-INFO: main.c(549): Writing dest /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_initial/means
-INFO: s3gau_io.c(228): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_initial/means [246x1x1 array]
-INFO: main.c(561): Writing dest /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_initial/variances
-INFO: s3gau_io.c(228): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_initial/variances [246x1x1 array]
+   y a x e <- y         : INFO: main.c(529): Writing dest ./model_parameters/diadiem.cd_cont_initial/transition_matrices
+INFO: s3tmat_io.c(176): Wrote ./model_parameters/diadiem.cd_cont_initial/transition_matrices [23x3x4 array]
+INFO: main.c(540): Writing dest ./model_parameters/diadiem.cd_cont_initial/mixture_weights
+INFO: s3mixw_io.c(233): Wrote ./model_parameters/diadiem.cd_cont_initial/mixture_weights [246x1x1 array]
+INFO: main.c(549): Writing dest ./model_parameters/diadiem.cd_cont_initial/means
+INFO: s3gau_io.c(228): Wrote ./model_parameters/diadiem.cd_cont_initial/means [246x1x1 array]
+INFO: main.c(561): Writing dest ./model_parameters/diadiem.cd_cont_initial/variances
+INFO: s3gau_io.c(228): Wrote ./model_parameters/diadiem.cd_cont_initial/variances [246x1x1 array]
 
-Thu Jan  4 11:09:05 2018
+Thu Jan  4 15:58:37 2018

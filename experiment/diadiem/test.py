@@ -1,6 +1,7 @@
 import os
 from util import text
 
+
 def listen(file):
     command = "pocketsphinx_continuous -hmm model_parameters/diadiem.cd_cont_200 -samprate 8000 -lm etc/diadiem.lm -dict etc/diadiem.dic -infile {} -logfn yes".format(
         file)

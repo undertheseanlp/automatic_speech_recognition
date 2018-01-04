@@ -1,22 +1,22 @@
 Current configuration:
 [NAME]		[DEFLT]	[VALUE]
--dest_meanfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_untied/means
--dest_mixwfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_untied/mixture_weights
--dest_moddeffn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.untied.mdef
--dest_tmatfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_untied/transition_matrices
+-dest_meanfn		./model_parameters/diadiem.cd_cont_untied/means
+-dest_mixwfn		./model_parameters/diadiem.cd_cont_untied/mixture_weights
+-dest_moddeffn		./model_architecture/diadiem.untied.mdef
+-dest_tmatfn		./model_parameters/diadiem.cd_cont_untied/transition_matrices
 -dest_ts2cbfn		.cont.
--dest_varfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_untied/variances
+-dest_varfn		./model_parameters/diadiem.cd_cont_untied/variances
 -example	no	no
 -fullvar	no	no
 -help		no	no
--src_meanfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.ci_cont/means
--src_mixwfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.ci_cont/mixture_weights
--src_moddeffn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.ci.mdef
--src_tmatfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.ci_cont/transition_matrices
+-src_meanfn		./model_parameters/diadiem.ci_cont/means
+-src_mixwfn		./model_parameters/diadiem.ci_cont/mixture_weights
+-src_moddeffn		./model_architecture/diadiem.ci.mdef
+-src_tmatfn		./model_parameters/diadiem.ci_cont/transition_matrices
 -src_ts2cbfn		.cont.
--src_varfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.ci_cont/variances
+-src_varfn		./model_parameters/diadiem.ci_cont/variances
 
-INFO: main.c(261): Reading src /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.ci.mdef
+INFO: main.c(261): Reading src ./model_architecture/diadiem.ci.mdef
 INFO: model_def_io.c(573): Model definition info:
 INFO: model_def_io.c(574): 23 total models defined (23 base, 0 tri)
 INFO: model_def_io.c(575): 92 total states
@@ -26,15 +26,15 @@ INFO: model_def_io.c(578): 23 total tied transition matrices
 INFO: model_def_io.c(579): 4 max state/model
 INFO: model_def_io.c(580): 4 min state/model
 INFO: main.c(278): Generating continous ts2cb mapping
-INFO: main.c(299): Reading src /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.ci_cont/mixture_weights
-INFO: s3mixw_io.c(117): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.ci_cont/mixture_weights [69x1x1 array]
-INFO: main.c(309): Reading src /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.ci_cont/transition_matrices
-INFO: s3tmat_io.c(118): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.ci_cont/transition_matrices [23x3x4 array]
-INFO: main.c(318): Reading src /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.ci_cont/means
-INFO: s3gau_io.c(169): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.ci_cont/means [69x1x1 array]
-INFO: main.c(342): Reading src /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.ci_cont/variances
-INFO: s3gau_io.c(169): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.ci_cont/variances [69x1x1 array]
-INFO: main.c(391): Reading dest /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.untied.mdef
+INFO: main.c(299): Reading src ./model_parameters/diadiem.ci_cont/mixture_weights
+INFO: s3mixw_io.c(117): Read ./model_parameters/diadiem.ci_cont/mixture_weights [69x1x1 array]
+INFO: main.c(309): Reading src ./model_parameters/diadiem.ci_cont/transition_matrices
+INFO: s3tmat_io.c(118): Read ./model_parameters/diadiem.ci_cont/transition_matrices [23x3x4 array]
+INFO: main.c(318): Reading src ./model_parameters/diadiem.ci_cont/means
+INFO: s3gau_io.c(169): Read ./model_parameters/diadiem.ci_cont/means [69x1x1 array]
+INFO: main.c(342): Reading src ./model_parameters/diadiem.ci_cont/variances
+INFO: s3gau_io.c(169): Read ./model_parameters/diadiem.ci_cont/variances [69x1x1 array]
+INFO: main.c(391): Reading dest ./model_architecture/diadiem.untied.mdef
 INFO: model_def_io.c(573): Model definition info:
 INFO: model_def_io.c(574): 82 total models defined (23 base, 59 tri)
 INFO: model_def_io.c(575): 328 total states
@@ -152,13 +152,13 @@ INFO: main.c(463): Alloc 246x1x1 dest mean and var
    u d s i <- u         : [mx   234(0) +=    57] [mg   234(0) <-    57] [mx   235(1) +=    58] [mg   235(1) <-    58] [mx   236(2) +=    59] [mg   236(2) <-    59] 
    w o r i <- w         : [mx   237(0) +=    60] [mg   237(0) <-    60] [mx   238(1) +=    61] [mg   238(1) <-    61] [mx   239(2) +=    62] [mg   239(2) <-    62] 
    x t a b <- x         : [mx   240(0) +=    63] [mg   240(0) <-    63] [mx   241(1) +=    64] [mg   241(1) <-    64] [mx   242(2) +=    65] [mg   242(2) <-    65] 
-   y a t e <- y         : INFO: main.c(529): Writing dest /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_untied/transition_matrices
-INFO: s3tmat_io.c(176): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_untied/transition_matrices [23x3x4 array]
-INFO: main.c(540): Writing dest /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_untied/mixture_weights
-INFO: s3mixw_io.c(233): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_untied/mixture_weights [246x1x1 array]
-INFO: main.c(549): Writing dest /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_untied/means
-INFO: s3gau_io.c(228): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_untied/means [246x1x1 array]
-INFO: main.c(561): Writing dest /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_untied/variances
-INFO: s3gau_io.c(228): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_untied/variances [246x1x1 array]
+   y a t e <- y         : INFO: main.c(529): Writing dest ./model_parameters/diadiem.cd_cont_untied/transition_matrices
+INFO: s3tmat_io.c(176): Wrote ./model_parameters/diadiem.cd_cont_untied/transition_matrices [23x3x4 array]
+INFO: main.c(540): Writing dest ./model_parameters/diadiem.cd_cont_untied/mixture_weights
+INFO: s3mixw_io.c(233): Wrote ./model_parameters/diadiem.cd_cont_untied/mixture_weights [246x1x1 array]
+INFO: main.c(549): Writing dest ./model_parameters/diadiem.cd_cont_untied/means
+INFO: s3gau_io.c(228): Wrote ./model_parameters/diadiem.cd_cont_untied/means [246x1x1 array]
+INFO: main.c(561): Writing dest ./model_parameters/diadiem.cd_cont_untied/variances
+INFO: s3gau_io.c(228): Wrote ./model_parameters/diadiem.cd_cont_untied/variances [246x1x1 array]
 [mx   243(0) +=    66] [mg   243(0) <-    66] [mx   244(1) +=    67] [mg   244(1) <-    67] [mx   245(2) +=    68] [mg   245(2) <-    68] 
-Thu Jan  4 11:08:53 2018
+Thu Jan  4 15:58:25 2018

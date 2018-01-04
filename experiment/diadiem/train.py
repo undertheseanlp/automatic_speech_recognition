@@ -5,6 +5,7 @@ import os
 from util.sphinx_config import SphinxConfig
 from util import text
 import shutil
+import subprocess
 
 
 # ========================== #
@@ -31,17 +32,54 @@ def make_data():
 
 
 # ========================== #
-# Features
+# Config
 # ========================== # 
 def change_config():
     config = SphinxConfig()
     config.read(join("etc", "sphinx_train.cfg"))
-    config.set("$CFG_WAVFILE_SRATE", "\"8000.0\"")
+    config.set("$CFG_BASE_DIR", "\".\"")
+    config.set("$CFG_WAVFILE_SRATE", 8000.0)
     config.set("$CFG_NUM_FILT", 31)
     config.set("$CFG_LO_FILT", 200)
     config.set("$CFG_HI_FILT", 3500)
+    config.set("$CFG_WAVFILE_TYPE", "'raw'")
+    config.set("$CFG_LANGUAGEMODEL",
+               "\"$CFG_LIST_DIR/$CFG_DB_NAME.lm\"")
+    config.set("$DEC_CFG_LANGUAGEMODEL",
+               "\"$CFG_BASE_DIR/etc/${CFG_DB_NAME}.lm\"")
 
 
+# ========================== #
+# Language Model
+# ========================== #
+def make_cleaned_text():
+    in_file = "../../data/diadiem/corpus/train/text"
+    out_file = "etc/text"
+    lines = open(in_file).read().splitlines()
+    output = []
+    for line in lines:
+        fileid, word = line.split("|")
+        phone = text.word2phone(word)
+        content = "<s> {} </s>".format(phone, fileid)
+        output.append(content)
+    content = "\n".join(output)
+    open(out_file, "w").write(content)
+
+
+def make_language_model():
+    make_cleaned_text()
+    os.chdir("etc")
+    os.system("text2wfreq < text | wfreq2vocab > vocab")
+    os.system("text2idngram -vocab vocab -idngram idngram < text")
+    os.system(
+        "idngram2lm -vocab_type 0 -idngram idngram -vocab vocab -arpa diadiem.lm")
+    os.chdir("..")
+    pass
+
+
+# ========================== #
+# Transcription
+# ========================== #
 def convert_transcription(in_file, out_file):
     lines = open(in_file).read().splitlines()
     output = []
@@ -61,20 +99,9 @@ def make_transcription():
                           "etc/diadiem_test.transcription")
 
 
-def make_text():
-    in_file = "../../data/diadiem/corpus/train/text"
-    out_file = "etc/text"
-    lines = open(in_file).read().splitlines()
-    output = []
-    for line in lines:
-        fileid, word = line.split("|")
-        phone = text.word2phone(word)
-        content = "<s> {} </s>".format(phone, fileid)
-        output.append(content)
-    content = "\n".join(output)
-    open(out_file, "w").write(content)
-
-# create dictionary and phones
+# ============================== #
+# Create dictionary and phones
+# ============================== #
 def make_dictionary():
     lines = open("../../data/diadiem/corpus/train/text").read().splitlines()
     phones = []
@@ -100,7 +127,7 @@ def make_dictionary():
 
 def make_filler():
     fillers = ["<s>", "</s>", "<sil>"]
-    lines = ["{:15s}SIL".format(f) for f in fillers]
+    lines = ["{:20s}SIL".format(f) for f in fillers]
     open("etc/diadiem.filler", "w").write("\n".join(lines))
 
 
@@ -115,8 +142,8 @@ if __name__ == '__main__':
     # flow = Flow()
     make_data()
     change_config()
-    make_text()
     make_transcription()
     make_dictionary()
     make_filler()
-    # train()
+    make_language_model()
+    train()

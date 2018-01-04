@@ -1,14 +1,14 @@
 Current configuration:
 [NAME]		[DEFLT]		[VALUE]
--accumdir			/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/bwaccumdir/diadiem_buff_1
+-accumdir			./bwaccumdir/diadiem_buff_1
 -agc		none		none
 -agcthresh	2.0		2.000000e+00
--cepdir				/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/feat
+-cepdir				./feat
 -cepext		mfc		mfc
 -ceplen		13		13
--cmn		live		current
+-cmn		live		batch
 -cmninit	40,3,-1		40,3,-1
--ctlfn				/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/etc/diadiem_train.fileids
+-ctlfn				./etc/diadiem_train.fileids
 -dictfn				
 -example	no		no
 -fdictfn			
@@ -4955,5 +4955,5 @@ INFO: cmn.c(133): CMN: 52.11 -17.13 -14.18 -17.42 -21.03 -2.95 -4.27 -6.17 -3.12
 INFO: cmn.c(133): CMN: 58.60 -10.24 -10.78 -3.55 -8.69 -10.64 -19.87 -8.58 -9.84 -0.02 -10.43  2.69 -4.28 
 INFO: cmn.c(133): CMN: 57.40 -6.26 -25.55  4.02 -28.36 -6.16 -7.21 -9.93 -2.48 -5.90 -7.07 -3.58 -0.45 
 INFO: cmn.c(133): CMN: 50.64 -2.68 -20.12 -3.94 -15.97 -8.99 -13.98 -15.41  6.26 -4.24 -6.93 -6.71 -4.94 
-INFO: s3gau_io.c(485): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/bwaccumdir/diadiem_buff_1/gauden_counts with means [1x1x1 vector arrays]
-Thu Jan  4 11:08:33 2018
+INFO: s3gau_io.c(485): Wrote ./bwaccumdir/diadiem_buff_1/gauden_counts with means [1x1x1 vector arrays]
+Thu Jan  4 15:58:06 2018

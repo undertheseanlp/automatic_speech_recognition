@@ -8,23 +8,23 @@ Current configuration:
 -example	no	no
 -fullvar	no	no
 -help		no	no
--meanfn			/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_untied/means
--mixwfn			/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_untied/mixture_weights
--moddeffn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.untied.mdef
+-meanfn			./model_parameters/diadiem.cd_cont_untied/means
+-mixwfn			./model_parameters/diadiem.cd_cont_untied/mixture_weights
+-moddeffn		./model_architecture/diadiem.untied.mdef
 -mwfloor	1e-4	1.000000e-08
 -phone			t
--psetfn			/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.tree_questions
+-psetfn			./model_architecture/diadiem.tree_questions
 -ssplitmax	5	7
 -ssplitmin	1	1
 -ssplitthr	8e-4	0.000000e+00
 -state			2
 -stwt			1.0,0.05,0.0,
--treefn			/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/trees/diadiem.unpruned/t-2.dtree
+-treefn			./trees/diadiem.unpruned/t-2.dtree
 -ts2cbfn	.semi.	.cont.
 -varfloor	0.00001	1.000000e-05
--varfn			/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_untied/variances
+-varfn			./model_parameters/diadiem.cd_cont_untied/variances
 
-INFO: main.c(223): Reading: /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.untied.mdef
+INFO: main.c(223): Reading: ./model_architecture/diadiem.untied.mdef
 INFO: model_def_io.c(573): Model definition info:
 INFO: model_def_io.c(574): 82 total models defined (23 base, 59 tri)
 INFO: model_def_io.c(575): 328 total states
@@ -35,13 +35,13 @@ INFO: model_def_io.c(579): 4 max state/model
 INFO: model_def_io.c(580): 4 min state/model
 INFO: main.c(242): Building trees for [t SIL r b] through [t y e b]
 INFO: main.c(269): Covering states |[225 233]| == 9
-INFO: main.c(275): Reading: /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_untied/mixture_weights
-INFO: s3mixw_io.c(173): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_untied/mixture_weights [9x1x1 array]
+INFO: main.c(275): Reading: ./model_parameters/diadiem.cd_cont_untied/mixture_weights
+INFO: s3mixw_io.c(173): Read ./model_parameters/diadiem.cd_cont_untied/mixture_weights [9x1x1 array]
 INFO: main.c(311): 3 of 3 models have observation count greater than 0.000010
 INFO: main.c(95): nrm stwt: 0.000 0.048 0.952 
-INFO: s3gau_io.c(169): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_untied/means [246x1x1 array]
-INFO: s3gau_io.c(169): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_untied/variances [246x1x1 array]
-INFO: main.c(549): Reading: /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.tree_questions
+INFO: s3gau_io.c(169): Read ./model_parameters/diadiem.cd_cont_untied/means [246x1x1 array]
+INFO: s3gau_io.c(169): Read ./model_parameters/diadiem.cd_cont_untied/variances [246x1x1 array]
+INFO: main.c(549): Reading: ./model_architecture/diadiem.tree_questions
 INFO: main.c(588): 180 total simple questions (172 phone; 8 word bndry)
 INFO: main.c(590): 42 Left Only questions, and 42 Right Only questions
 INFO: dtree.c(1439): stop. leaf nodes are specific
@@ -66,4 +66,4 @@ s>        ( - -6.046e+05 1 0)
 s>        ( - -4.440e+05 1 0))INFO: dtree.c(1315): Comp split 1
 INFO: dtree.c(1315): Comp split 2
 INFO: dtree.c(1318): stop. leaf nodes are specific
-Thu Jan  4 11:09:05 2018
+Thu Jan  4 15:58:37 2018

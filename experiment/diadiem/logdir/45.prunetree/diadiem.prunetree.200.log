@@ -3,14 +3,14 @@ Current configuration:
 -allphones	no	no
 -example	no	no
 -help		no	no
--itreedir		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/trees/diadiem.unpruned
+-itreedir		./trees/diadiem.unpruned
 -minocc		0.0	0.000000e+00
--moddeffn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.alltriphones.mdef
+-moddeffn		./model_architecture/diadiem.alltriphones.mdef
 -nseno			200
--otreedir		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/trees/diadiem.200
--psetfn			/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.tree_questions
+-otreedir		./trees/diadiem.200
+-psetfn			./model_architecture/diadiem.tree_questions
 
-INFO: main.c(76): Reading: /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.alltriphones.mdef
+INFO: main.c(76): Reading: ./model_architecture/diadiem.alltriphones.mdef
 INFO: model_def_io.c(573): Model definition info:
 INFO: model_def_io.c(574): 415 total models defined (23 base, 392 tri)
 INFO: model_def_io.c(575): 1660 total states
@@ -19,7 +19,7 @@ INFO: model_def_io.c(577): 69 total tied CI states
 INFO: model_def_io.c(578): 23 total tied transition matrices
 INFO: model_def_io.c(579): 4 max state/model
 INFO: model_def_io.c(580): 4 min state/model
-INFO: main.c(82): Reading: /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.tree_questions
+INFO: main.c(82): Reading: ./model_architecture/diadiem.tree_questions
 INFO: main.c(185): a-0	10 [0 < 0.000000e+00]
 INFO: main.c(185): a-1	10 [0 < 0.000000e+00]
 INFO: main.c(185): a-2	10 [0 < 0.000000e+00]
@@ -155,4 +155,4 @@ INFO: main.c(386): x-2	1
 INFO: main.c(386): y-0	1
 INFO: main.c(386): y-1	1
 INFO: main.c(386): y-2	1
-Thu Jan  4 11:09:05 2018
+Thu Jan  4 15:58:37 2018

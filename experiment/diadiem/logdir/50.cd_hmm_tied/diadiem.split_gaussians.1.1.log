@@ -1,22 +1,22 @@
 Current configuration:
 [NAME]		[DEFLT]	[VALUE]
--dcountfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_200/mixture_weights
+-dcountfn		./model_parameters/diadiem.cd_cont_200/mixture_weights
 -example	no	no
 -fullvar	no	no
 -help		no	no
--inmeanfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_200/means
--inmixwfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_200/mixture_weights
--invarfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_200/variances
+-inmeanfn		./model_parameters/diadiem.cd_cont_200/means
+-inmixwfn		./model_parameters/diadiem.cd_cont_200/mixture_weights
+-invarfn		./model_parameters/diadiem.cd_cont_200/variances
 -ninc		1	1
--outmeanfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_initial/means
--outmixwfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_initial/mixture_weights
--outvarfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_initial/variances
+-outmeanfn		./model_parameters/diadiem.cd_cont_initial/means
+-outmixwfn		./model_parameters/diadiem.cd_cont_initial/mixture_weights
+-outvarfn		./model_parameters/diadiem.cd_cont_initial/variances
 
-INFO: main.c(86): Reading mixing weight file /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_200/mixture_weights.
-INFO: s3mixw_io.c(117): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_200/mixture_weights [246x1x1 array]
-INFO: s3gau_io.c(169): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_200/means [246x1x1 array]
-INFO: s3gau_io.c(169): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_200/variances [246x1x1 array]
-INFO: s3gau_io.c(553): Read /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_200/mixture_weights [246x1x1 array]
+INFO: main.c(86): Reading mixing weight file ./model_parameters/diadiem.cd_cont_200/mixture_weights.
+INFO: s3mixw_io.c(117): Read ./model_parameters/diadiem.cd_cont_200/mixture_weights [246x1x1 array]
+INFO: s3gau_io.c(169): Read ./model_parameters/diadiem.cd_cont_200/means [246x1x1 array]
+INFO: s3gau_io.c(169): Read ./model_parameters/diadiem.cd_cont_200/variances [246x1x1 array]
+INFO: s3gau_io.c(553): Read ./model_parameters/diadiem.cd_cont_200/mixture_weights [246x1x1 array]
 INFO: main.c(151): output n_density == 2
 0:0(3.76e+04)
 1:0(4.30e+04)
@@ -263,8 +263,8 @@ INFO: main.c(151): output n_density == 2
 242:0(8.50e+03)
 243:0(3.68e+03)
 244:0(2.84e+03)
-245:0(1.47e+03)INFO: s3mixw_io.c(233): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_initial/mixture_weights [246x1x2 array]
-INFO: s3gau_io.c(228): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_initial/means [246x1x2 array]
-INFO: s3gau_io.c(228): Wrote /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_parameters/diadiem.cd_cont_initial/variances [246x1x2 array]
+245:0(1.47e+03)INFO: s3mixw_io.c(233): Wrote ./model_parameters/diadiem.cd_cont_initial/mixture_weights [246x1x2 array]
+INFO: s3gau_io.c(228): Wrote ./model_parameters/diadiem.cd_cont_initial/means [246x1x2 array]
+INFO: s3gau_io.c(228): Wrote ./model_parameters/diadiem.cd_cont_initial/variances [246x1x2 array]
 
-Thu Jan  4 11:09:16 2018
+Thu Jan  4 15:58:48 2018

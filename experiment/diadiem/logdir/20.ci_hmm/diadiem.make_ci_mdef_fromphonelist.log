@@ -12,17 +12,17 @@ Current configuration:
 -minocc		1	1
 -n_state_pm	3	3
 -oalltphnmdef		
--ocimdef		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.ci.mdef
+-ocimdef		./model_architecture/diadiem.ci.mdef
 -ocountfn		
 -ountiedmdef		
--phnlstfn		/home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.phonelist
+-phnlstfn		./model_architecture/diadiem.phonelist
 -triphnlstfn		
 
-INFO: main.c(92): Will write CI mdef file /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.ci.mdef
+INFO: main.c(92): Will write CI mdef file ./model_architecture/diadiem.ci.mdef
 INFO: mk_mdef_gen.c(189): 0 single word triphones in input phone list
 INFO: mk_mdef_gen.c(190): 0 word beginning triphones in input phone list
 INFO: mk_mdef_gen.c(191): 0 word internal triphones in input phone list
 INFO: mk_mdef_gen.c(192): 0 word ending triphones in input phone list
 INFO: mk_mdef_gen.c(897): 23 n_base, 0 n_tri
-INFO: mk_mdef_gen.c(969): Wrote mdef file /home/rain/PycharmProjects/underthesea/automatic_speech_recognition/experiment/diadiem/model_architecture/diadiem.ci.mdef
-Thu Jan  4 11:08:33 2018
+INFO: mk_mdef_gen.c(969): Wrote mdef file ./model_architecture/diadiem.ci.mdef
+Thu Jan  4 15:58:05 2018
