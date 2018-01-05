@@ -28,5 +28,5 @@ INFO: s3mixw_io.c(233): Wrote ./model_parameters/tmp.cd_cont_200/mixture_weights
 INFO: s3tmat_io.c(176): Wrote ./model_parameters/tmp.cd_cont_200/transition_matrices [23x3x4 array]
 INFO: s3gau_io.c(228): Wrote ./model_parameters/tmp.cd_cont_200/means [246x1x1 array]
 INFO: s3gau_io.c(228): Wrote ./model_parameters/tmp.cd_cont_200/variances [246x1x1 array]
-Thu Jan  4 18:20:44 2018
+Fri Jan  5 10:30:00 2018
 Current Overall Likelihood Per Frame = -156.471044814736

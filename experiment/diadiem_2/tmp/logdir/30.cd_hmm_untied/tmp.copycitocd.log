@@ -161,4 +161,4 @@ INFO: s3gau_io.c(228): Wrote ./model_parameters/tmp.cd_cont_untied/means [246x1x
 INFO: main.c(561): Writing dest ./model_parameters/tmp.cd_cont_untied/variances
 INFO: s3gau_io.c(228): Wrote ./model_parameters/tmp.cd_cont_untied/variances [246x1x1 array]
 [mx   243(0) +=    66] [mg   243(0) <-    66] [mx   244(1) +=    67] [mg   244(1) <-    67] [mx   245(2) +=    68] [mg   245(2) <-    68] 
-Thu Jan  4 18:20:29 2018
+Fri Jan  5 10:29:45 2018

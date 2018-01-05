@@ -46,4 +46,4 @@ INFO: main.c(588): 180 total simple questions (172 phone; 8 word bndry)
 INFO: main.c(590): 42 Left Only questions, and 42 Right Only questions
 INFO: dtree.c(1315): Comp split 0
 INFO: dtree.c(1325): stop. b_n->wt_ent_dec (0.000e+00) <= 0
-Thu Jan  4 18:20:40 2018
+Fri Jan  5 10:29:56 2018

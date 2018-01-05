@@ -25,4 +25,4 @@ INFO: mk_mdef_gen.c(191): 0 word internal triphones in input phone list
 INFO: mk_mdef_gen.c(192): 0 word ending triphones in input phone list
 INFO: mk_mdef_gen.c(897): 23 n_base, 0 n_tri
 INFO: mk_mdef_gen.c(969): Wrote mdef file ./model_architecture/tmp.ci.mdef
-Thu Jan  4 18:20:10 2018
+Fri Jan  5 10:29:25 2018

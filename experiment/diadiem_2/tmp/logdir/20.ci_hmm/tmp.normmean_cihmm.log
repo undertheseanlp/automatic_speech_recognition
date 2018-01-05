@@ -26,4 +26,4 @@ INFO: s3gau_io.c(386): Read ./bwaccumdir/tmp_buff_1/gauden_counts with means [1x
 INFO: main.c(321): -2passvar yes
 INFO: main.c(391): Normalizing mean for n_mgau= 1, n_stream= 1, n_density= 1
 INFO: s3gau_io.c(228): Wrote model_parameters/tmp.ci_cont_flatinitial/globalmean [1x1x1 array]
-Thu Jan  4 18:20:10 2018
+Fri Jan  5 10:29:25 2018

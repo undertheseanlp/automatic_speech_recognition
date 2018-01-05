@@ -9955,4 +9955,4 @@ INFO: s3mixw_io.c(233): Wrote ./bwaccumdir/tmp_buff_1/mixw_counts [246x1x1 array
 INFO: s3tmat_io.c(176): Wrote ./bwaccumdir/tmp_buff_1/tmat_counts [23x3x4 array]
 INFO: s3gau_io.c(485): Wrote ./bwaccumdir/tmp_buff_1/gauden_counts with means with vars (2pass) [246x1x1 vector arrays]
 INFO: main.c(999): Counts saved to ./bwaccumdir/tmp_buff_1
-Thu Jan  4 18:20:35 2018
+Fri Jan  5 10:29:50 2018

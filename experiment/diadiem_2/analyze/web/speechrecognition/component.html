@@ -1,0 +1,27 @@
+<div class="panel panel-default">
+  <h2>Results
+    <div class="btn-group">
+      <label class="btn btn-xs btn-success" ng-click="updateItems(true)">True</label>
+      <label class="btn btn-xs btn-danger" ng-click="updateItems(false)">False</label>
+    </div>
+  </h2>
+  <table class="table table-bordered">
+    <tr>
+      <th>Actual</th>
+      <th>Predict</th>
+      <th>Sample</th>
+    </tr>
+    <tr ng-repeat="item in filteredItems track by $index">
+      <td> {{ item['actual'] }}</td>
+      <td>
+        {{ item }}
+        {{ item['pred'] }}
+      </td>
+      <td>
+        <audio controls="controls">
+          <source ng-src="{{ item['wav'] }}" type="audio/wav">
+        </audio>
+      </td>
+    </tr>
+  </table>
+</div>

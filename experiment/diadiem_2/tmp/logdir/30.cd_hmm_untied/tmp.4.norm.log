@@ -29,9 +29,9 @@ INFO: s3mixw_io.c(233): Wrote ./model_parameters/tmp.cd_cont_untied/mixture_weig
 INFO: s3tmat_io.c(176): Wrote ./model_parameters/tmp.cd_cont_untied/transition_matrices [23x3x4 array]
 INFO: s3gau_io.c(228): Wrote ./model_parameters/tmp.cd_cont_untied/means [246x1x1 array]
 INFO: s3gau_io.c(228): Wrote ./model_parameters/tmp.cd_cont_untied/variances [246x1x1 array]
-Thu Jan  4 18:20:40 2018
+Fri Jan  5 10:29:55 2018
 Current Overall Likelihood Per Frame = -155.411917094149
 Convergence ratio = 0.0840369583500831
 Likelihoods have converged! Baum Welch training completed!
 ******************************TRAINING COMPLETE*************************
-Thu Jan  4 18:20:40 2018
+Fri Jan  5 10:29:55 2018

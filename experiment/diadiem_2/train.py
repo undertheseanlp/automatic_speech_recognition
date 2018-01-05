@@ -6,12 +6,8 @@ from os.path import join, dirname
 tmp_folder = join(dirname(__file__), "tmp")
 export_folder = join(dirname(__file__), "model")
 
-class Model:
-    pass
-model = Model()
-model.tmp_folder = tmp_folder
-# model = SphinxSpeechRecognition(corpus_folder, tmp_folder)
-# model.fit()
+model = SphinxSpeechRecognition(corpus_folder, tmp_folder)
+model.fit()
 SphinxSpeechRecognitionExporter.export(model, export_folder)
 # wav_file = join(tmp_folder, "etc", "wav", "train", "test", "CAFPHEE003.wav")
 # model.predict(wav_file)

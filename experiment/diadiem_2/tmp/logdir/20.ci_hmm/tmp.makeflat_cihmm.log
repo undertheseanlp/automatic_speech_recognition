@@ -21,4 +21,4 @@ INFO: s3tmat_io.c(176): Wrote model_parameters/tmp.ci_cont_flatinitial/transitio
 INFO: s3mixw_io.c(233): Wrote model_parameters/tmp.ci_cont_flatinitial/mixture_weights [69x1x1 array]
 main.c(83): Reading model definition file ./model_architecture/tmp.ci.mdef
 main.c(90): 23 models defined
-Thu Jan  4 18:20:10 2018
+Fri Jan  5 10:29:25 2018

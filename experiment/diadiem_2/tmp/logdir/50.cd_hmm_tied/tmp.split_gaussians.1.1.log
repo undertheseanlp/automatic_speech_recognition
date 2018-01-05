@@ -267,4 +267,4 @@ INFO: main.c(151): output n_density == 2
 INFO: s3gau_io.c(228): Wrote ./model_parameters/tmp.cd_cont_initial/means [246x1x2 array]
 INFO: s3gau_io.c(228): Wrote ./model_parameters/tmp.cd_cont_initial/variances [246x1x2 array]
 
-Thu Jan  4 18:20:52 2018
+Fri Jan  5 10:30:08 2018
