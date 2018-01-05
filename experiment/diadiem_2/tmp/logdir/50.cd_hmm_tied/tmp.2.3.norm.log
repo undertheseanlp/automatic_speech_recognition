@@ -1,0 +1,34 @@
+Current configuration:
+[NAME]		[DEFLT]	[VALUE]
+-accumdir		bwaccumdir/tmp_buff_1,
+-constE		3.0	3.000000e+00
+-dcountfn		
+-example	no	no
+-fullvar	no	no
+-help		no	no
+-inmeanfn		
+-inmixwfn		
+-invarfn		
+-meanfn			./model_parameters/tmp.cd_cont_200/means
+-mixwfn			./model_parameters/tmp.cd_cont_200/mixture_weights
+-mmie		no	no
+-oaccumdir		
+-regmatfn		
+-tiedvar	no	no
+-tmatfn			./model_parameters/tmp.cd_cont_200/transition_matrices
+-varfn			./model_parameters/tmp.cd_cont_200/variances
+
+INFO: main.c(207): Reading and accumulating counts from bwaccumdir/tmp_buff_1
+INFO: s3mixw_io.c(117): Read bwaccumdir/tmp_buff_1/mixw_counts [246x1x2 array]
+INFO: s3tmat_io.c(118): Read bwaccumdir/tmp_buff_1/tmat_counts [23x3x4 array]
+INFO: s3gau_io.c(386): Read bwaccumdir/tmp_buff_1/gauden_counts with means with vars (2pass) [246x1x2 vector arrays]
+INFO: main.c(321): -2passvar yes
+INFO: main.c(391): Normalizing mean for n_mgau= 246, n_stream= 1, n_density= 2
+INFO: main.c(414): Normalizing var
+INFO: s3mixw_io.c(233): Wrote ./model_parameters/tmp.cd_cont_200/mixture_weights [246x1x2 array]
+INFO: s3tmat_io.c(176): Wrote ./model_parameters/tmp.cd_cont_200/transition_matrices [23x3x4 array]
+INFO: s3gau_io.c(228): Wrote ./model_parameters/tmp.cd_cont_200/means [246x1x2 array]
+INFO: s3gau_io.c(228): Wrote ./model_parameters/tmp.cd_cont_200/variances [246x1x2 array]
+Thu Jan  4 18:21:02 2018
+Current Overall Likelihood Per Frame = -155.013555036434
+Convergence ratio = 0.234666620786641

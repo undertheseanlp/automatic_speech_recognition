@@ -1,0 +1,136 @@
+#############################################################################
+## Copyright (c) 1996, Carnegie Mellon University, Cambridge University,
+## Ronald Rosenfeld and Philip Clarkson
+## Version 3, Copyright (c) 2006, Carnegie Mellon University 
+## Contributors includes Wen Xu, Ananlada Chotimongkol, 
+## David Huggins-Daines, Arthur Chan and Alan Black 
+#############################################################################
+=============================================================================
+===============  This file was produced by the CMU-Cambridge  ===============
+===============     Statistical Language Modeling Toolkit     ===============
+=============================================================================
+This is a 3-gram language model, based on a vocabulary of 18 words,
+  which begins "</s>", "<s>", "ay"...
+This is a CLOSED-vocabulary model
+  (OOVs eliminated from training data and are forbidden in test data)
+Good-Turing discounting was applied.
+1-gram frequency of frequency : 0 
+2-gram frequency of frequency : 0 0 0 0 0 0 0 
+3-gram frequency of frequency : 0 0 0 0 0 0 0 
+1-gram discounting ratios : 
+2-gram discounting ratios : 
+3-gram discounting ratios : 
+This file is in the ARPA-standard format introduced by Doug Paul.
+
+p(wd3|wd1,wd2)= if(trigram exists)           p_3(wd1,wd2,wd3)
+                else if(bigram w1,w2 exists) bo_wt_2(w1,w2)*p(wd3|wd2)
+                else                         p(wd3|w2)
+
+p(wd2|wd1)= if(bigram exists) p_2(wd1,wd2)
+            else              bo_wt_1(wd1)*p_1(wd2)
+
+All probs and back-off weights (bo_wt) are given in log10 form.
+
+Data formats:
+
+Beginning of data mark: \data\
+ngram 1=nr            # number of 1-grams
+ngram 2=nr            # number of 2-grams
+ngram 3=nr            # number of 3-grams
+
+\1-grams:
+p_1     wd_1 bo_wt_1
+\2-grams:
+p_2     wd_1 wd_2 bo_wt_2
+\3-grams:
+p_3     wd_1 wd_2 wd_3 
+
+end of data mark: \end\
+
+\data\
+ngram 1=18
+ngram 2=25
+ngram 3=32
+
+\1-grams:
+-0.5755 </s>	-3.5579
+-0.5754 <s>	-3.5587
+-1.6028 ay	-2.6555
+-1.5908 caf	-2.6672
+-1.2657 ddusng	-2.8684
+-1.5982 ka	-2.6601
+-1.5982 ke	-2.5370
+-1.6066 khasch	-2.6519
+-1.2289 khoong	-2.9053
+-1.5817 laji	-2.5534
+-1.5899 mast	-2.6681
+-1.5908 phee	-2.5444
+-1.5982 rao	-2.6601
+-1.6066 sajn	-2.5286
+-1.6028 teem	-2.5324
+-1.6028 trajm	-2.6555
+-1.5817 trowr	-2.6760
+-1.5899 xa	-2.5453
+
+\2-grams:
+-0.0001 </s> <s> 0.0008
+-1.0152 <s> caf 0.0009
+-0.6907 <s> ddusng 0.0004
+-1.0226 <s> ka 0.0009
+-1.0310 <s> khasch 0.0009
+-0.6538 <s> khoong 0.0004
+-1.0143 <s> mast 0.0009
+-1.0273 <s> trajm 0.0009
+-1.0053 <s> trowr 0.0000
+-0.0009 ay teem 0.0009
+-0.0009 caf phee 0.0009
+-0.0004 ddusng </s> 0.6900
+-0.0009 ka rao 0.0009
+-0.0009 ke </s> 1.0219
+-0.0009 khasch sajn 0.0009
+-0.0004 khoong </s> 0.6531
+-0.0009 laji </s> 1.0055
+-0.0009 mast xa 0.0009
+-0.0009 phee </s> 1.0145
+-0.0009 rao ke 0.0009
+-0.0009 sajn </s> 1.0303
+-0.0009 teem </s> 1.0266
+-0.0009 trajm ay 0.0009
+-0.0009 trowr laji 0.0009
+-0.0009 xa </s> 1.0136
+
+\3-grams:
+-1.0163 </s> <s> caf 
+-0.6903 </s> <s> ddusng 
+-1.0227 </s> <s> ka 
+-1.0312 </s> <s> khasch 
+-0.6534 </s> <s> khoong 
+-1.0144 </s> <s> mast 
+-1.0274 </s> <s> trajm 
+-1.0054 </s> <s> trowr 
+-0.0009 <s> caf phee 
+-0.0004 <s> ddusng </s> 
+-0.0009 <s> ka rao 
+-0.0009 <s> khasch sajn 
+-0.0004 <s> khoong </s> 
+-0.0009 <s> mast xa 
+-0.0009 <s> trajm ay 
+-0.0009 <s> trowr laji 
+-0.0009 ay teem </s> 
+-0.0009 caf phee </s> 
+-0.0004 ddusng </s> <s> 
+-0.0009 ka rao ke 
+-0.0009 ke </s> <s> 
+-0.0009 khasch sajn </s> 
+-0.0004 khoong </s> <s> 
+-0.0009 laji </s> <s> 
+-0.0009 mast xa </s> 
+-0.0009 phee </s> <s> 
+-0.0009 rao ke </s> 
+-0.0009 sajn </s> <s> 
+-0.0009 teem </s> <s> 
+-0.0009 trajm ay teem 
+-0.0009 trowr laji </s> 
+-0.0009 xa </s> <s> 
+
+\end\
