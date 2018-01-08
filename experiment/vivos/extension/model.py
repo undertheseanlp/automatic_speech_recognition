@@ -2,7 +2,7 @@ import shutil
 import os
 import text
 
-N = 500
+N = 10000
 
 
 class SphinxSpeechRecognition:

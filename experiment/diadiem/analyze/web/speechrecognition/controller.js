@@ -19,20 +19,20 @@ window.app.filter('trusted', ['$sce', function ($sce) {
     };
 }]);
 
-window.app.directive('audios', function($sce) {
-  return {
-    restrict: 'A',
-    scope: { url:'=' },
-    replace: true,
-    template: '<audio ng-src="{{src}}" controls></audio>',
-    link: function (scope) {
-        scope.$watch('url', function (newVal, oldVal) {
-           if (newVal !== undefined) {
-               scope.src = $sce.trustAsResourceUrl(newVal);
-           }
-        });
-    }
-  };
+window.app.directive('audios', function ($sce) {
+    return {
+        restrict: 'A',
+        scope: {url: '='},
+        replace: true,
+        template: '<audio ng-src="{{src}}" controls></audio>',
+        link: function (scope) {
+            scope.$watch('url', function (newVal, oldVal) {
+                if (newVal !== undefined) {
+                    scope.src = $sce.trustAsResourceUrl(newVal);
+                }
+            });
+        }
+    };
 });
 window.app.controller('SpeechRecognitionController', function ($scope, $http) {
     $http.get("speechrecognition.json")
@@ -50,12 +50,14 @@ window.app.controller('SpeechRecognitionController', function ($scope, $http) {
             }
             $scope.items = items;
             $scope.filteredItems = $scope.items;
+            $scope.filteredItems = $scope.filteredItems.slice(0, 50);
         });
 
     $scope.updateItems = function (result) {
         $scope.filteredItems = _.filter($scope.items, function (item) {
             return item.correct == result;
-        })
+        });
+        $scope.filteredItems = $scope.filteredItems.slice(0, 50);
         console.log(0);
     }
 });

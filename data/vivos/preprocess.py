@@ -39,7 +39,9 @@ def create_test_waves():
 
 
 def create_train_text():
-    lines = open("raw/train/prompts.txt").read().splitlines()
+    content = open("raw/train/prompts.txt").read()
+    content = content.replace(":", "")
+    lines = content.splitlines()
     output = []
     for line in lines:
         items = line.split()
@@ -52,7 +54,9 @@ def create_train_text():
 
 
 def create_test_text():
-    lines = open("raw/test/prompts.txt").read().splitlines()
+    content = open("raw/test/prompts.txt").read()
+    content = content.replace(":", "")
+    lines = content.splitlines()
     output = []
     for line in lines:
         items = line.split()
