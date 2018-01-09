@@ -1,46 +1,65 @@
 import shutil
 import os
 import text
-import numpy as np
 
-N = 100
+N = 10000
 
 
-class KaldiSpeechRecognition:
-    def __init__(self, corpus_folder, kaldi_folder):
-        print("Initial Kaldi Speech Recognition")
+class SphinxSpeechRecognition:
+    def __init__(self, corpus_folder, tmp_folder):
+        print("Initial Sphinx Speech Recognition")
         self.corpus_folder = corpus_folder
-        self.kaldi_folder = kaldi_folder
-        id = np.random.randint(1000)
-        self.id = "uts_{}".format(id)
-        self.tmp_folder = "{}/egs/{}".format(self.kaldi_folder, self.id)
-
-        self._init_folder()
-        # self._change_config()
-        self._init_audio()
+        self.tmp_folder = tmp_folder
+        try:
+            shutil.rmtree(tmp_folder)
+        except Exception as e:
+            pass
+        finally:
+            os.mkdir(tmp_folder)
+            os.system("cd {}; sphinxtrain -t tmp setup".format(tmp_folder))
+        self._init_data()
+        self._change_config()
         self._make_transcription()
-        # self._make_dictionary()
-        # self._make_filler()
-        # self._make_language_model()
+        self._make_dictionary()
+        self._make_filler()
+        self._make_language_model()
 
     # ========================== #
     # Init Data
     # ========================== #
-    def _init_folder(self):
-        os.system("cd {0}/egs; rm -rf uts*".format(self.kaldi_folder))
-        os.system("cd {0}/egs; rm -f {1} | mkdir {1}".format(self.kaldi_folder,
-                                                             self.id))
-        os.system("cd {}; mkdir -p audio/train".format(self.tmp_folder))
-        os.system("cd {}; mkdir -p audio/test".format(self.tmp_folder))
-        os.system("cd {}; mkdir -p data/train".format(self.tmp_folder))
-        os.system("cd {}; mkdir -p data/test".format(self.tmp_folder))
+    def _init_data(self):
+        os.system("cd {}; mkdir wav".format(self.tmp_folder))
+        os.system("cd {}; mkdir wav/train".format(self.tmp_folder))
+        os.system("cd {}; mkdir wav/test".format(self.tmp_folder))
 
-    def _init_audio(self):
-        lines = open("{}/train/text".format(self.corpus_folder)).read().\
-            splitlines()
-        lines = lines[:N]
-        ids = [line.split("|")[0] for line in lines]
-        pass
+        ids = open(
+            "{}/train/text".format(self.corpus_folder)).read().splitlines()[:N]
+        ids = [item.split("|")[0] for item in ids]
+        for id in ids:
+            shutil.copy2(
+                "{}/train/wav/{}.wav".format(self.corpus_folder, id),
+                "{}/wav/train/{}.wav".format(self.tmp_folder, id)
+            )
+
+        ids = ["train/{}".format(id) for id in ids]
+        ids.append("")
+        content = "\n".join(ids)
+        open(os.path.join(self.tmp_folder, "etc", "tmp_train.fileids"),
+             "w").write(content)
+
+        ids = open(
+            "{}/test/text".format(self.corpus_folder)).read().splitlines()
+        ids = [item.split("|")[0] for item in ids]
+        for id in ids:
+            shutil.copy2(
+                "{}/test/wav/{}.wav".format(self.corpus_folder, id),
+                "{}/wav/test/{}.wav".format(self.tmp_folder, id)
+            )
+        ids = ["test/{}".format(id) for id in ids]
+        ids.append("")
+        content = "\n".join(ids)
+        open(os.path.join(self.tmp_folder, "etc", "tmp_test.fileids"),
+             "w").write(content)
 
     # ========================== #
     # Config
@@ -68,7 +87,7 @@ class KaldiSpeechRecognition:
         for line in lines:
             fileid, word = line.split("|")
             phone = text.word2phone(word)
-            content = "{} {}".format(fileid, phone)
+            content = "<s> {} </s> ({})".format(phone, fileid)
             output.append(content)
         output.append("")
         content = "\n".join(output)
@@ -77,10 +96,10 @@ class KaldiSpeechRecognition:
     def _make_transcription(self):
         self._convert_transcription(
             "{}/train/text".format(self.corpus_folder),
-            "{}/data/train/text".format(self.tmp_folder))
+            "{}/etc/tmp_train.transcription".format(self.tmp_folder))
         self._convert_transcription(
             "{}/test/text".format(self.corpus_folder),
-            "{}/data/test/text".format(self.tmp_folder))
+            "{}/etc/tmp_test.transcription".format(self.tmp_folder))
 
     # ============================== #
     # Create dictionary and phones

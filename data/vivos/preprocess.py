@@ -68,6 +68,35 @@ def create_test_text():
     open("corpus/test/text", "w").write(text)
 
 
+def create_gender():
+    content = open("raw/train/genders.txt").read()
+    open("corpus/train/gender", "w").write(content)
+    content = open("raw/test/genders.txt").read()
+    open("corpus/test/gender", "w").write(content)
+
+
+def create_speaker():
+    lines = open("raw/train/prompts.txt").read().splitlines()
+    files = [line.split()[0] for line in lines]
+    tmp = []
+    for file_id in files:
+        speaker_id = file_id.split("_")[0]
+        content = "{} {}".format(speaker_id, file_id)
+        tmp.append(content)
+    content = "\n".join(tmp)
+    open("corpus/train/speaker", "w").write(content)
+
+    lines = open("raw/test/prompts.txt").read().splitlines()
+    files = [line.split()[0] for line in lines]
+    tmp = []
+    for file_id in files:
+        speaker_id = file_id.split("_")[0]
+        content = "{} {}".format(speaker_id, file_id)
+        tmp.append(content)
+    content = "\n".join(tmp)
+    open("corpus/test/speaker", "w").write(content)
+
+
 try:
     shutil.rmtree("corpus")
 except:
@@ -80,3 +109,5 @@ finally:
     create_test_waves()
     create_train_text()
     create_test_text()
+    create_gender()
+    create_speaker()
