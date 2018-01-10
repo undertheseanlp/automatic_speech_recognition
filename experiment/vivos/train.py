@@ -4,7 +4,7 @@ from load_data import corpus_folder
 from os.path import join, dirname
 
 export_folder = join(dirname(__file__), "model")
-kaldi_folder = "/home/rain/Downloads/kaldi-trunk/"
+kaldi_folder = "/home/rain/Downloads/kaldi-trunk"
 
 model = KaldiSpeechRecognition(corpus_folder, kaldi_folder)
 # model.fit()

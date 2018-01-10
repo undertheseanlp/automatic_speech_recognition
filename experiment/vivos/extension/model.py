@@ -2,6 +2,9 @@ import shutil
 import os
 import text
 import numpy as np
+from itertools import groupby
+
+from os.path import dirname
 
 N = 100
 
@@ -15,18 +18,17 @@ class KaldiSpeechRecognition:
         self.id = "uts_{}".format(id)
         self.tmp_folder = "{}/egs/{}".format(self.kaldi_folder, self.id)
 
-        self._init_folder()
-        # self._change_config()
-        self._init_audio()
-        self._make_transcription()
-        # self._make_dictionary()
-        # self._make_filler()
-        # self._make_language_model()
+        self._init_env()
+        self._config()
+        self._audio_data()
+        self._transcription()
+        self._language_model()
+        self._scripts()
 
     # ========================== #
     # Init Data
     # ========================== #
-    def _init_folder(self):
+    def _init_env(self):
         os.system("cd {0}/egs; rm -rf uts*".format(self.kaldi_folder))
         os.system("cd {0}/egs; rm -f {1} | mkdir {1}".format(self.kaldi_folder,
                                                              self.id))
@@ -34,30 +36,143 @@ class KaldiSpeechRecognition:
         os.system("cd {}; mkdir -p audio/test".format(self.tmp_folder))
         os.system("cd {}; mkdir -p data/train".format(self.tmp_folder))
         os.system("cd {}; mkdir -p data/test".format(self.tmp_folder))
+        os.system("cd {}; mkdir -p data/local".format(self.tmp_folder))
+        os.system("cd {}; mkdir -p data/local/dict".format(self.tmp_folder))
 
-    def _init_audio(self):
-        lines = open("{}/train/text".format(self.corpus_folder)).read().\
+    # ========================== #
+    # Corpus Information
+    # ========================== #
+    def _get_speakers_utterances(self, speaker_file):
+        # Get speakers and utterances
+        items = open(speaker_file).read().splitlines()
+        items = [item.split(" ") for item in items]
+        s_u = {k: [i[1] for i in g] for k, g in
+               groupby(items, key=lambda x: x[0])}
+        u_s = {}
+        for speaker in s_u:
+            for utterance in s_u[speaker]:
+                u_s[utterance] = speaker
+        return s_u, u_s
+
+    # ========================== #
+    # Audio
+    # ========================== #
+    def _audio_data(self):
+        self._copy_sound_files("train")
+        self._copy_sound_files("test")
+        self._create_description_files("train")
+        self._create_description_files("test")
+
+    def _copy_sound_files(self, type="train"):
+        speaker_file = "{}/{}/speaker".format(self.corpus_folder, type)
+        s_u, u_s = self._get_speakers_utterances(speaker_file)
+
+        lines = open("{}/{}/text".format(self.corpus_folder, type)).read(). \
             splitlines()
         lines = lines[:N]
-        ids = [line.split("|")[0] for line in lines]
-        pass
+        utterances = [line.split("|")[0] for line in lines]
+        speakers_files = {}
+        for utterance in utterances:
+            speaker = u_s[utterance]
+            if speaker not in speakers_files:
+                speakers_files[speaker] = []
+            speakers_files[speaker].append(utterance)
+        for speaker in speakers_files:
+            os.system(
+                "cd {}; mkdir -p audio/{}/{}".format(self.tmp_folder, type,
+                                                     speaker))
+            for file in speakers_files[speaker]:
+                infile = "{}/{}/wav/{}.wav".format(self.corpus_folder, type,
+                                                   file)
+                utterance = file.split("_")[1]
+                outfile = "{}/audio/{}/{}/{}.wav".format(self.tmp_folder, type,
+                                                         speaker, utterance)
+                os.system("cp {} {}".format(infile, outfile))
+
+    def _create_description_files(self, type):
+        speaker_file = "{}/{}/speaker".format(self.corpus_folder, type)
+        s_u, u_s = self._get_speakers_utterances(speaker_file)
+        lines = open("{}/{}/text".format(self.corpus_folder, type)).read(). \
+            splitlines()
+        lines = lines[:N]
+        utterances = [line.split("|")[0] for line in lines]
+        speakers = [u_s[u] for u in utterances]
+        speakers = list(set(speakers))
+
+        # spk2gender
+        infile = "{0}/{1}/gender".format(self.corpus_folder, type)
+        lines = open(infile).read()
+        lines = lines.splitlines()
+        lines = list(filter(lambda x: x.split()[0] in speakers, lines))
+        content = "\n".join(lines) + "\n"
+        outfile = "{}/data/{}/spk2gender".format(self.tmp_folder, type)
+        open(outfile, "w").write(content)
+
+        # spk2utt
+        output = []
+        speakers_files = {}
+        for utterance in utterances:
+            speaker = u_s[utterance]
+            if speaker not in speakers_files:
+                speakers_files[speaker] = []
+            speakers_files[speaker].append(utterance)
+        for speaker in speakers_files:
+            u = speakers_files[speaker]
+            u = [item.split("_")[1] for item in u]
+            line = "{} {}".format(speaker, " ".join(u))
+            output.append(line)
+        content = "\n".join(output) + "\n"
+        outfile = "{}/data/{}/spk2utt".format(self.tmp_folder, type)
+        open(outfile, "w").write(content)
+
+        # utt2spk
+        output = []
+        for utterance in utterances:
+            speaker_id = u_s[utterance]
+            utterance_id = utterance.split("_")[1]
+            line = "{1}-{0} {1}".format(utterance_id, speaker_id)
+            output.append(line)
+        output = sorted(output, key=lambda x: x.split()[1] + x.split()[0])
+        content = "\n".join(output) + "\n"
+        outfile = "{}/data/{}/utt2spk".format(self.tmp_folder, type)
+        open(outfile, "w").write(content)
+
+        # wav.scp
+        output = []
+        for u in utterances:
+            speaker_id, utterance_id = u.split("_")
+            line = "{0}-{1} {2}/audio/{3}/{0}/{1}.wav".format(
+                speaker_id, utterance_id, self.tmp_folder, type)
+            output.append(line)
+        output = sorted(output, key=lambda x: x.split()[0])
+        content = "\n".join(output) + "\n"
+        outfile = "{}/data/{}/wav.scp".format(self.tmp_folder, type)
+        open(outfile, "w").write(content)
 
     # ========================== #
     # Config
     # ========================== #
-    def _change_config(self):
-        config_file = os.path.join(self.tmp_folder, "etc", "sphinx_train.cfg")
-        config = SphinxConfig(config_file)
-        config.set("$CFG_BASE_DIR", "\".\"")
-        config.set("$CFG_WAVFILE_SRATE", 8000.0)
-        config.set("$CFG_NUM_FILT", 31)
-        config.set("$CFG_LO_FILT", 200)
-        config.set("$CFG_HI_FILT", 3500)
-        config.set("$CFG_WAVFILE_TYPE", "'raw'")
-        config.set("$CFG_LANGUAGEMODEL",
-                   "\"$CFG_LIST_DIR/$CFG_DB_NAME.lm\"")
-        config.set("$DEC_CFG_LANGUAGEMODEL",
-                   "\"$CFG_BASE_DIR/etc/${CFG_DB_NAME}.lm\"")
+    def _config(self):
+        os.system("cd {}; mkdir -p conf".format(self.tmp_folder))
+
+        # decode.conf
+        configs = [
+            "first_beam=10.0",
+            "beam=13.0",
+            "lattice_beam=6.0"
+        ]
+        content = "\n".join(configs)
+        outfile = "{}/conf/decode.config".format(self.tmp_folder)
+        open(outfile, "w").write(content)
+
+        # mfcc.conf
+        configs = [
+            "--use-energy=false  # only non-default option.",
+            "--sample-frequency=16000"
+        ]
+        content = "\n".join(configs)
+        outfile = "{}/conf/mfcc.conf".format(self.tmp_folder)
+        open(outfile, "w").write(content)
 
     # ========================== #
     # Transcription
@@ -67,20 +182,61 @@ class KaldiSpeechRecognition:
         output = []
         for line in lines:
             fileid, word = line.split("|")
-            phone = text.word2phone(word)
-            content = "{} {}".format(fileid, phone)
+            speaker_id, utterance_id = fileid.split("_")
+            content = "{}-{} {}".format(speaker_id, utterance_id, word)
             output.append(content)
+        output = sorted(output, key=lambda x: x.split()[0])
         output.append("")
         content = "\n".join(output)
         open(out_file, "w").write(content)
 
-    def _make_transcription(self):
+    def _corpus_txt(self):
+        train_text_file = "{}/train/text".format(self.corpus_folder)
+        train_text = open(train_text_file).read().splitlines()[:N]
+        test_text_file = "{}/test/text".format(self.corpus_folder)
+        test_text = open(test_text_file).read().splitlines()[:N]
+        text = train_text + test_text
+        text = [item.split("|")[1] for item in text]
+        content = "\n".join(text)
+        open("{}/data/local/corpus.txt".format(self.tmp_folder), "w").write(
+            content)
+
+    def _transcription(self):
         self._convert_transcription(
             "{}/train/text".format(self.corpus_folder),
             "{}/data/train/text".format(self.tmp_folder))
         self._convert_transcription(
             "{}/test/text".format(self.corpus_folder),
             "{}/data/test/text".format(self.tmp_folder))
+        self._corpus_txt()
+
+    # ============================== #
+    # Create dictionary and phones
+    # ============================== #
+    def _scripts(self):
+        pwd = dirname(__file__)
+        shutil.copy2(
+            "{}/cmd.sh".format(pwd),
+            "{}/cmd.sh".format(self.tmp_folder)
+        )
+        shutil.copy2(
+            "{}/path.sh".format(pwd),
+            "{}/path.sh".format(self.tmp_folder)
+        )
+        shutil.copy2(
+            "{}/run.sh".format(pwd),
+            "{}/run.sh".format(self.tmp_folder)
+        )
+
+        shutil.copytree(
+            "{}/../voxforge/s5/utils".format(self.tmp_folder),
+            "{}/utils".format(self.tmp_folder)
+        )
+
+        shutil.copytree(
+            "{}/../voxforge/s5/steps".format(self.tmp_folder),
+            "{}/steps".format(self.tmp_folder)
+        )
 
     # ============================== #
     # Create dictionary and phones
@@ -140,6 +296,41 @@ class KaldiSpeechRecognition:
         os.system(chdir + "text2idngram -vocab vocab -idngram idngram < text")
         os.system(
             chdir + "idngram2lm -vocab_type 0 -idngram idngram -vocab vocab -arpa tmp.lm")
+
+    def _lexicon(self):
+        corpus_file = "{}/data/local/corpus.txt".format(self.tmp_folder)
+        texts = open(corpus_file).read()
+        words = sorted(set(texts.split()))
+        phones = [list(text.word2phone(item)) for item in words]
+
+        nonsilence_phones = sorted(
+            set([item for sublist in phones for item in sublist]))
+        outfile = "{}/data/local/dict/nonsilence_phones.txt".format(
+            self.tmp_folder)
+        content = "\n".join(nonsilence_phones) + "\n"
+        open(outfile, "w").write(content)
+
+        silence_phones = ["sil", "spn"]
+        outfile = "{}/data/local/dict/silence_phones.txt".format(
+            self.tmp_folder)
+        content = "\n".join(silence_phones) + "\n"
+        open(outfile, "w").write(content)
+
+        optional_silence = ["sil"]
+        outfile = "{}/data/local/dict/optional_silence.txt".format(
+            self.tmp_folder)
+        content = "\n".join(optional_silence) + "\n"
+        open(outfile, "w").write(content)
+
+        lexicon = (["{} {}".format(word, " ".join(phone)) for word, phone in
+                    zip(words, phones)])
+        lexicon = ["!SIL sil", "<UNK> spn"] + lexicon
+        content = "\n".join(lexicon) + "\n"
+        outfile = "{}/data/local/dict/lexicon.txt".format(self.tmp_folder)
+        open(outfile, "w").write(content)
+
+    def _language_model(self):
+        self._lexicon()
 
     def fit(self):
         chdir = "cd {}; ".format(self.tmp_folder)
