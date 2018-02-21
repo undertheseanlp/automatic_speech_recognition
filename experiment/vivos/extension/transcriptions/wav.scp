@@ -1,0 +1,6 @@
+r1 ./transcriptions/audio/R001.wav
+r2 ./transcriptions/audio/R002.wav
+r3 ./transcriptions/audio/R003.wav
+r4 ./transcriptions/audio/R004.wav
+r5 ./transcriptions/audio/R005.wav
+t1 ./transcriptions/audio/t1_tat_ca.wav

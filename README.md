@@ -1,11 +1,11 @@
-# Vietnamese Speech Recognition
+# Vietnamese Automatic Speech Recognition
+
 
 
 ## Huấn luyện mô hình
 
 
-
-## Môi trường
+## Môi trường đã thử nghiệm
 
 * Ubuntu 16.04
 
@@ -13,9 +13,17 @@
 
 **Cài đặt Kaldi** theo hướng dẫn tại [http://kaldi-asr.org/doc/tutorial_setup.html](http://kaldi-asr.org/doc/tutorial_setup.html)
 
-**Cài đặt language modeling toolkit srilm**
+```
+$ git clone https://github.com/kaldi-asr/kaldi.git kaldi-trunk --origin golden
 
-Tải [srilm](https://github.com/denizyuret/nlpcourse/blob/master/download/srilm-1.7.0.tgz) sau đó lưu trong thư mục `kaldi-trunk/tools` với tên srilm.tgz
+$ cd kaldi-trunk/tools/; make;
+
+$ extras/install_openblas.sh
+
+$ cd ../src; ./configure  --openblas-root=../tools/OpenBLAS/install; make
+```
+
+**Cài đặt language modeling toolkit srilm**
 
 Cài đặt dependencies
 
@@ -27,6 +35,7 @@ Cài đặt srilm
 
 ```
 $ cd kaldi-trunk/tools
+$ wget -O srilm.tgz https://raw.githubusercontent.com/denizyuret/nlpcourse/master/download/srilm-1.7.0.tgz
 $ ./install_srilm.sh
 ...
 Installation of SRILM finished successfully

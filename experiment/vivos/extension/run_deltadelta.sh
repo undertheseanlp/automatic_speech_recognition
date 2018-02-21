@@ -3,8 +3,10 @@
 . ./path.sh || exit 1
 . ./cmd.sh || exit 1
 
-nj=1       # number of parallel jobs - 1 is perfect for such a small data set
-lm_order=1 # language model order (n-gram quantity) - 1 is enough for digits grammar
+EXP_START=$(date +%s);
+
+nj=1       # number of parallel jobs
+lm_order=1 # language model order (n-gram quantity)
 
 # Safety mechanism (possible running this script with modified arguments)
 . utils/parse_options.sh || exit 1
@@ -96,34 +98,128 @@ echo
 echo "===== MONO TRAINING ====="
 echo
 
-steps/train_mono.sh --nj $nj --cmd "$train_cmd" data/train data/lang exp/mono  || exit 1
+START=$(date +%s);
+steps/train_mono.sh --nj $nj \
+  --cmd "$train_cmd" data/train data/lang exp/mono  || exit 1
+END=$(date +%s);
+MONO_TRAINING_TIME=$((END - START))
 
 echo
 echo "===== MONO DECODING ====="
 echo
 
+START=$(date +%s);
 utils/mkgraph.sh --mono data/lang exp/mono exp/mono/graph || exit 1
-steps/decode.sh --config conf/decode.config --nj $nj --cmd "$decode_cmd" exp/mono/graph data/test exp/mono/decode
+steps/decode.sh --config conf/decode.config --nj 1 --cmd "$decode_cmd" \
+  exp/mono/graph data/test exp/mono/decode
+END=$(date +%s);
+MONO_DECODING_TIME=$((END - START))
 
 echo
 echo "===== MONO ALIGNMENT ====="
 echo
 
-steps/align_si.sh --nj $nj --cmd "$train_cmd" data/train data/lang exp/mono exp/mono_ali || exit 1
+START=$(date +%s);
+steps/align_si.sh --nj $nj --cmd "$train_cmd" \
+  data/train data/lang exp/mono exp/mono_ali || exit 1
+END=$(date +%s);
+MONO_ALIGNMENT_TIME=$((END - START))
 
 echo
 echo "===== TRI1 (first triphone pass) TRAINING ====="
 echo
 
-steps/train_deltas.sh --cmd "$train_cmd" 2000 11000 data/train data/lang exp/mono_ali exp/tri1 || exit 1
+START=$(date +%s);
+steps/train_deltas.sh --cmd "$train_cmd" 2500 20000 \
+  data/train data/lang exp/mono_ali exp/tri1 || exit 1
+END=$(date +%s);
+TRI1_TRAINING_TIME=$((END - START))
 
 echo
 echo "===== TRI1 (first triphone pass) DECODING ====="
 echo
 
+START=$(date +%s);
 utils/mkgraph.sh data/lang exp/tri1 exp/tri1/graph || exit 1
-steps/decode.sh --config conf/decode.config --nj $nj --cmd "$decode_cmd" exp/tri1/graph data/test exp/tri1/decode
+steps/decode.sh --config conf/decode.config --nj 1 --cmd "$decode_cmd" \
+  exp/tri1/graph data/test exp/tri1/decode
+END=$(date +%s);
+TRI1_DECODING_TIME=$((END - START))
+
+echo
+echo "===== TRI1 ALIGNMENT ====="
+echo
+
+START=$(date +%s);
+steps/align_si.sh --nj $nj --cmd "$train_cmd" \
+  data/train data/lang exp/tri1 exp/tri1_ali || exit 1;
+END=$(date +%s);
+TRI1_ALIGNMENT_TIME=$((END - START))
+
+echo
+echo "===== TRI2A TRAINING ====="
+echo
+
+START=$(date +%s);
+steps/train_deltas.sh --cmd "$train_cmd" 2500 20000 \
+  data/train data/lang exp/tri1_ali exp/tri2a || exit 1
+END=$(date +%s);
+TRI2A_TRAINING_TIME=$((END - START))
+
+echo
+echo "===== TRI2A DECODING ====="
+echo
+
+START=$(date +%s);
+utils/mkgraph.sh data/lang exp/tri2a exp/tri2a/graph || exit 1
+steps/decode.sh --config conf/decode.config --nj 1 --cmd "$decode_cmd" \
+  exp/tri2a/graph data/test exp/tri2a/decode
+END=$(date +%s);
+TRI2A_DECODING_TIME=$((END - START))
+
+echo
+echo "===== TRI2A ALIGNMENT ====="
+echo
+
+START=$(date +%s);
+steps/align_si.sh --nj $nj --cmd "$train_cmd" \
+  data/train data/lang exp/tri2a exp/tri2a_ali || exit 1;
+END=$(date +%s);
+TRI2A_ALIGNMENT_TIME=$((END - START))
 
 echo
 echo "===== run.sh script is finished ====="
 echo
+
+EXP_END=$(date +%s);
+EXP_TIME=$((EXP_END - EXP_START))
+
+log_file='exp.log'
+echo "" > $log_file
+echo "===== Time Report =====" >> $log_file
+echo "Mono" >> $log_file
+echo $MONO_TRAINING_TIME | awk '{print int($1/60)":"int($1%60)}' >> $log_file
+echo $MONO_DECODING_TIME | awk '{print int($1/60)":"int($1%60)}' >> $log_file
+echo $MONO_ALIGNMENT_TIME | awk '{print int($1/60)":"int($1%60)}' >> $log_file
+
+echo "Tri1" >> $log_file
+echo $TRI1_TRAINING_TIME | awk '{print int($1/60)":"int($1%60)}' >> $log_file
+echo $TRI1_DECODING_TIME | awk '{print int($1/60)":"int($1%60)}' >> $log_file
+echo $TRI1_ALIGNMENT_TIME | awk '{print int($1/60)":"int($1%60)}' >> $log_file
+
+echo "Tri2a" >> $log_file
+echo $TRI2A_TRAINING_TIME | awk '{print int($1/60)":"int($1%60)}' >> $log_file
+echo $TRI2A_DECODING_TIME | awk '{print int($1/60)":"int($1%60)}' >> $log_file
+echo $TRI2A_ALIGNMENT_TIME | awk '{print int($1/60)":"int($1%60)}' >> $log_file
+
+echo "Total time:" >> $log_file
+echo $EXP_TIME | awk '{print int($1/60)":"int($1%60)}' >> $log_file
+
+echo -e "\n" >> $log_file
+echo "===== Score Report =====" >> $log_file
+echo "Best WER" >> $log_file
+for x in exp/*/decode*; do [ -d $x ] && [[ $x =~ "$1" ]] && grep WER $x/wer_* | utils/best_wer.sh; done >> $log_file
+
+echo -e "\n" >> $log_file
+
+cat $log_file

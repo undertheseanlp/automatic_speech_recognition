@@ -1,23 +1,39 @@
 import shutil
 import os
-import text
+from experiment.vivos.extension.text import PhoneConverter1 as PhoneConverter
 import numpy as np
 from itertools import groupby
 
 from os.path import dirname
 
-N = 100
+N_TRAIN = 100
+N_TEST = 10
 
 
 class KaldiSpeechRecognition:
-    def __init__(self, corpus_folder, kaldi_folder):
-        print("Initial Kaldi Speech Recognition")
+    def __init__(self,
+                 corpus_folder,
+                 kaldi_folder,
+                 params={}):
+        """ Wrapper for Kaldi Speech Recognition
+
+        Parameters
+        ----------
+        params: dict
+            collection of parameters for training phrase
+            - jobs: number of parallel jobs
+            - method: {deltadelta, lda_mllt, sat}
+        """
+
         self.corpus_folder = corpus_folder
         self.kaldi_folder = kaldi_folder
+        self.method = "deltadelta" if "method" not in params else params["method"]
+        self.params = params
         id = np.random.randint(1000)
         self.id = "uts_{}".format(id)
         self.tmp_folder = "{}/egs/{}".format(self.kaldi_folder, self.id)
 
+        print("Init Kaldi Speech Recognition in {} folder".format(self.id))
         self._init_env()
         self._config()
         self._audio_data()
@@ -32,6 +48,7 @@ class KaldiSpeechRecognition:
         os.system("cd {0}/egs; rm -rf uts*".format(self.kaldi_folder))
         os.system("cd {0}/egs; rm -f {1} | mkdir {1}".format(self.kaldi_folder,
                                                              self.id))
+        os.system("cd {}; mkdir -p local".format(self.tmp_folder))
         os.system("cd {}; mkdir -p audio/train".format(self.tmp_folder))
         os.system("cd {}; mkdir -p audio/test".format(self.tmp_folder))
         os.system("cd {}; mkdir -p data/train".format(self.tmp_folder))
@@ -69,7 +86,10 @@ class KaldiSpeechRecognition:
 
         lines = open("{}/{}/text".format(self.corpus_folder, type)).read(). \
             splitlines()
-        lines = lines[:N]
+        if type == "train":
+            lines = lines[:N_TRAIN]
+        else:
+            lines = lines[:N_TEST]
         utterances = [line.split("|")[0] for line in lines]
         speakers_files = {}
         for utterance in utterances:
@@ -94,7 +114,10 @@ class KaldiSpeechRecognition:
         s_u, u_s = self._get_speakers_utterances(speaker_file)
         lines = open("{}/{}/text".format(self.corpus_folder, type)).read(). \
             splitlines()
-        lines = lines[:N]
+        if type == "train":
+            lines = lines[:N_TRAIN]
+        else:
+            lines = lines[:N_TEST]
         utterances = [line.split("|")[0] for line in lines]
         speakers = [u_s[u] for u in utterances]
         speakers = list(set(speakers))
@@ -141,8 +164,8 @@ class KaldiSpeechRecognition:
         output = []
         for u in utterances:
             speaker_id, utterance_id = u.split("_")
-            line = "{0}-{1} {2}/audio/{3}/{0}/{1}.wav".format(
-                speaker_id, utterance_id, self.tmp_folder, type)
+            line = "{0}-{1} ./audio/{2}/{0}/{1}.wav".format(
+                speaker_id, utterance_id, type)
             output.append(line)
         output = sorted(output, key=lambda x: x.split()[0])
         content = "\n".join(output) + "\n"
@@ -177,7 +200,7 @@ class KaldiSpeechRecognition:
     # ========================== #
     # Transcription
     # ========================== #
-    def _convert_transcription(self, in_file, out_file):
+    def _convert_transcription(self, in_file, out_file, N):
         lines = open(in_file).read().splitlines()[:N]
         output = []
         for line in lines:
@@ -192,9 +215,9 @@ class KaldiSpeechRecognition:
 
     def _corpus_txt(self):
         train_text_file = "{}/train/text".format(self.corpus_folder)
-        train_text = open(train_text_file).read().splitlines()[:N]
+        train_text = open(train_text_file).read().splitlines()[:N_TRAIN]
         test_text_file = "{}/test/text".format(self.corpus_folder)
-        test_text = open(test_text_file).read().splitlines()[:N]
+        test_text = open(test_text_file).read().splitlines()[:N_TEST]
         text = train_text + test_text
         text = [item.split("|")[1] for item in text]
         content = "\n".join(text)
@@ -204,10 +227,10 @@ class KaldiSpeechRecognition:
     def _transcription(self):
         self._convert_transcription(
             "{}/train/text".format(self.corpus_folder),
-            "{}/data/train/text".format(self.tmp_folder))
+            "{}/data/train/text".format(self.tmp_folder), N_TRAIN)
         self._convert_transcription(
             "{}/test/text".format(self.corpus_folder),
-            "{}/data/test/text".format(self.tmp_folder))
+            "{}/data/test/text".format(self.tmp_folder), N_TEST)
         self._corpus_txt()
 
     # ============================== #
@@ -215,19 +238,39 @@ class KaldiSpeechRecognition:
     # ============================== #
     def _scripts(self):
         pwd = dirname(__file__)
+
+        # cmd.sh
         shutil.copy2(
             "{}/cmd.sh".format(pwd),
             "{}/cmd.sh".format(self.tmp_folder)
         )
+
+        # path.sh
         shutil.copy2(
             "{}/path.sh".format(pwd),
             "{}/path.sh".format(self.tmp_folder)
         )
+
+        # run.sh
+        content = open("{}/run_{}.sh".format(pwd, self.method)).read()
+        script_file = "{}/run.sh".format(self.tmp_folder)
+        with open(script_file, "w") as f:
+            if "jobs" in self.params:
+                jobs = "nj={}".format(self.params["jobs"])
+                content = content.replace("nj=1", jobs)
+            if "lm_order" in self.params:
+                config = "lm_order={}".format(self.params["lm_order"])
+                content = content.replace("lm_order=1", config)
+            f.write(content)
+        os.system("chmod u+x {}".format(script_file))
+
+        # local/score.sh
         shutil.copy2(
-            "{}/run.sh".format(pwd),
-            "{}/run.sh".format(self.tmp_folder)
+            "{}/../voxforge/s5/local/score.sh".format(self.tmp_folder),
+            "{}/local/score.sh".format(self.tmp_folder)
         )
 
+        # utils and steps
         shutil.copytree(
             "{}/../voxforge/s5/utils".format(self.tmp_folder),
             "{}/utils".format(self.tmp_folder)
@@ -238,16 +281,30 @@ class KaldiSpeechRecognition:
             "{}/steps".format(self.tmp_folder)
         )
 
+        # transcript.sh
+        transcript_file = "{}/transcript.sh".format(self.tmp_folder)
+        shutil.copy2(
+            "{}/transcript_{}.sh".format(pwd, self.method),
+            transcript_file
+        )
+        os.system("chmod u+x {}".format(transcript_file))
+
+        shutil.copytree(
+            "{}/transcriptions".format(pwd),
+            "{}/transcriptions".format(self.tmp_folder)
+        )
+
     # ============================== #
     # Create dictionary and phones
     # ============================== #
     def _make_dictionary(self):
         lines = open(
-            "{}/train/text".format(self.corpus_folder)).read().splitlines()[:N]
+            "{}/train/text".format(self.corpus_folder)).read().splitlines()[
+                :N_TRAIN]
         phones = []
         for line in lines:
             fileid, word = line.split("|")
-            p = text.word2phone(word).split()
+            p = PhoneConverter.word2phone(word).split()
             phones += p
         phones = sorted(set(phones))
         # create .dic files
@@ -278,11 +335,11 @@ class KaldiSpeechRecognition:
     def _make_cleaned_text(self):
         in_file = "{}/train/text".format(self.corpus_folder)
         out_file = "{}/etc/text".format(self.tmp_folder)
-        lines = open(in_file).read().splitlines()[:N]
+        lines = open(in_file).read().splitlines()[:N_TRAIN]
         output = []
         for line in lines:
             fileid, word = line.split("|")
-            phone = text.word2phone(word)
+            phone = PhoneConverter.word2phone(word)
             content = "<s> {} </s>".format(phone, fileid)
             output.append(content)
         content = "\n".join(output)
@@ -301,7 +358,7 @@ class KaldiSpeechRecognition:
         corpus_file = "{}/data/local/corpus.txt".format(self.tmp_folder)
         texts = open(corpus_file).read()
         words = sorted(set(texts.split()))
-        phones = [list(text.word2phone(item)) for item in words]
+        phones = [list(PhoneConverter.word2phone(item)) for item in words]
 
         nonsilence_phones = sorted(
             set([item for sublist in phones for item in sublist]))
@@ -340,7 +397,7 @@ class KaldiSpeechRecognition:
         command = "pocketsphinx_continuous -hmm {}/model_parameters/tmp.cd_cont_200 -samprate 8000 -lm {}/etc/tmp.lm -dict {}/etc/tmp.dic -infile {} -logfn yes".format(
             self.tmp_folder, self.tmp_folder, self.tmp_folder, wav_file)
         output = os.popen(command).read().strip()
-        output = text.phone2word(output)
+        output = PhoneConverter.phone2word(output)
         return output
 
 
