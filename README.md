@@ -44,4 +44,4 @@ Please source the tools/env.sh in your path.sh to enable it
 
 # Mô tả dữ liệu
 
-[Xem chi tiết](đin_dang_du_lieu.md)
+[Xem chi tiết](dinh_dang_du_lieu.md)
