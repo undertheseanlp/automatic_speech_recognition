@@ -1,10 +1,10 @@
-from extension.model import KaldiSpeechRecognition
-from extension.export import SphinxSpeechRecognitionExporter
-from load_data import corpus_folder
+from experiment.vivos.extension.model import KaldiSpeechRecognition
+from experiment.vivos.extension.export import SphinxSpeechRecognitionExporter
+from experiment.vivos.load_data import corpus_folder
 from os.path import join, dirname
 
 export_folder = join(dirname(__file__), "model")
-kaldi_folder = "/home/rain/Downloads/kaldi-trunk"
+kaldi_folder = "/Users/dkht/Downloads/kaldi-trunk"
 params = {
     "method": "deltadelta",
     "jobs": 1,
