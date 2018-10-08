@@ -7,7 +7,7 @@ Dự án này chứa những thử nghiệm cho bài toán *Nhận dạng tiến
 * [Cài đặt](#cài-đặt)
 * [Huấn luyện mô hình](#huấn-luyện-mô-hình)
 
-## 1. Cài đặt
+## Cài đặt
 
 **Môi trường thử nghiệm**
 
@@ -46,7 +46,4 @@ Please source the tools/env.sh in your path.sh to enable it
 
 ## Huấn luyện mô hình
 
-
-### Mô tả dữ liệu
-
-[Xem chi tiết](data_format.md)
+**Mô tả dữ liệu**: [Xem chi tiết](data_format.md)
