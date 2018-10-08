@@ -3,7 +3,7 @@
 ## Huấn luyện mô hình
 
 
-## Môi trường đã thử nghiệm
+## Môi trường thử nghiệm
 
 * Ubuntu 16.04
 
