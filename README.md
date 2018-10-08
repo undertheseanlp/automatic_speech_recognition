@@ -1,7 +1,5 @@
 # Vietnamese Automatic Speech Recognition
 
-
-
 ## Huấn luyện mô hình
 
 
