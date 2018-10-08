@@ -8,6 +8,7 @@
 ## Môi trường đã thử nghiệm
 
 * Ubuntu 16.04
+* MacOS Mojave 10.14 
 
 ## Cài đặt
 
