@@ -2,7 +2,6 @@
 
 ## Huấn luyện mô hình
 
-
 ## Môi trường thử nghiệm
 
 * Ubuntu 16.04
@@ -42,4 +41,4 @@ Please source the tools/env.sh in your path.sh to enable it
 
 # Mô tả dữ liệu
 
-[Xem chi tiết](dinh_dang_du_lieu.md)
+[Xem chi tiết](data_format.md)
