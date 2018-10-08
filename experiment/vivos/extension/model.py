@@ -87,9 +87,15 @@ class KaldiSpeechRecognition:
         lines = open("{}/{}/text".format(self.corpus_folder, type)).read(). \
             splitlines()
         if type == "train":
+            list = os.listdir("{}/{}/wav".format(self.corpus_folder, type))
+            N_TRAIN = len(list)
+        
             lines = lines[:N_TRAIN]
         else:
+            list = os.listdir("{}/{}/wav".format(self.corpus_folder, type))
+            N_TEST = len(list)
             lines = lines[:N_TEST]
+
         utterances = [line.split("|")[0] for line in lines]
         speakers_files = {}
         for utterance in utterances:
@@ -115,8 +121,12 @@ class KaldiSpeechRecognition:
         lines = open("{}/{}/text".format(self.corpus_folder, type)).read(). \
             splitlines()
         if type == "train":
+            list = os.listdir("{}/{}/wav".format(self.corpus_folder, type))
+            N_TRAIN = len(list)
             lines = lines[:N_TRAIN]
         else:
+            list = os.listdir("{}/{}/wav".format(self.corpus_folder, type))
+            N_TEST = len(list)
             lines = lines[:N_TEST]
         utterances = [line.split("|")[0] for line in lines]
         speakers = [u_s[u] for u in utterances]
