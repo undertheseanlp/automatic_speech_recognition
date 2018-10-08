@@ -1,17 +1,15 @@
 # Vietnamese Automatic Speech Recognition
 
-Dự án này chứa những thử nghiệm cho bài toán *Nhận dạng tiếng nói tiếng Việt*, là một phần của dự án (https://github.com/undertheseanlp/underthesea). Trong dự án này có chứa code để đọc dữ liệu, huấn luyện và đánh giá các mô hình. Bạn cũng có thể mở rộng bằng cách huấn luyện mô hình cho bài toán của riêng bạn.  
-
 ## Mục lục
 
-* [Cài đặt](#cài-đặt)
-* [Huấn luyện mô hình](#huấn-luyện-mô-hình)
 
-## 1. Cài đặt
+## Huấn luyện mô hình
 
-**Môi trường thử nghiệm**
+## Môi trường thử nghiệm
 
 * Ubuntu 16.04
+
+## Cài đặt
 
 **Cài đặt Kaldi** theo hướng dẫn tại [http://kaldi-asr.org/doc/tutorial_setup.html](http://kaldi-asr.org/doc/tutorial_setup.html)
 
@@ -44,9 +42,6 @@ Installation of SRILM finished successfully
 Please source the tools/env.sh in your path.sh to enable it
 ```
 
-## Huấn luyện mô hình
-
-
-### Mô tả dữ liệu
+# Mô tả dữ liệu
 
 [Xem chi tiết](data_format.md)
