@@ -35,8 +35,8 @@ class KaldiSpeechRecognition:
 
         train_list = os.listdir("{}/{}/wav".format(self.corpus_folder, "train"))
         test_list = os.listdir("{}/{}/wav".format(self.corpus_folder, "test"))
-        self.N_TRAIN = len(train_list)
-        self.N_TEST = len(test_list)
+        self.N_TRAIN = 100#len(train_list)
+        self.N_TEST = 10#len(test_list)
 
 
         print("Init Kaldi Speech Recognition in {} folder".format(self.id))
@@ -402,7 +402,9 @@ class KaldiSpeechRecognition:
 
     def fit(self):
         chdir = "cd {}; ".format(self.tmp_folder)
-        os.system(chdir + "sphinxtrain run")
+        os.system(chdir + "./run.sh")
+        # os.system(chdir + "sphinxtrain run")
+
 
     def predict(self, wav_file):
         command = "pocketsphinx_continuous -hmm {}/model_parameters/tmp.cd_cont_200 -samprate 8000 -lm {}/etc/tmp.lm -dict {}/etc/tmp.dic -infile {} -logfn yes".format(
