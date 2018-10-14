@@ -50,5 +50,5 @@ Please source the tools/env.sh in your path.sh to enable it
 
 ## Nhóm tác giả 
 
-* Vũ Anh <anhv.ict91@gmail.com>
-* Lê Phi Hùng <lephihungch@gmail.com>
+* Vũ Anh &lt;anhv.ict91@gmail.com&gt;
+* Lê Phi Hùng &lt;lephihungch@gmail.com&gt;
