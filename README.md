@@ -47,3 +47,8 @@ Please source the tools/env.sh in your path.sh to enable it
 ## Huấn luyện mô hình
 
 **Mô tả dữ liệu**: [Xem chi tiết](data_format.md)
+
+## Nhóm tác giả 
+
+* Vũ Anh <anhv.ict91@gmail.com>
+* Lê Phi Hùng <lephihungch@gmail.com>
