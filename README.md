@@ -20,6 +20,7 @@ Nếu bạn có kinh nghiệm trong bài toán này, muốn tham gia vào nhóm 
 * [Hướng dẫn sử dụng](#hướng-dẫn-sử-dụng)
   * [Sử dụng mô hình đã huấn luyện sẵn](#sử-dụng-mô-hình-đã-huấn-luyện-sẵn)
   * [Huấn luyện mô hình](#huấn-luyện-mô-hình)
+* [Bản quyền](#bản-quyền)
 
 ## Yêu cầu hệ thống 
 
@@ -75,3 +76,8 @@ Method predict nên có thêm argument model_path nếu bạn đã thực hiện
 Thay đổi N_TRAIN và N_TEST trong init của KaldiSpeechRecognition để đổi giới hạn tập train/test
 
 Output folder sẽ nằm trong kaldi_folder/egs/uts_{tmp_number} với tmp_number được thấy khi run train.py (EX: "Init Kaldi Speech Recognition in number_of_tmp folder" - Will be updated soon)
+
+## Bản quyền
+
+Mã nguồn của dự án được phân phối theo giấy phép [GPL-3.0](LICENSE.txt).
+
