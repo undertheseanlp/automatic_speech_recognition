@@ -1,6 +1,6 @@
 # Nhận dạng tiếng nói tiếng Việt
 
-Dự án nghiên cứu về bài toán *Nhận dạng tiếng nói tiếng Việt*, thuộc nhóm các dự án nghiên cứu về xử lý ngôn ngữ tự nhiên tiếng Việt - [undertheseanlp](https://github.com/undertheseanlp/). Trong dự án bao gồm mã nguồn để xử lý dữ liệu, huấn luyện và đánh giá các mô hình. Bạn cũng có thể dễ dàng mở rộng bằng cách huấn luyện mô hình cho bài toán của riêng bạn.  
+Dự án nghiên cứu về bài toán *Nhận dạng tiếng nói tiếng Việt*, thuộc nhóm các dự án nghiên cứu và phát triển xử lý ngôn ngữ tự nhiên tiếng Việt - [undertheseanlp](https://github.com/undertheseanlp/). Chứa các mã nguồn để xử lý dữ liệu, huấn luyện và đánh giá các mô hình, cũng như dễ dàng tùy chỉnh mô hình cho những dữ liệu mới.  
 
 **Nhóm tác giả**
 
