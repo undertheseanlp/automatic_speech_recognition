@@ -11,7 +11,7 @@ Dự án nghiên cứu về bài toán *Nhận dạng tiếng nói tiếng Việ
 
 Mọi ý kiến đóng góp hoặc yêu cầu trợ giúp xin gửi vào mục [Issues](../../issues) của dự án. Các thảo luận được khuyến khích **sử dụng tiếng Việt** để dễ dàng trong quá trình trao đổi. 
 
-Nếu bạn có kinh nghiệm trong bài toán này, muốn tham gia vào nhóm phát triển với vai trò là [Committer](https://docs.google.com/document/d/1o8is5rf1Co62YWn4xu8kIAgSh54_sHeOnnR-0HSKY68/edit#heading=h.wbhllzwe8ncq), xin hãy đọc kỹ [Hướng dẫn tham gia](https://docs.google.com/document/d/1o8is5rf1Co62YWn4xu8kIAgSh54_sHeOnnR-0HSKY68/edit#heading=h.wbhllzwe8ncq) và điền vào [Đơn đăng ký tham gia]().
+Nếu bạn có kinh nghiệm trong bài toán này, muốn tham gia vào nhóm phát triển với vai trò là [Developer](https://docs.google.com/document/d/1o8is5rf1Co62YWn4xu8kIAgSh54_sHeOnnR-0HSKY68/edit#heading=h.wbhllzwe8ncq), xin hãy đọc kỹ [Hướng dẫn tham gia](https://docs.google.com/document/d/1o8is5rf1Co62YWn4xu8kIAgSh54_sHeOnnR-0HSKY68/edit#heading=h.wbhllzwe8ncq).
 
 ## Mục lục
 
