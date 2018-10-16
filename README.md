@@ -60,3 +60,10 @@ Please source the tools/env.sh in your path.sh to enable it
 **Mô tả dữ liệu**: [Xem chi tiết](data_format.md)
 
 
+Trước khi run train.py phải set lại đường dẫn tới kaldi_folder .
+
+Method predict nên có thêm argument model_path nếu bạn đã thực hiện train trước đó (vì nếu không nó sẽ lấy theo tmp_path của model, mà tmp_path này random cho mỗi lần khởi tạo lại model để chuẩn bị cho việc chạy training mới)
+
+Thay đổi N_TRAIN và N_TEST trong init của KaldiSpeechRecognition để đổi giới hạn tập train/test
+
+Output folder sẽ nằm trong kaldi_folder/egs/uts_{tmp_number} với tmp_number được thấy khi run train.py (EX: "Init Kaldi Speech Recognition in number_of_tmp folder" - Will be updated soon)
