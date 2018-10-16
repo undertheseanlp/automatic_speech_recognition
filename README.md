@@ -7,7 +7,7 @@ Dự án nghiên cứu về bài toán *Nhận dạng tiếng nói tiếng Việ
 * Vũ Anh ([anhv.ict91@gmail.com](anhv.ict91@gmail.com))
 * Lê Phi Hùng ([lephihungch@gmail.com](lephihungch@gmail.com))
 
-**Đóng góp**
+**Tham gia đóng góp**
 
 Mọi ý kiến đóng góp hoặc yêu cầu trợ giúp xin gửi vào mục [Issues](../../issues) của dự án. Các thảo luận được khuyến khích **sử dụng tiếng Việt** để dễ dàng trong quá trình trao đổi. 
 
@@ -15,16 +15,24 @@ Nếu bạn có kinh nghiệm trong bài toán này, muốn tham gia vào nhóm 
 
 ## Mục lục
 
-* [Cài đặt](#cài-đặt)
-* [Huấn luyện mô hình](#huấn-luyện-mô-hình)
+* [Yêu cầu hệ thống](#yêu-cầu-hệ-thống)
+* [Thiết lập môi trường](#thiết-lập-môi-trường)
+* [Hướng dẫn sử dụng](#hướng-dẫn-sử-dụng)
+  * [Sử dụng mô hình đã huấn luyện sẵn](#sử-dụng-mô-hình-đã-huấn-luyện-sẵn)
+  * [Huấn luyện mô hình](#huấn-luyện-mô-hình)
 
-## Cài đặt
+## Yêu cầu hệ thống 
 
-**Môi trường thử nghiệm**
+* `Hệ điều hành: Ubuntu 16.04`
+* `Python 3.6+`
+* `conda 4+`
 
-* Ubuntu 16.04
 
-**Cài đặt Kaldi** theo hướng dẫn tại [http://kaldi-asr.org/doc/tutorial_setup.html](http://kaldi-asr.org/doc/tutorial_setup.html)
+## Thiết lập môi trường
+
+**Cài đặt Kaldi**
+
+Để cài đặt Kaldi, thực hiện theo các bước tại [hướng dẫn](http://kaldi-asr.org/doc/tutorial_setup.html)
 
 ```
 $ git clone https://github.com/kaldi-asr/kaldi.git kaldi-trunk --origin golden
@@ -44,7 +52,7 @@ Cài đặt dependencies
 $ apt-get install gawk
 ```
 
-Cài đặt srilm
+**Cài đặt srilm**
 
 ```
 $ cd kaldi-trunk/tools
