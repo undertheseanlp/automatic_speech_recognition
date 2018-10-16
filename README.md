@@ -11,6 +11,8 @@ Dự án nghiên cứu về bài toán *Nhận dạng tiếng nói tiếng Việ
 
 Mọi ý kiến đóng góp hoặc yêu cầu trợ giúp xin gửi vào mục [Issues](../../issues) của dự án. Các thảo luận được khuyến khích **sử dụng tiếng Việt** để dễ dàng trong quá trình trao đổi. 
 
+Nếu bạn có kinh nghiệm trong bài toán này, muốn tham gia vào nhóm với vai trò là 
+
 ## Mục lục
 
 * [Cài đặt](#cài-đặt)
