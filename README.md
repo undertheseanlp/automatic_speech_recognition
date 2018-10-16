@@ -1,6 +1,13 @@
 # Nhận dạng tiếng nói tiếng Việt
 
-Dự án này chứa những thử nghiệm cho bài toán *Nhận dạng tiếng nói tiếng Việt*, là một phần của dự án [underthesea](https://github.com/undertheseanlp/underthesea). Trong dự án này có chứa code để đọc dữ liệu, huấn luyện và đánh giá các mô hình. Bạn cũng có thể mở rộng bằng cách huấn luyện mô hình cho bài toán của riêng bạn.  
+Dự án nghiên cứu về bài toán *Nhận dạng tiếng nói tiếng Việt*, thuộc nhóm nghiên cứu về xử lý ngôn ngữ tự nhiên tiếng Việt - [underthesea](https://github.com/undertheseanlp/). Chứa mã nguồn để xử lý dữ liệu, huấn luyện và đánh giá các mô hình. Bạn cũng có thể mở rộng bằng cách huấn luyện mô hình cho bài toán của riêng bạn.  
+
+## Nhóm tác giả 
+
+* Vũ Anh ([anhv.ict91@gmail.com](anhv.ict91@gmail.com))
+* Lê Phi Hùng &lt;lephihungch@gmail.com&gt;
+
+Mọi ý kiến đóng góp hoặc yêu cầu trợ giúp xin gửi vào mục [Issues](/issues) của dự án. Các thảo luận được khuyến khích **sử dụng tiếng Việt** để dễ dàng trong quá trình trao đổi. 
 
 ## Mục lục
 
@@ -48,7 +55,4 @@ Please source the tools/env.sh in your path.sh to enable it
 
 **Mô tả dữ liệu**: [Xem chi tiết](data_format.md)
 
-## Nhóm tác giả 
 
-* Vũ Anh &lt;anhv.ict91@gmail.com&gt;
-* Lê Phi Hùng &lt;lephihungch@gmail.com&gt;
