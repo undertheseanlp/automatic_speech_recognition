@@ -7,6 +7,8 @@ Dự án nghiên cứu về bài toán *Nhận dạng tiếng nói tiếng Việ
 * Vũ Anh ([anhv.ict91@gmail.com](anhv.ict91@gmail.com))
 * Lê Phi Hùng ([lephihungch@gmail.com](lephihungch@gmail.com))
 
+**Đóng góp**
+
 Mọi ý kiến đóng góp hoặc yêu cầu trợ giúp xin gửi vào mục [Issues](../../issues) của dự án. Các thảo luận được khuyến khích **sử dụng tiếng Việt** để dễ dàng trong quá trình trao đổi. 
 
 ## Mục lục
