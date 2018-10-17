@@ -64,7 +64,9 @@ Installation of SRILM finished successfully
 Please source the tools/env.sh in your path.sh to enable it
 ```
 
-## Huấn luyện mô hình
+## Hướng dẫn sử dụng
+
+### Huấn luyện mô hình
 
 **Mô tả dữ liệu**: [Xem chi tiết](data_format.md)
 
