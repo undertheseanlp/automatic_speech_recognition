@@ -18,7 +18,7 @@ Nếu bạn có kinh nghiệm trong bài toán này, muốn tham gia vào nhóm 
 * [Yêu cầu hệ thống](#yêu-cầu-hệ-thống)
 * [Thiết lập môi trường](#thiết-lập-môi-trường)
 * [Hướng dẫn sử dụng](#hướng-dẫn-sử-dụng)
-  * [Sử dụng mô hình đã huấn luyện sẵn](#sử-dụng-mô-hình-đã-huấn-luyện-sẵn)
+  * [Sử dụng mô hình đã huấn luyện](#sử-dụng-mô-hình-đã-huấn-luyện)
   * [Huấn luyện mô hình](#huấn-luyện-mô-hình)
 * [Bản quyền](#bản-quyền)
 
