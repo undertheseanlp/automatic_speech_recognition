@@ -113,7 +113,7 @@ class KaldiSpeechRecognition:
             for file in speakers_files[speaker]:
                 infile = "{}/{}/wav/{}.wav".format(self.corpus_folder, type,
                                                    file)
-                utterance = file.split("_")[1]
+                utterance = file
                 outfile = "{}/audio/{}/{}/{}.wav".format(self.tmp_folder, type,
                                                          speaker, utterance)
                 os.system("cp {} {}".format(infile, outfile))
@@ -152,7 +152,7 @@ class KaldiSpeechRecognition:
             speakers_files[speaker].append(utterance)
         for speaker in speakers_files:
             u = speakers_files[speaker]
-            u = [item.split("_")[1] for item in u]
+            u = [item for item in u]
             line = "{} {}".format(speaker, " ".join(u))
             output.append(line)
         content = "\n".join(output) + "\n"
@@ -163,7 +163,7 @@ class KaldiSpeechRecognition:
         output = []
         for utterance in utterances:
             speaker_id = u_s[utterance]
-            utterance_id = utterance.split("_")[1]
+            utterance_id = utterance
             line = "{1}-{0} {1}".format(utterance_id, speaker_id)
             output.append(line)
         output = sorted(output, key=lambda x: x.split()[1] + x.split()[0])
@@ -174,7 +174,7 @@ class KaldiSpeechRecognition:
         # wav.scp
         output = []
         for u in utterances:
-            speaker_id, utterance_id = u.split("_")
+            speaker_id, utterance_id = ["global",u]
             line = "{0}-{1} ./audio/{2}/{0}/{1}.wav".format(
                 speaker_id, utterance_id, type)
             output.append(line)
@@ -216,7 +216,7 @@ class KaldiSpeechRecognition:
         output = []
         for line in lines:
             fileid, word = line.split("|")
-            speaker_id, utterance_id = fileid.split("_")
+            speaker_id, utterance_id = ["global",fileid]
             content = "{}-{} {}".format(speaker_id, utterance_id, word)
             output.append(content)
         output = sorted(output, key=lambda x: x.split()[0])

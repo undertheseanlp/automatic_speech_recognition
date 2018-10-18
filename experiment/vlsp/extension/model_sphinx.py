@@ -2,6 +2,8 @@ import shutil
 import os
 import text
 
+N = 10000
+
 
 class SphinxSpeechRecognition:
     def __init__(self, corpus_folder, tmp_folder):
@@ -27,15 +29,18 @@ class SphinxSpeechRecognition:
     # ========================== #
     def _init_data(self):
         os.system("cd {}; mkdir wav".format(self.tmp_folder))
-
-        os.system("cd {}; cp -r {}/train/wav wav/train".format(self.tmp_folder,
-                                                               self.corpus_folder))
-        os.system("cd {}; cp -r {}/test/wav wav/test".format(self.tmp_folder,
-                                                             self.corpus_folder))
+        os.system("cd {}; mkdir wav/train".format(self.tmp_folder))
+        os.system("cd {}; mkdir wav/test".format(self.tmp_folder))
 
         ids = open(
-            "{}/train/text".format(self.corpus_folder)).read().splitlines()
+            "{}/train/text".format(self.corpus_folder)).read().splitlines()[:N]
         ids = [item.split("|")[0] for item in ids]
+        for id in ids:
+            shutil.copy2(
+                "{}/train/wav/{}.wav".format(self.corpus_folder, id),
+                "{}/wav/train/{}.wav".format(self.tmp_folder, id)
+            )
+
         ids = ["train/{}".format(id) for id in ids]
         ids.append("")
         content = "\n".join(ids)
@@ -45,6 +50,11 @@ class SphinxSpeechRecognition:
         ids = open(
             "{}/test/text".format(self.corpus_folder)).read().splitlines()
         ids = [item.split("|")[0] for item in ids]
+        for id in ids:
+            shutil.copy2(
+                "{}/test/wav/{}.wav".format(self.corpus_folder, id),
+                "{}/wav/test/{}.wav".format(self.tmp_folder, id)
+            )
         ids = ["test/{}".format(id) for id in ids]
         ids.append("")
         content = "\n".join(ids)
@@ -58,24 +68,11 @@ class SphinxSpeechRecognition:
         config_file = os.path.join(self.tmp_folder, "etc", "sphinx_train.cfg")
         config = SphinxConfig(config_file)
         config.set("$CFG_BASE_DIR", "\".\"")
-        #8khz
-        # config.set("$CFG_WAVFILE_SRATE", 8000.0)
-        # config.set("$CFG_NUM_FILT", 31)
-        # config.set("$CFG_LO_FILT", 200)
-        # config.set("$CFG_HI_FILT", 3500)
-        #16khz
-        config.set("$CFG_WAVFILE_SRATE", 16000.0)
-        config.set("$CFG_NUM_FILT", 40)
-        config.set("$CFG_LO_FILT", 133.3334)
-        config.set("$CFG_HI_FILT", 6855.4976)
-        #small data - ignore CD
-        # config.set("$CFG_CD_TRAIN","'no'") #Small data train
+        config.set("$CFG_WAVFILE_SRATE", 8000.0)
+        config.set("$CFG_NUM_FILT", 31)
+        config.set("$CFG_LO_FILT", 200)
+        config.set("$CFG_HI_FILT", 3500)
         config.set("$CFG_WAVFILE_TYPE", "'raw'")
-        #Prallel
-        config.set("$CFG_QUEUE_TYPE", "Queue::POSIX") #Enable parallel
-        config.set("$CFG_NPART", 4) #numbeer of physical cores
-        config.set("$DEC_CFG_NPART", 4) #numbeer of physical cores
-        #
         config.set("$CFG_LANGUAGEMODEL",
                    "\"$CFG_LIST_DIR/$CFG_DB_NAME.lm\"")
         config.set("$DEC_CFG_LANGUAGEMODEL",
@@ -85,13 +82,14 @@ class SphinxSpeechRecognition:
     # Transcription
     # ========================== #
     def _convert_transcription(self, in_file, out_file):
-        lines = open(in_file).read().splitlines()
+        lines = open(in_file).read().splitlines()[:N]
         output = []
         for line in lines:
             fileid, word = line.split("|")
             phone = text.word2phone(word)
             content = "<s> {} </s> ({})".format(phone, fileid)
             output.append(content)
+        output.append("")
         content = "\n".join(output)
         open(out_file, "w").write(content)
 
@@ -108,7 +106,7 @@ class SphinxSpeechRecognition:
     # ============================== #
     def _make_dictionary(self):
         lines = open(
-            "{}/train/text".format(self.corpus_folder)).read().splitlines()
+            "{}/train/text".format(self.corpus_folder)).read().splitlines()[:N]
         phones = []
         for line in lines:
             fileid, word = line.split("|")
@@ -143,7 +141,7 @@ class SphinxSpeechRecognition:
     def _make_cleaned_text(self):
         in_file = "{}/train/text".format(self.corpus_folder)
         out_file = "{}/etc/text".format(self.tmp_folder)
-        lines = open(in_file).read().splitlines()
+        lines = open(in_file).read().splitlines()[:N]
         output = []
         for line in lines:
             fileid, word = line.split("|")
