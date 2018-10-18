@@ -24,7 +24,7 @@ Nếu bạn có kinh nghiệm trong bài toán này, muốn tham gia vào nhóm 
 * [Hướng dẫn sử dụng](#hướng-dẫn-sử-dụng)
   * [Sử dụng mô hình đã huấn luyện](#sử-dụng-mô-hình-đã-huấn-luyện)
   * [Huấn luyện mô hình](#huấn-luyện-mô-hình)
-* [Kết quả thử nghiệm)(#kết-quả-thử-ngh
+* [Kết quả thử nghiệm)(#kết-quả-thử-nghiệm)
 * [Trích dẫn](#trích-dẫn)
 * [Bản quyền](#bản-quyền)
 
