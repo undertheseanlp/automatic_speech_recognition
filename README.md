@@ -24,6 +24,7 @@ Nếu bạn có kinh nghiệm trong bài toán này, muốn tham gia vào nhóm 
 * [Hướng dẫn sử dụng](#hướng-dẫn-sử-dụng)
   * [Sử dụng mô hình đã huấn luyện](#sử-dụng-mô-hình-đã-huấn-luyện)
   * [Huấn luyện mô hình](#huấn-luyện-mô-hình)
+* [Trích dẫn](#trích-dẫn)
 * [Bản quyền](#bản-quyền)
 
 ## Yêu cầu hệ thống 
