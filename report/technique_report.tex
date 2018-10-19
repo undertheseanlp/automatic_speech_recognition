@@ -41,6 +41,7 @@ underthesea\\
 \begin{document}
 \maketitle
 \begin{abstract}
+
 Trong báo cáo này, trong chúng mô tả hệ thống nhận dạng tiếng nói tiếng Việt trong underthesea. Trong đó, hệ thống sử dụng công cụ Kaldi để xây dựng module nhận dạng, kết quả được đánh giá trên tập dữ liệu test của VLSP 2018. Toàn bộ mã nguồn và tài liệu của dự án được phát hiện dưới dạng mở nguồn mở tại địa chỉ \url{https://github.com/undertheseanlp/automatic_speech_recognition}
 
 \end{abstract}
@@ -50,6 +51,37 @@ Trong báo cáo này, trong chúng mô tả hệ thống nhận dạng tiếng n
 \section{Mô tả hệ thống}
 
 Các thử nghiệm được thực hiện trên bộ công cụ nhận dạng tiếng nói được viết trên C++ Kaldi. \footnote{http://kaldi-asr.org/}
+
+Mô hình xây dựng hệ thống nhận dạng tiếng nói
+
+\subsection{Chuẩn bị dữ liệu và các tài nguyên ngôn ngữ}
+
+Việc đầu tiên cần làm là chuẩn bị dữ liệu huấn luyện âm thanh - phụ đề.
+Gồm có các tập tin âm thanh (thường để ở định dạng wav) chứa các tiếng nói của người và các tập tin phụ đề tương ứng.
+
+Việc tiếp theo là xây dựng từ điển phát âm.
+Hình dung một cách đơn giản, từ điển phát âm sẽ chứa cách phát âm (cách phân chia các âm) tương ứng với từng tiếng.
+Ngoài ra trong hệ thống còn cần các âm câm (silence\_phones), các từ ngoài từ điển (out-of-vocabulary hay oov).
+
+
+Cuối cùng là chuẩn bị dữ liệu cho việc huấn luyện mô hình ngôn ngữ.
+Mô hình ngôn ngữ giúp cải thiện chất lượng của hệ thống nhận dạng tiếng nói, bằng cách đưa ra những khả năng có thể nhất trong một cụm từ.
+Hãy xem xét ví dụ hệ thống đang phải quyết định từ con thiếu trong câu \textit{Tôi đi Hà \_ mấy ngày}.
+Nếu hệ thống sử dụng mô hình ngôn ngữ, có thể dễ dàng nhận ra từ \textit{Nội} là từ có khả năng còn thiếu nhất trong câu này.
+
+\subsection{Huấn luyện mô hình Gaussian Mixture Model}
+
+Bước đầu tiên là huấn luyện mô hình âm học, là thành phần chuyển các tín hiệu âm thanh thành dữ liệu văn bản.
+Mô hình huấn luyện thường sử dụng thuật toán Gaussian Mixture Model trên các tập đặc trưng phổ biến của âm thanh như MFCC (Mel-frequency cepstral coefficients) \footnote{Để biết thêm về đặc trưng này, xin tìm đọc tài liệu \href{http://www.lrc.tnu.edu.vn/upload/collection/brief/41619_13520141527406.pdf}{So sánh hai phương pháp trích chọn đặc trưng âm thanh: Đường bao phổ (MFCC) và cao độ Pitch trong việc tìm kiếm âm nhạc theo nội dung}}. Ngoài ra còn có các đặc trưng delta, lda, mltt hay sat.
+
+Bước thứ hai là huấn luyện mô hình ngôn ngữ
+
+\subsection{Quá trình giải mã}
+
+\begin{itemize}
+  \item Tạo ra một đồ thị giải mã
+  \item Tính điểm lại Lattice
+\end{itemize}
 
 \section{Đánh giá}
 
@@ -64,6 +96,10 @@ Có hai tập dữ liệu được sử dụng. Tập dữ liệu VIVOS và tậ
 \section{Conclusion}
 
 % TODO To be updated
+
+\section{Lời cảm ơn}
+
+Vì kiến thức còn hạn chế, trong phần mô tả kỹ thuật, tác giả có tham khảo các tài liệu \textit{Building Speech Recognition Systems with the Kaldi Toolkit} \footnote{https://engineering.jhu.edu/clsp/wp-content/uploads/sites/75/2016/06/Building-Speech-Recognition-Systems-with-the-Kaldi-Toolkit.pdf}
 
 \bibliography{technique_report}
 \bibliographystyle{acl_natbib}
