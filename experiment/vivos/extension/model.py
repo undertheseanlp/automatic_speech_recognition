@@ -35,8 +35,8 @@ class KaldiSpeechRecognition:
 
         train_list = os.listdir("{}/{}/wav".format(self.corpus_folder, "train"))
         test_list = os.listdir("{}/{}/wav".format(self.corpus_folder, "test"))
-        self.N_TRAIN = 100#len(train_list)
-        self.N_TEST = 10#len(test_list)
+        self.N_TRAIN = len(train_list)
+        self.N_TEST = len(test_list)
 
 
         print("Init Kaldi Speech Recognition in {} folder".format(self.id))

@@ -3,6 +3,7 @@ from os import mkdir, walk
 from os import listdir
 from os.path import dirname
 from os.path import join
+import os
 import re
 
 def create_train_waves():
@@ -47,6 +48,10 @@ def create_test_waves():
         mkdir(corpus_waves_folder)
 
     shutil.copytree(waves_folder,join(corpus_waves_folder,"wav"))
+    files = listdir(join(corpus_waves_folder,"wav"))
+    for file in files:
+        os.rename(join(corpus_waves_folder,"wav",file),join(corpus_waves_folder,"wav","{}_{}".format("global",file)))
+
 
 
 def create_train_text():
@@ -92,7 +97,7 @@ def create_test_text():
         if m:
             text = m.group("text")
             fileid = m.group("fileid")
-            content = "{}|{}".format(fileid, text)
+            content = "{}|{}".format("global_{}".format(fileid), text)
             output.append(content)
     text = "\n".join(output)
 
@@ -106,13 +111,13 @@ def create_gender():
 
     content_path2 = join(dirname(dirname(dirname(__file__))), "data", "vivos", "raw", "test", "genders.txt")
     content2 = open(content_path2).read()
-    content = content + content2
+    content = content2 + content
 
     output_path = join(dirname(dirname(dirname(__file__))), "data", "vivos", "corpus", "train", "gender")
     open(output_path, "w").write(content)
 
-
     content_test = "\n".join(["global m"])
+
     output_test_path = join(dirname(dirname(dirname(__file__))), "data", "vivos", "corpus", "test", "gender")
     open(output_test_path, "w").write(content_test)
 
@@ -122,11 +127,13 @@ def create_speaker():
     lines = open(content_path).read().splitlines()
     files = [line.split()[0] for line in lines]
     tmp = []
+
     for file_id in files:
         speaker_id = file_id.split("_")[0]
         content = "{} {}".format(speaker_id, file_id)
         tmp.append(content)
 
+        # Merge vivos test to train dir
     lines2 = open(content_path2).read().splitlines()
     files2 = [line.split()[0] for line in lines2]
 
@@ -134,6 +141,8 @@ def create_speaker():
         speaker_id = file_id.split("_")[0]
         content = "{} {}".format(speaker_id, file_id)
         tmp.append(content)
+
+    tmp.sort()
 
     content = "\n".join(tmp)
 
@@ -149,7 +158,7 @@ def create_speaker():
         if m:
             # text = m.group("text")
             fileid = m.group("fileid")
-            content = "global {}".format(fileid)
+            content = "global {}".format("global_{}".format(fileid))
 
             test_output.append(content)
 
