@@ -3,7 +3,7 @@ from os import mkdir, walk
 from os import listdir
 from os.path import dirname
 from os.path import join
-
+import re
 
 def create_train_waves():
 
@@ -28,17 +28,17 @@ def create_train_waves():
 
     for root, dirs, files in walk(waves_folder_2):
         for dir in dirs:
-            for f in listdir(join(waves_folder, dir)):
+            for f in listdir(join(waves_folder_2, dir)):
                 shutil.copy(
-                    join(waves_folder, dir, f),
+                    join(waves_folder_2, dir, f),
                     join(corpus_waves_folder, f))
 
 
 def create_test_waves():
     waves_folder = join(dirname(dirname(dirname(__file__))), "data", "vlsp",
          "wav")
-    corpus_waves_folder = join(dirname(dirname(dirname(__file__))), "data", "vlsp",
-         "corpus","test","wav")
+    corpus_waves_folder = join(dirname(dirname(dirname(__file__))), "data", "vivos",
+         "corpus","test")
     try:
         shutil.rmtree(corpus_waves_folder)
     except:
@@ -46,7 +46,7 @@ def create_test_waves():
     finally:
         mkdir(corpus_waves_folder)
 
-    shutil.copy(waves_folder,corpus_waves_folder)
+    shutil.copytree(waves_folder,join(corpus_waves_folder,"wav"))
 
 
 def create_train_text():
@@ -58,8 +58,9 @@ def create_train_text():
     content = content.replace(":", "")
 
     content2 = open(content_path2)
+    content2 = content.replace(":", "")
     lines = content.splitlines()
-    lines2 = content.splitlines()
+    lines2 = content2.splitlines()
     output = []
     for line in lines:
         items = line.split()
@@ -74,52 +75,89 @@ def create_train_text():
         content2 = "{}|{}".format(fileid, text)
         output.append(content2)
     text = "\n".join(output)
-    open("corpus/train/text", "w").write(text)
+
+    content_path = join(dirname(dirname(dirname(__file__))), "data", "vivos","corpus","train", "text")
+    open(content_path, "w").write(text)
 
 
 def create_test_text():
-    content = open("raw/test/prompts.txt").read()
+    content_path = join(dirname(dirname(dirname(__file__))), "data", "vlsp", "text")
+
+    content = open(content_path).read()
     content = content.replace(":", "")
     lines = content.splitlines()
     output = []
     for line in lines:
-        items = line.split()
-        fileid = items[0]
-        text = " ".join(items[1:]).lower()
-        content = "{}|{}".format(fileid, text)
-        output.append(content)
+        m = re.match(r"^(?P<fileid>.*)\t(?P<text>.*)$", line)
+        if m:
+            text = m.group("text")
+            fileid = m.group("fileid")
+            content = "{}|{}".format(fileid, text)
+            output.append(content)
     text = "\n".join(output)
-    open("corpus/test/text", "w").write(text)
+
+    content_path = join(dirname(dirname(dirname(__file__))), "data", "vivos", "corpus", "test", "text")
+    open(content_path, "w").write(text)
 
 
 def create_gender():
-    content = open("raw/train/genders.txt").read()
-    open("corpus/train/gender", "w").write(content)
-    content = open("raw/test/genders.txt").read()
-    open("corpus/test/gender", "w").write(content)
+    content_path = join(dirname(dirname(dirname(__file__))), "data", "vivos", "raw", "train", "genders.txt")
+    content = open(content_path).read()
 
+    content_path2 = join(dirname(dirname(dirname(__file__))), "data", "vivos", "raw", "test", "genders.txt")
+    content2 = open(content_path2).read()
+    content.join(content2)
+
+    output_path = join(dirname(dirname(dirname(__file__))), "data", "vivos", "corpus", "train", "gender")
+    open(output_path, "w").write(content)
+
+
+    content_test = "\n".join(["global m"])
+    output_test_path = join(dirname(dirname(dirname(__file__))), "data", "vivos", "corpus", "test", "gender")
+    open(output_test_path, "w").write(content_test)
 
 def create_speaker():
-    lines = open("raw/train/prompts.txt").read().splitlines()
+    content_path = join(dirname(dirname(dirname(__file__))), "data", "vivos", "raw", "train", "prompts.txt")
+    content_path2 = join(dirname(dirname(dirname(__file__))), "data", "vivos", "raw", "test", "prompts.txt")
+    lines = open(content_path).read().splitlines()
     files = [line.split()[0] for line in lines]
     tmp = []
     for file_id in files:
         speaker_id = file_id.split("_")[0]
         content = "{} {}".format(speaker_id, file_id)
         tmp.append(content)
-    content = "\n".join(tmp)
-    open("corpus/train/speaker", "w").write(content)
 
-    lines = open("raw/test/prompts.txt").read().splitlines()
-    files = [line.split()[0] for line in lines]
-    tmp = []
-    for file_id in files:
+    lines2 = open(content_path2).read().splitlines()
+    files2 = [line.split()[0] for line in lines2]
+
+    for file_id in files2:
         speaker_id = file_id.split("_")[0]
         content = "{} {}".format(speaker_id, file_id)
         tmp.append(content)
-    content = "\n".join(tmp)
-    open("corpus/test/speaker", "w").write(content)
 
+    content = "\n".join(tmp)
+
+    content_path = join(dirname(dirname(dirname(__file__))), "data", "vivos", "corpus", "train", "speaker")
+    open(content_path, "w").write(content)
+
+    lines_test_path = join(dirname(dirname(dirname(__file__))), "data", "vlsp", "text")
+    lines_test = open(lines_test_path).read().splitlines()
+    test_output = []
+    for line in lines_test:
+        # print(line)
+        m = re.match(r"^(?P<fileid>.*)\t(?P<text>.*)$", line)
+        if m:
+            # text = m.group("text")
+            fileid = m.group("fileid")
+            content = "global {}".format(fileid)
+
+            test_output.append(content)
+
+        else:
+            raise Exception("Content not match.")
+    content_path = join(dirname(dirname(dirname(__file__))), "data", "vivos", "corpus", "test", "speaker")
+    content = "\n".join(test_output)
+    open(content_path, "w").write(content)
 
 try:
     shutil.rmtree("corpus")
