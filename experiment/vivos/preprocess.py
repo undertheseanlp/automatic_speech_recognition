@@ -160,13 +160,13 @@ def create_speaker():
     open(content_path, "w").write(content)
 
 try:
-    shutil.rmtree("corpus")
+    shutil.rmtree(join(dirname(dirname(dirname(__file__))), "data", "vivos", "corpus"))
 except:
     pass
 finally:
-    mkdir("corpus")
-    mkdir("corpus/train")
-    mkdir("corpus/test")
+    mkdir(join(dirname(dirname(dirname(__file__))), "data", "vivos", "corpus"))
+    mkdir(join(dirname(dirname(dirname(__file__))), "data", "vivos", "corpus","train"))
+    mkdir(join(dirname(dirname(dirname(__file__))), "data", "vivos", "corpus", "test"))
     create_train_waves()
     create_test_waves()
     create_train_text()
