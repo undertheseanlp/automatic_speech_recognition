@@ -57,8 +57,8 @@ def create_train_text():
     content = open(content_path).read()
     content = content.replace(":", "")
 
-    content2 = open(content_path2)
-    content2 = content.replace(":", "")
+    content2 = open(content_path2).read()
+    content2 = content2.replace(":", "")
     lines = content.splitlines()
     lines2 = content2.splitlines()
     output = []
@@ -106,7 +106,7 @@ def create_gender():
 
     content_path2 = join(dirname(dirname(dirname(__file__))), "data", "vivos", "raw", "test", "genders.txt")
     content2 = open(content_path2).read()
-    content.join(content2)
+    content = content + content2
 
     output_path = join(dirname(dirname(dirname(__file__))), "data", "vivos", "corpus", "train", "gender")
     open(output_path, "w").write(content)
