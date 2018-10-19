@@ -6,4 +6,7 @@
 **/analyze/
 /experiment/diadiem/tmp/
 /data/vlsp/corpus/
-/data/vlsp/wav/
+/data/vlsp/wav
+/experiment/vlsp/extension/_pycache_/
+**/**/__pycache__/
+**/__pycache__/
