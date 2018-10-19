@@ -58,24 +58,11 @@ class SphinxSpeechRecognition:
         config_file = os.path.join(self.tmp_folder, "etc", "sphinx_train.cfg")
         config = SphinxConfig(config_file)
         config.set("$CFG_BASE_DIR", "\".\"")
-        #8khz
-        # config.set("$CFG_WAVFILE_SRATE", 8000.0)
-        # config.set("$CFG_NUM_FILT", 31)
-        # config.set("$CFG_LO_FILT", 200)
-        # config.set("$CFG_HI_FILT", 3500)
-        #16khz
-        config.set("$CFG_WAVFILE_SRATE", 16000.0)
-        config.set("$CFG_NUM_FILT", 40)
-        config.set("$CFG_LO_FILT", 133.3334)
-        config.set("$CFG_HI_FILT", 6855.4976)
-        #small data - ignore CD
-        # config.set("$CFG_CD_TRAIN","'no'") #Small data train
+        config.set("$CFG_WAVFILE_SRATE", 8000.0)
+        config.set("$CFG_NUM_FILT", 31)
+        config.set("$CFG_LO_FILT", 200)
+        config.set("$CFG_HI_FILT", 3500)
         config.set("$CFG_WAVFILE_TYPE", "'raw'")
-        #Prallel
-        config.set("$CFG_QUEUE_TYPE", "Queue::POSIX") #Enable parallel
-        config.set("$CFG_NPART", 4) #numbeer of physical cores
-        config.set("$DEC_CFG_NPART", 4) #numbeer of physical cores
-        #
         config.set("$CFG_LANGUAGEMODEL",
                    "\"$CFG_LIST_DIR/$CFG_DB_NAME.lm\"")
         config.set("$DEC_CFG_LANGUAGEMODEL",
