@@ -188,12 +188,10 @@ def create_speaker():
             content = "global {}".format("global_{}".format(fileid))
 
             test_output.append(content)
-
             if short_test_counter < 20:
                 short_test_output.append(content)
 
             short_test_counter+=1
-
     content_path = join(dirname(dirname(dirname(__file__))), "data", "vivos", "corpus", "test", "speaker")
     content = "\n".join(test_output)
     open(content_path, "w").write(content)
