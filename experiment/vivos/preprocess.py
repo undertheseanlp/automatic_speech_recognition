@@ -40,18 +40,27 @@ def create_test_waves():
          "wav")
     corpus_waves_folder = join(dirname(dirname(dirname(__file__))), "data", "vivos",
          "corpus","test")
+    corpus_short_waves_folder = join(dirname(dirname(dirname(__file__))), "data", "vivos",
+                               "corpus", "test_short")
     try:
         shutil.rmtree(corpus_waves_folder)
+        shutil.rmtree(corpus_short_waves_folder)
     except:
         pass
     finally:
         mkdir(corpus_waves_folder)
+        mkdir(corpus_short_waves_folder)
+        mkdir(join(corpus_short_waves_folder,"wav"))
 
     shutil.copytree(waves_folder,join(corpus_waves_folder,"wav"))
     files = listdir(join(corpus_waves_folder,"wav"))
     for file in files:
         os.rename(join(corpus_waves_folder,"wav",file),join(corpus_waves_folder,"wav","{}_{}".format("global",file)))
-
+    list_files = listdir(join(corpus_waves_folder,"wav"))
+    list_files.sort()
+    for index,file in enumerate(list_files):
+        if index < 20:
+            shutil.copyfile(join(corpus_waves_folder,"wav",file),join(corpus_short_waves_folder,"wav",file))
 
 
 def create_train_text():
@@ -92,6 +101,8 @@ def create_test_text():
     content = content.replace(":", "")
     lines = content.splitlines()
     output = []
+    output_short = []
+    short_counter = 0
     for line in lines:
         m = re.match(r"^(?P<fileid>.*)\t(?P<text>.*)$", line)
         if m:
@@ -99,9 +110,18 @@ def create_test_text():
             fileid = m.group("fileid")
             content = "{}|{}".format("global_{}".format(fileid), text)
             output.append(content)
+            if short_counter < 20:
+                output_short.append(content)
+            short_counter += 1
     text = "\n".join(output)
 
+
     content_path = join(dirname(dirname(dirname(__file__))), "data", "vivos", "corpus", "test", "text")
+    open(content_path, "w").write(text)
+
+    text = "\n".join(output_short)
+
+    content_path = join(dirname(dirname(dirname(__file__))), "data", "vivos", "corpus", "test_short", "text")
     open(content_path, "w").write(text)
 
 
@@ -120,6 +140,10 @@ def create_gender():
 
     output_test_path = join(dirname(dirname(dirname(__file__))), "data", "vivos", "corpus", "test", "gender")
     open(output_test_path, "w").write(content_test)
+
+    output_test_path = join(dirname(dirname(dirname(__file__))), "data", "vivos", "corpus", "test_short", "gender")
+    open(output_test_path, "w").write(content_test)
+
 
 def create_speaker():
     content_path = join(dirname(dirname(dirname(__file__))), "data", "vivos", "raw", "train", "prompts.txt")
@@ -152,6 +176,9 @@ def create_speaker():
     lines_test_path = join(dirname(dirname(dirname(__file__))), "data", "vlsp", "text")
     lines_test = open(lines_test_path).read().splitlines()
     test_output = []
+    short_test_output = []
+    short_test_counter = 0
+
     for line in lines_test:
         # print(line)
         m = re.match(r"^(?P<fileid>.*)\t(?P<text>.*)$", line)
@@ -162,11 +189,18 @@ def create_speaker():
 
             test_output.append(content)
 
-        else:
-            raise Exception("Content not match.")
+            if short_test_counter < 20:
+                short_test_output.append(content)
+
+            short_test_counter+=1
+
     content_path = join(dirname(dirname(dirname(__file__))), "data", "vivos", "corpus", "test", "speaker")
     content = "\n".join(test_output)
     open(content_path, "w").write(content)
+
+    content_path = join(dirname(dirname(dirname(__file__))), "data", "vivos", "corpus", "test_short", "speaker")
+    short_content = "\n".join(short_test_output)
+    open(content_path, "w").write(short_content)
 
 try:
     shutil.rmtree(join(dirname(dirname(dirname(__file__))), "data", "vivos", "corpus"))
@@ -176,6 +210,7 @@ finally:
     mkdir(join(dirname(dirname(dirname(__file__))), "data", "vivos", "corpus"))
     mkdir(join(dirname(dirname(dirname(__file__))), "data", "vivos", "corpus","train"))
     mkdir(join(dirname(dirname(dirname(__file__))), "data", "vivos", "corpus", "test"))
+    mkdir(join(dirname(dirname(dirname(__file__))), "data", "vivos", "corpus", "test_short"))
     create_train_waves()
     create_test_waves()
     create_train_text()
