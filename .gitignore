@@ -12,3 +12,5 @@
 **/__pycache__/
 .ipynb_checkpoints
 data/vlsp
+tmp
+!tmp/.gitkeep

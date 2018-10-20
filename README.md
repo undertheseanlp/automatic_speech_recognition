@@ -76,7 +76,6 @@ Please source the tools/env.sh in your path.sh to enable it
 
 **Mô tả dữ liệu**: [Xem chi tiết](data_format.md)
 
-
 Trước khi run train.py phải set lại đường dẫn tới kaldi_folder .
 
 Method predict nên có thêm argument model_path nếu bạn đã thực hiện train trước đó (vì nếu không nó sẽ lấy theo tmp_path của model, mà tmp_path này random cho mỗi lần khởi tạo lại model để chuẩn bị cho việc chạy training mới)
