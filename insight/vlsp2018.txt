@@ -1,0 +1,39 @@
+# Dữ liệu VLSP 2018
+
+Tập dữ liệu VLSP 2018 có tất cả 796 câu.
+
+Dữ liệu gồm 796 câu nói với độ dài trung bình 40 tokens (max 104 tokens, min 0 tokens).
+Trong đó có một câu đặc biệt có id 0437, không chứa một tiếng nói nào, trong file wav tương ứng chỉ có tiếng xe máy chạy ngoài đường.
+
+Thông tin phân phối độ dài câu trong tập dữ liệu:
+
+```
+count    796.000000
+mean      40.812814
+std       22.313014
+min        0.000000
+0%         0.000000
+5%         9.000000
+10%       13.000000
+15.0%     16.000000
+20%       19.000000
+25%       22.000000
+30.0%     25.000000
+35%       28.000000
+40%       31.000000
+45%       34.000000
+50%       38.000000
+55.0%     41.000000
+60.0%     46.000000
+65%       49.000000
+70%       53.000000
+75%       58.000000
+80%       62.000000
+85.0%     68.000000
+90%       73.000000
+95%       81.000000
+100%     104.000000
+max      104.000000
+```
+
+File âm thanh dài nhất cỡ 27 giây, ngắn nhất cỡ 1 giây, độ dài trung bình của file âm thanh là 9.5 giây.
