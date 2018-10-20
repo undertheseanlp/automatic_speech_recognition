@@ -14,6 +14,8 @@ lm_order=1 # language model order (n-gram quantity)
 
 # Removing previously created data (from last run.sh execution)
 rm -rf exp mfcc data/train/spk2utt data/train/cmvn.scp data/train/feats.scp data/train/split1 data/test/spk2utt data/test/cmvn.scp data/test/feats.scp data/test/split1 data/local/lang data/lang data/local/tmp data/local/dict/lexiconp.txt
+rm -rf data/test_short/spk2utt data/test_short/cmvn.scp data/test_short/feats.scp data/test_short/split1
+
 
 echo
 echo "===== PREPARING ACOUSTIC DATA ====="
@@ -31,6 +33,10 @@ echo
 utils/utt2spk_to_spk2utt.pl data/train/utt2spk > data/train/spk2utt
 utils/utt2spk_to_spk2utt.pl data/test/utt2spk > data/test/spk2utt
 
+# Making short spk2uu files
+utils/utt2spk_to_spk2utt.pl data/train/utt2spk > data/train/spk2utt
+utils/utt2spk_to_spk2utt.pl data/test_short/utt2spk > data/test_short/spk2utt
+
 echo
 echo "===== FEATURES EXTRACTION ====="
 echo
@@ -43,9 +49,12 @@ mfccdir=mfcc
 steps/make_mfcc.sh --nj $nj --cmd "$train_cmd" data/train exp/make_mfcc/train $mfccdir
 steps/make_mfcc.sh --nj $nj --cmd "$train_cmd" data/test exp/make_mfcc/test $mfccdir
 
+steps/make_mfcc.sh --nj $nj --cmd "$train_cmd" data/test_short exp/make_mfcc/test $mfccdir
+
 # Making cmvn.scp files
 steps/compute_cmvn_stats.sh data/train exp/make_mfcc/train $mfccdir
 steps/compute_cmvn_stats.sh data/test exp/make_mfcc/test $mfccdir
+steps/compute_cmvn_stats.sh data/test_short exp/make_mfcc/test_short $mfccdir
 
 echo
 echo "===== PREPARING LANGUAGE DATA ====="
@@ -111,7 +120,7 @@ echo
 START=$(date +%s);
 utils/mkgraph.sh --mono data/lang exp/mono exp/mono/graph || exit 1
 steps/decode.sh --config conf/decode.config --nj 1 --cmd "$decode_cmd" \
-  exp/mono/graph data/test exp/mono/decode
+  exp/mono/graph data/test_short exp/mono/decode
 END=$(date +%s);
 MONO_DECODING_TIME=$((END - START))
 
@@ -142,7 +151,7 @@ echo
 START=$(date +%s);
 utils/mkgraph.sh data/lang exp/tri1 exp/tri1/graph || exit 1
 steps/decode.sh --config conf/decode.config --nj 1 --cmd "$decode_cmd" \
-  exp/tri1/graph data/test exp/tri1/decode
+  exp/tri1/graph data/test_short exp/tri1/decode
 END=$(date +%s);
 TRI1_DECODING_TIME=$((END - START))
 
