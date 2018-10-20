@@ -62,6 +62,8 @@ class KaldiSpeechRecognition:
         os.system("cd {}; mkdir -p data/local".format(self.tmp_folder))
         os.system("cd {}; mkdir -p data/local/dict".format(self.tmp_folder))
 
+        os.system("cd {}; mkdir -p data/test_short".format(self.tmp_folder))
+
     # ========================== #
     # Corpus Information
     # ========================== #
@@ -83,8 +85,10 @@ class KaldiSpeechRecognition:
     def _audio_data(self):
         self._copy_sound_files("train")
         self._copy_sound_files("test")
+        self._copy_sound_files("test_short")
         self._create_description_files("train")
         self._create_description_files("test")
+        self._create_description_files("test_short")
 
     def _copy_sound_files(self, type="train"):
         speaker_file = "{}/{}/speaker".format(self.corpus_folder, type)
@@ -242,6 +246,11 @@ class KaldiSpeechRecognition:
         self._convert_transcription(
             "{}/test/text".format(self.corpus_folder),
             "{}/data/test/text".format(self.tmp_folder), self.N_TEST)
+
+        self._convert_transcription(
+            "{}/test/text".format(self.corpus_folder),
+            "{}/data/test_short/text".format(self.tmp_folder), 20)
+
         self._corpus_txt()
 
     # ============================== #
