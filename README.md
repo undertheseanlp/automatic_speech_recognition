@@ -87,7 +87,7 @@ Output folder sẽ nằm trong kaldi_folder/egs/uts_{tmp_number} với tmp_numbe
 
 ## Kết quả thử nghiệm 
 
-Kết quả thử nghiệm trên tập test VLSP 2018
+Huấn luyện trên tập dữ liệu VIVOS, test trên tập VLSP 2018 
 
 <table>
  <tr>
@@ -95,8 +95,8 @@ Kết quả thử nghiệm trên tập test VLSP 2018
    <th>WER</td>
  </tr>
  <tr>
-    <td>TDB</td>
-    <td>TDB</td>
+    <td>GMM: MFCC + delta</td>
+    <td>82.03%</td>
  </tr>
 </table>
 

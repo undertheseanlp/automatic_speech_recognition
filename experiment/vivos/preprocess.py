@@ -162,8 +162,8 @@ def create_speaker():
 
             test_output.append(content)
 
-        else:
-            raise Exception("Content not match.")
+        # else:
+        #     raise Exception("Content not match.")
     content_path = join(dirname(dirname(dirname(__file__))), "data", "vivos", "corpus", "test", "speaker")
     content = "\n".join(test_output)
     open(content_path, "w").write(content)
