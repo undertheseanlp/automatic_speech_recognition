@@ -6,11 +6,12 @@ parser.add_argument('--wav', help='Path for input file to predict', required=Tru
 parser.add_argument('--kaldi_folder', help='Kaldi dir path', required=True)
 parser.add_argument('--model_path', help='Model path (default: exp/{model} in kaldi-trunk/egs/{result})', required=True)
 parser.add_argument('--utils_path', help='Kaldi utils dir path, usually in super parent directory of model_path')
+parser.add_argument('--method', help='Method to predict, delta/lda_mllt,sat',default="delta")
 
 args = parser.parse_args()
 
 
-def predict(kaldi_folder, wav_file, model_path, utils_path=None):
+def predict(kaldi_folder, wav_file, model_path,method="delta", utils_path=None):
     # Model path usually is in etc at kaldi-trunk/egs/uts_{random_int}/exp
     model = model_path
 
@@ -35,27 +36,46 @@ def predict(kaldi_folder, wav_file, model_path, utils_path=None):
 
     # Copy pre-trained model
     os.system("cd {};cp final.mdl predict/experiment/triphones_deldel/final.mdl;".format(model))
+    os.system("cd {};cp final.mat predict/experiment/triphones_deldel/final.mat;".format(model))
     os.system("cd {};cp -r graph predict/experiment/triphones_deldel/graph".format(model))
-    os.system("cd {}/predict/config; echo '--sample-frequency=16000 \
-            \n--num-mel-bins=40 \n--frame-length=25 \n--frame-shift=10 \
-            \n--high-freq=0 \n--low-freq=0 \n--num-ceps=13 \n--window-type=hamming \
-            \n--use-energy=true' > mfcc.conf".format(model))
+
+    os.system("cd {}/predict/config; echo '--use-energy=false \
+            \n--sample-frequency=16000' > mfcc.conf".format(model))
     os.system("cd {}/predict/transcriptions; echo 'result: {}' > wav.scp".format(model, wav_file))
-    print("done")
 
     # Run predict
     os.system(
         "cd {}/predict; {}/src/featbin/compute-mfcc-feats --config=config/mfcc.conf scp:transcriptions/wav.scp ark,scp:transcriptions/feats.ark,transcriptions/feats.scp" \
             .format(model, kaldi_folder))
+    #delta
+    if method == "delta":
+        os.system("cd {}/predict; {}/src/featbin/add-deltas \
+                          scp:transcriptions/feats.scp ark:transcriptions/delta-feats.ark" \
+                  .format(model, kaldi_folder))
 
-    os.system("cd {}/predict; {}/src/featbin/add-deltas \
-                      scp:transcriptions/feats.scp ark:transcriptions/delta-feats.ark" \
-              .format(model, kaldi_folder))
-    os.system("cd {}/predict; {}/src/gmmbin/gmm-latgen-faster \
-                      --word-symbol-table=experiment/triphones_deldel/graph/words.txt \
-                      experiment/triphones_deldel/final.mdl experiment/triphones_deldel/graph/HCLG.fst \
-                      ark:transcriptions/delta-feats.ark ark,t:transcriptions/lattices.ark" \
-              .format(model, kaldi_folder))
+
+        os.system("cd {}/predict; {}/src/gmmbin/gmm-latgen-faster \
+                          --word-symbol-table=experiment/triphones_deldel/graph/words.txt \
+                          experiment/triphones_deldel/final.mdl experiment/triphones_deldel/graph/HCLG.fst \
+                          ark:transcriptions/delta-feats.ark ark,t:transcriptions/lattices.ark" \
+                  .format(model, kaldi_folder))
+
+    elif method == "lda_mllt":
+        os.system("cd {}/predict; {}/src/featbin/splice-feats \
+               scp:transcriptions/feats.scp \
+               ark:transcriptions/splice-feats.ark".format(model,kaldi_folder))
+        os.system("cd {}/predict; {}/src/featbin/transform-feats \
+                  experiment/triphones_deldel/final.mat \
+                  ark:transcriptions/splice-feats.ark \
+                  ark:transcriptions/splice-transform-feats.ark".format(model,kaldi_folder))
+        os.system("cd {}/predict; {}/src/gmmbin/gmm-latgen-faster \
+                          --word-symbol-table=experiment/triphones_deldel/graph/words.txt \
+                          experiment/triphones_deldel/final.mdl experiment/triphones_deldel/graph/HCLG.fst \
+                          ark:transcriptions/splice-transform-feats.ark ark,t:transcriptions/lattices.ark" \
+                  .format(model, kaldi_folder))
+    else:
+        raise Exception("The given method {} is not supported yet".format(method))
+
     os.system("cd {}/predict; {}/src/latbin/lattice-best-path \
                       --word-symbol-table=experiment/triphones_deldel/graph/words.txt \
                       ark:transcriptions/lattices.ark ark,t:transcriptions/one-best.tra" \
@@ -71,4 +91,4 @@ def predict(kaldi_folder, wav_file, model_path, utils_path=None):
     return result
 
 if __name__ == "__main__":
-    predict(args.kaldi_folder, args.wav,args.model_path,args.utils_path)
+    predict(args.kaldi_folder, args.wav, args.model_path, args.method, args.utils_path)
