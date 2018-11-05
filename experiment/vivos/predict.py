@@ -36,7 +36,7 @@ def predict(kaldi_folder, wav_file, model_path,method="delta", utils_path=None):
 
     # Copy pre-trained model
     os.system("cd {};cp final.mdl predict/experiment/triphones_deldel/final.mdl;".format(model))
-    os.system("cd {};cp final.mat predict/experiment/triphones_deldel/final.mat;".format(model))
+
     os.system("cd {};cp -r graph predict/experiment/triphones_deldel/graph".format(model))
 
     os.system("cd {}/predict/config; echo '--use-energy=false \
@@ -61,6 +61,8 @@ def predict(kaldi_folder, wav_file, model_path,method="delta", utils_path=None):
                   .format(model, kaldi_folder))
 
     elif method == "lda_mllt":
+        os.system("cd {};cp final.mat predict/experiment/triphones_deldel/final.mat;".format(model))
+
         os.system("cd {}/predict; {}/src/featbin/splice-feats \
                scp:transcriptions/feats.scp \
                ark:transcriptions/splice-feats.ark".format(model,kaldi_folder))
