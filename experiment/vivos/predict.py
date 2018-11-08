@@ -6,16 +6,16 @@ parser.add_argument('--wav', help='Path for input file to predict', required=Tru
 parser.add_argument('--kaldi_folder', help='Kaldi dir path', required=True)
 parser.add_argument('--model_path', help='Model path (default: exp/{model} in kaldi-trunk/egs/{result})', required=True)
 parser.add_argument('--utils_path', help='Kaldi utils dir path, usually in super parent directory of model_path')
-parser.add_argument('--method', help='Method to predict, delta/lda_mllt,sat',default="delta")
+parser.add_argument('--method', help='Method to predict, delta/lda_mllt,sat', default="delta")
 
 args = parser.parse_args()
 
 
-def predict(kaldi_folder, wav_file, model_path,method="delta", utils_path=None):
+def predict(kaldi_folder, wav_file, model_path, method="delta", utils_path=None):
     # Model path usually is in etc at kaldi-trunk/egs/uts_{random_int}/exp
     model = model_path
 
-    if not os.path.exists(os.path.join(model,"final.mdl")):
+    if not os.path.exists(os.path.join(model, "final.mdl")):
         raise Exception("Cannot find final.mdl model file with given model path.")
     if not os.path.exists(os.path.join(model, "graph")):
         raise Exception("Cannot find graph with given model path.")
@@ -23,8 +23,9 @@ def predict(kaldi_folder, wav_file, model_path,method="delta", utils_path=None):
     if utils_path is None:
         utils_path = os.path.join(os.path.dirname(os.path.dirname(model)), "utils")
 
-    if not os.path.exists(os.path.join(utils_path,"int2sym.pl")):
-        raise Exception("Cannot find int2sym.pl file with given utils path, please make sure that you are provided correctly utils_path argument")
+    if not os.path.exists(os.path.join(utils_path, "int2sym.pl")):
+        raise Exception(
+            "Cannot find int2sym.pl file with given utils path, please make sure that you are provided correctly utils_path argument")
 
     # Prepare predict dir
     os.system("cd {}; rm -rf predict;".format(model))
@@ -56,7 +57,7 @@ def predict(kaldi_folder, wav_file, model_path,method="delta", utils_path=None):
     # Run predict
     os.system(
         "cd {}/predict; {}/src/featbin/compute-mfcc-feats --config=config/mfcc.conf \
-        scp:transcriptions/wav.scp ark,scp:transcriptions/feats.ark,transcriptions/feats.scp"\
+        scp:transcriptions/wav.scp ark,scp:transcriptions/feats.ark,transcriptions/feats.scp" \
             .format(model, kaldi_folder))
 
     os.system(
@@ -69,12 +70,11 @@ def predict(kaldi_folder, wav_file, model_path,method="delta", utils_path=None):
     #     scp:transcriptions/feats.scp ark,scp:experiment/cmvn.ark,experiment/cmvn.scp" \
     #         .format(model, kaldi_folder))
 
-    #delta
+    # delta
     if method == "delta":
         # os.system("cd {}/predict; {}/src/featbin/add-deltas \
         #                   scp:transcriptions/feats.scp ark:transcriptions/delta-feats.ark" \
         #           .format(model, kaldi_folder))
-
 
         # os.system("cd {}/predict; {}/src/gmmbin/gmm-latgen-faster \
         # --max-active=7000 --beam=13.0 --lattice_beam=6.0 --acoustic-scale=0.83333 --allow-partial=true \
@@ -93,19 +93,19 @@ def predict(kaldi_folder, wav_file, model_path,method="delta", utils_path=None):
                                   --utt2spk=ark:transcriptions/utt2spk \
                                   scp:experiment/cmvn.scp \
                                   scp:transcriptions/feats.scp ark:- | \
-                                  {}/src/featbin/add-deltas  ark:- ark:- |' 'ark:|gzip -c > experiment/lat.JOB.gz'"\
-                  .format(model, kaldi_folder,kaldi_folder,kaldi_folder))
+                                  {}/src/featbin/add-deltas  ark:- ark:- |' 'ark:|gzip -c > experiment/lat.JOB.gz'" \
+                  .format(model, kaldi_folder, kaldi_folder, kaldi_folder))
 
     elif method == "lda_mllt":
         os.system("cd {};cp final.mat predict/experiment/triphones_deldel/final.mat;".format(model))
 
         os.system("cd {}/predict; {}/src/featbin/splice-feats \
                scp:transcriptions/feats.scp \
-               ark:transcriptions/splice-feats.ark".format(model,kaldi_folder))
+               ark:transcriptions/splice-feats.ark".format(model, kaldi_folder))
         os.system("cd {}/predict; {}/src/featbin/transform-feats \
                   experiment/triphones_deldel/final.mat \
                   ark:transcriptions/splice-feats.ark \
-                  ark:transcriptions/splice-transform-feats.ark".format(model,kaldi_folder))
+                  ark:transcriptions/splice-transform-feats.ark".format(model, kaldi_folder))
         os.system("cd {}/predict; {}/src/gmmbin/gmm-latgen-faster \
                           --word-symbol-table=experiment/triphones_deldel/graph/words.txt \
                           experiment/triphones_deldel/final.mdl experiment/triphones_deldel/graph/HCLG.fst \
@@ -124,10 +124,11 @@ def predict(kaldi_folder, wav_file, model_path,method="delta", utils_path=None):
               .format(model, utils_path, model, model, model))
 
     result = open("{}/predict/transcriptions/one-best-hypothesis.txt".format(model)).read()
-    #Result will stored in model_path/predict/transcriptions/one-best-hypothesis.txt under format test {predict_result}
+    # Result will stored in model_path/predict/transcriptions/one-best-hypothesis.txt under format test {predict_result}
     result = result[8:]
     print(result)
     return result
+
 
 if __name__ == "__main__":
     predict(args.kaldi_folder, args.wav, args.model_path, args.method, args.utils_path)
