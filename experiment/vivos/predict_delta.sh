@@ -1,7 +1,7 @@
 # Please don't charge this default config
 MODEL=/home/anhv/PycharmProjects/kaldi-trunk/egs/uts_443/exp/tri2a
 KALDI=/home/anhv/PycharmProjects/kaldi-trunk
-WAV=/home/anhv/PycharmProjects/undertheseanlp/automatic_speech_recognition/experiment/vivos/test/VIVOSDEV01_R003.wav
+WAV=/home/anhv/PycharmProjects/undertheseanlp/automatic_speech_recognition/experiment/vivos/test/VIVOSDEV01_R034.wav
 
 # Variables
 # MODEL=
@@ -51,15 +51,15 @@ $KALDI/src/featbin/compute-mfcc-feats \
 $KALDI/src/featbin/compute-cmvn-stats --spk2utt=ark:transcriptions/spk2utt \
     scp:transcriptions/feats.scp \
     ark,scp:experiment/cmvn.ark,experiment/cmvn.scp
+
+cd $MODEL/predict;
 $KALDI/src/gmmbin/gmm-latgen-faster \
     --max-active=7000 --beam=13.0 --lattice_beam=6.0 --acoustic-scale=0.83333 --allow-partial=true \
     --word-symbol-table=experiment/triphones_delta/graph/words.txt \
-    experiment/triphones_delta/final.mdl \
-    experiment/triphones_delta/graph/HCLG.fst \
-    'ark,s,cs:$KALDI/src/featbin/apply-cmvn \
-    --utt2spk=ark:transcriptions/utt2spk \
-    scp:experiment/cmvn.scp \
-    scp:transcriptions/feats.scp ark:- | \
-    $KALDI/src/featbin/add-deltas  ark:- ark:- |' 'ark:|gzip -c > experiment/lat.JOB.gz'
+     experiment/triphones_delta/final.mdl \
+     experiment/triphones_delta/graph/HCLG.fst \
+     'ark,s,cs:'$KALDI'/src/featbin/apply-cmvn \
+     --utt2spk=ark:transcriptions/utt2spk scp:experiment/cmvn.scp scp:transcriptions/feats.scp \
+     ark:- | '$KALDI'/src/featbin/add-deltas  ark:- ark:- |' 'ark:|gzip -c > experiment/lat.JOB.gz'
 
 echo "Finish predict"

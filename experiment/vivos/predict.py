@@ -84,7 +84,7 @@ def predict(kaldi_folder, wav_file, model_path, method="delta", utils_path=None)
         #                   ark:transcriptions/delta-feats.ark \
         #                   ark,t:transcriptions/lattices.ark" \
         #           .format(model, kaldi_folder))
-        os.system("cd {}/predict; {}/src/gmmbin/gmm-latgen-faster \
+        command = "cd {}/predict; {}/src/gmmbin/gmm-latgen-faster \
                 --max-active=7000 --beam=13.0 --lattice_beam=6.0 --acoustic-scale=0.83333 --allow-partial=true \
                                   --word-symbol-table=experiment/triphones_deldel/graph/words.txt \
                                   experiment/triphones_deldel/final.mdl \
@@ -94,8 +94,8 @@ def predict(kaldi_folder, wav_file, model_path, method="delta", utils_path=None)
                                   scp:experiment/cmvn.scp \
                                   scp:transcriptions/feats.scp ark:- | \
                                   {}/src/featbin/add-deltas  ark:- ark:- |' 'ark:|gzip -c > experiment/lat.JOB.gz'" \
-                  .format(model, kaldi_folder, kaldi_folder, kaldi_folder))
-
+                  .format(model, kaldi_folder, kaldi_folder, kaldi_folder)
+        os.system(command)
     elif method == "lda_mllt":
         os.system("cd {};cp final.mat predict/experiment/triphones_deldel/final.mat;".format(model))
 
