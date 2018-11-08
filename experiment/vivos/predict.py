@@ -39,26 +39,62 @@ def predict(kaldi_folder, wav_file, model_path,method="delta", utils_path=None):
 
     os.system("cd {};cp -r graph predict/experiment/triphones_deldel/graph".format(model))
 
-    os.system("cd {}/predict/config; echo '--use-energy=false \
-            \n--sample-frequency=16000' > mfcc.conf".format(model))
+    os.system("cd {}/predict/config; echo '--use-energy=true \n\
+            --sample-frequency=16000 \n\
+            --num-mel-bins=40 \n\
+            --frame-length=25 \n\
+            --frame-shift=10 \n\
+            --high-freq=0 \n\
+            --low-freq=0 \n\
+            --num-ceps=13 \n\
+            --window-type=hamming' > mfcc.conf".format(model))
     os.system("cd {}/predict/transcriptions; echo 'result: {}' > wav.scp".format(model, wav_file))
+    os.system("cd {}/predict/transcriptions; echo 'VIVOSDEV16 result:' > spk2utt".format(model))
+    os.system("cd {}/predict/transcriptions; echo 'result: VIVOSDEV16' > utt2spk".format(model))
+    # os.system("cd {}/predict/transcriptions; echo 'VIVOSDEV02-R015 result' > utt2spk".format(model))
 
     # Run predict
     os.system(
-        "cd {}/predict; {}/src/featbin/compute-mfcc-feats --config=config/mfcc.conf scp:transcriptions/wav.scp ark,scp:transcriptions/feats.ark,transcriptions/feats.scp" \
+        "cd {}/predict; {}/src/featbin/compute-mfcc-feats --config=config/mfcc.conf \
+        scp:transcriptions/wav.scp ark,scp:transcriptions/feats.ark,transcriptions/feats.scp"\
             .format(model, kaldi_folder))
+
+    os.system(
+        "cd {}/predict; {}/src/featbin/compute-cmvn-stats --spk2utt=ark:transcriptions/spk2utt \
+        scp:transcriptions/feats.scp ark,scp:experiment/cmvn.ark,experiment/cmvn.scp" \
+            .format(model, kaldi_folder))
+
+    # os.system(
+    #     "cd {}/predict; {}/src/featbin/apply-cmvn --uut2spk=ark:transcriptions/utt2spk \
+    #     scp:transcriptions/feats.scp ark,scp:experiment/cmvn.ark,experiment/cmvn.scp" \
+    #         .format(model, kaldi_folder))
+
     #delta
     if method == "delta":
-        os.system("cd {}/predict; {}/src/featbin/add-deltas \
-                          scp:transcriptions/feats.scp ark:transcriptions/delta-feats.ark" \
-                  .format(model, kaldi_folder))
+        # os.system("cd {}/predict; {}/src/featbin/add-deltas \
+        #                   scp:transcriptions/feats.scp ark:transcriptions/delta-feats.ark" \
+        #           .format(model, kaldi_folder))
 
 
+        # os.system("cd {}/predict; {}/src/gmmbin/gmm-latgen-faster \
+        # --max-active=7000 --beam=13.0 --lattice_beam=6.0 --acoustic-scale=0.83333 --allow-partial=true \
+        #                   --word-symbol-table=experiment/triphones_deldel/graph/words.txt \
+        #                   experiment/triphones_deldel/final.mdl \
+        #                   experiment/triphones_deldel/graph/HCLG.fst \
+        #                   ark:transcriptions/delta-feats.ark \
+        #                   ark,t:transcriptions/lattices.ark" \
+        #           .format(model, kaldi_folder))
         os.system("cd {}/predict; {}/src/gmmbin/gmm-latgen-faster \
-                          --word-symbol-table=experiment/triphones_deldel/graph/words.txt \
-                          experiment/triphones_deldel/final.mdl experiment/triphones_deldel/graph/HCLG.fst \
-                          ark:transcriptions/delta-feats.ark ark,t:transcriptions/lattices.ark" \
-                  .format(model, kaldi_folder))
+                --max-active=7000 --beam=13.0 --lattice_beam=6.0 --acoustic-scale=0.83333 --allow-partial=true \
+                                  --word-symbol-table=experiment/triphones_deldel/graph/words.txt \
+                                  experiment/triphones_deldel/final.mdl \
+                                  experiment/triphones_deldel/graph/HCLG.fst \
+                                  'ark,s,cs:{}/src/featbin/apply-cmvn \
+                                  --utt2spk=ark:transcriptions/utt2spk \
+                                  scp:experiment/cmvn.scp \
+                                  scp:transcriptions/feats.scp ark:- | \
+                                  {}/src/featbin/add-deltas  ark:- ark:- |' 'ark:|gzip -c > experiment/lat.JOB.gz'"\
+                  .format(model, kaldi_folder,kaldi_folder,kaldi_folder))
 
     elif method == "lda_mllt":
         os.system("cd {};cp final.mat predict/experiment/triphones_deldel/final.mat;".format(model))
@@ -80,7 +116,8 @@ def predict(kaldi_folder, wav_file, model_path,method="delta", utils_path=None):
 
     os.system("cd {}/predict; {}/src/latbin/lattice-best-path \
                       --word-symbol-table=experiment/triphones_deldel/graph/words.txt \
-                      ark:transcriptions/lattices.ark ark,t:transcriptions/one-best.tra" \
+                      ark:transcriptions/lattices.ark \
+                      ark,t:transcriptions/one-best.tra" \
               .format(model, kaldi_folder))
     os.system("cd {}/predict; {}/int2sym.pl -f 2- {}/predict/experiment/triphones_deldel/graph/words.txt transcriptions/one-best.tra \
                       > {}/predict/transcriptions/one-best-hypothesis.txt; echo $(<{}/predict/transcriptions/one-best-hypothesis.txt);" \
