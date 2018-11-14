@@ -1,7 +1,6 @@
 .idea
-/huanluyen_diadiem/logdir/
-/data/vivos/raw/
-/data/vivos/corpus/
+data/vivos/raw/
+data/vivos/corpus/
 **/tmp/
 **/analyze/
 /experiment/diadiem/tmp/
