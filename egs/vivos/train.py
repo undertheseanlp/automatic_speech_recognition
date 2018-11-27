@@ -1,4 +1,4 @@
-from experiment.vivos.extension.model import KaldiSpeechRecognition
+from egs.vivos.extension.model import KaldiSpeechRecognition
 from os.path import join, dirname
 import argparse
 
