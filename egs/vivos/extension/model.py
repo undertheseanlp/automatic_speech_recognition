@@ -1,6 +1,6 @@
 import shutil
 import os
-from experiment.vivos.extension.text import PhoneConverter1 as PhoneConverter
+from egs.vivos.extension.text import PhoneConverter1 as PhoneConverter
 import numpy as np
 from itertools import groupby
 
