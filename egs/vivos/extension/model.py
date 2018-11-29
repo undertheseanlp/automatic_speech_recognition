@@ -295,17 +295,17 @@ class KaldiSpeechRecognition:
         )
 
         # transcript.sh
-        transcript_file = "{}/transcript.sh".format(self.tmp_folder)
-        shutil.copy2(
-            "{}/transcript_{}.sh".format(pwd, self.method),
-            transcript_file
-        )
-        os.system("chmod u+x {}".format(transcript_file))
-
-        shutil.copytree(
-            "{}/transcriptions".format(pwd),
-            "{}/transcriptions".format(self.tmp_folder)
-        )
+        # transcript_file = "{}/transcript.sh".format(self.tmp_folder)
+        # shutil.copy2(
+        #     "{}/transcript_{}.sh".format(pwd, self.method),
+        #     transcript_file
+        # )
+        # os.system("chmod u+x {}".format(transcript_file))
+        #
+        # shutil.copytree(
+        #     "{}/transcriptions".format(pwd),
+        #     "{}/transcriptions".format(self.tmp_folder)
+        # )
 
     # ============================== #
     # Create dictionary and phones
