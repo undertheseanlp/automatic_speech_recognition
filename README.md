@@ -93,6 +93,10 @@ Huấn luyện trên tập dữ liệu VIVOS, test trên tập VLSP 2018
    <th>Mô hình</td>
    <th>WER</td>
  </tr>
+  <tr>
+    <td>GMM: MFCC + delta + LDA + MLTT</td>
+    <td>79.80%</td>
+ </tr>
  <tr>
     <td>GMM: MFCC + delta</td>
     <td>82.03%</td>

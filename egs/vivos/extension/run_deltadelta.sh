@@ -176,7 +176,7 @@ echo
 
 START=$(date +%s);
 utils/mkgraph.sh data/lang exp/tri2a exp/tri2a/graph || exit 1
-steps/decode.sh --config conf/decode.config --nj 10 --cmd "$decode_cmd" \
+steps/decode.sh --config conf/decode.config --nj 1 --cmd "$decode_cmd" \
   exp/tri2a/graph data/test exp/tri2a/decode
 END=$(date +%s);
 TRI2A_DECODING_TIME=$((END - START))
