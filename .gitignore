@@ -1,6 +1,7 @@
 .idea
 data/vivos/raw/
 data/vivos/corpus/
+data/open_fpt/raw/
 **/tmp/
 **/analyze/
 /experiment/diadiem/tmp/
