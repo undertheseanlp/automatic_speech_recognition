@@ -15,7 +15,10 @@ def create_train_waves():
     waves_folder_3 = join(dirname(dirname(dirname(__file__))), "data", "open_fpt",
                           "raw", "FPTOpenSpeechData_Set001_V0.1", "mp3")
     waves_folder_4 = join(dirname(dirname(dirname(__file__))), "data", "open_fpt",
-                          "raw", "FPTOpenSpeechData_Set002_V0.1", "mp3")
+                          "raw", "FPTOpenSpeechData_Set002_Part1_V0.1", "mp3")
+    waves_folder_5 = join(dirname(dirname(dirname(__file__))), "data", "open_fpt",
+                          "raw", "FPTOpenSpeechData_Set002_Part2_V0.1", "mp3")
+
     corpus_waves_folder = join(dirname(dirname(dirname(__file__))), "data", "vivos",
          "corpus","train","wav")
     try:
@@ -28,19 +31,28 @@ def create_train_waves():
     list_files = os.listdir(waves_folder_3)
     list_files.sort()
 
+    list_files2 = os.listdir(waves_folder_4)
+    list_files2.sort()
+
+    list_files3 = os.listdir(waves_folder_5)
+    list_files3.sort()
+
+    convert_total = len(list_files) + len(list_files2) + len(list_files3)
+    progress = 0
+
     for f in list_files:
+        progress += 1
         real_file_path = join(waves_folder_3, f)
         des_file_path = path.abspath("{}/global_{}".format(corpus_waves_folder, f.replace(".mp3", ".wav").replace("_","")))
         if f[-3:] == "mp3":
             # TODO - Convert mp3 into wav with sox to mono
             subprocess.call(['ffmpeg', '-i', real_file_path, '-acodec', 'pcm_s16le', '-ac', '1', '-ar', '16000',
                              des_file_path])
+        print("Processed {:0.2f}%".format(progress/convert_total*100))
         pass
 
-    list_files2 = os.listdir(waves_folder_4)
-    list_files2.sort()
-
     for f in list_files2:
+        progress += 1
         real_file_path = join(waves_folder_4, f)
         des_file_path = path.abspath(
             "{}/global_{}".format(corpus_waves_folder, f.replace(".mp3", ".wav").replace("_", "")))
@@ -48,8 +60,20 @@ def create_train_waves():
             # TODO - Convert mp3 into wav with sox to mono
             subprocess.call(['ffmpeg', '-i', real_file_path, '-acodec', 'pcm_s16le', '-ac', '1', '-ar', '16000',
                              des_file_path])
+        print("Processed {:0.2f}%".format(progress / convert_total * 100))
         pass
 
+    for f in list_files3:
+        progress += 1
+        real_file_path = join(waves_folder_5, f)
+        des_file_path = path.abspath(
+            "{}/global_{}".format(corpus_waves_folder, f.replace(".mp3", ".wav").replace("_", "")))
+        if f[-3:] == "mp3":
+            # TODO - Convert mp3 into wav with sox to mono
+            subprocess.call(['ffmpeg', '-i', real_file_path, '-acodec', 'pcm_s16le', '-ac', '1', '-ar', '16000',
+                             des_file_path])
+        print("Converted open_fpt {:0.2f}%".format(progress / convert_total * 100))
+        pass
 
     for root, dirs, files in walk(waves_folder):
         for dir in dirs:
@@ -94,7 +118,10 @@ def create_train_text():
     content_path3 = join(dirname(dirname(dirname(__file__))), "data", "open_fpt","raw",
                          "FPTOpenSpeechData_Set001_V0.1", "transcript.txt")
     content_path4 = join(dirname(dirname(dirname(__file__))), "data", "open_fpt", "raw",
-                         "FPTOpenSpeechData_Set002_V0.1", "transcript.txt")
+                         "FPTOpenSpeechData_Set002_Part1_V0.1", "transcript.txt")
+
+    content_path5 = join(dirname(dirname(dirname(__file__))), "data", "open_fpt", "raw",
+                         "FPTOpenSpeechData_Set002_Part2_V0.1", "transcript.txt")
 
     content = open(content_path).read()
     content = content.replace(":", "")
@@ -110,11 +137,16 @@ def create_train_text():
     content4 = content4.replace(".mp3|", "|")
     content4 = re.sub(r'\|(\d*\.*\-*)*\n', '\n', content4)
 
+    content5 = open(content_path5).read()
+    content5 = content5.replace(".mp3|", "|")
+    content5 = re.sub(r'\|(\d*\.*\-*)*\n', '\n', content5)
+
     lines = content.splitlines()
     lines2 = content2.splitlines()
 
     lines3 = content3.splitlines()
     lines4 = content4.splitlines()
+    lines5 = content5.splitlines()
 
     output = []
 
@@ -126,18 +158,24 @@ def create_train_text():
         content = "global_{}".format(line.replace("_",""))
         output.append(content)
 
+    for line in lines5:
+        content = "global_{}".format(line.replace("_", ""))
+        output.append(content)
+
     for line in lines:
         items = line.split()
         fileid = items[0]
         text = " ".join(items[1:]).lower()
         content = "{}|{}".format(fileid, text)
         output.append(content)
+
     for line in lines2:
         items = line.split()
         fileid = items[0]
         text = " ".join(items[1:]).lower()
         content2 = "{}|{}".format(fileid, text)
         output.append(content2)
+
     text = "\n".join(output)
 
     content_path = join(dirname(dirname(dirname(__file__))), "data", "vivos","corpus","train", "text")
@@ -191,13 +229,16 @@ def create_speaker():
     content_path3 = join(dirname(dirname(dirname(__file__))), "data", "open_fpt", "raw",
                          "FPTOpenSpeechData_Set001_V0.1", "transcript.txt")
     content_path4 = join(dirname(dirname(dirname(__file__))), "data", "open_fpt", "raw",
-                         "FPTOpenSpeechData_Set002_V0.1", "transcript.txt")
+                         "FPTOpenSpeechData_Set002_Part1_V0.1", "transcript.txt")
+    content_path5 = join(dirname(dirname(dirname(__file__))), "data", "open_fpt", "raw",
+                         "FPTOpenSpeechData_Set002_Part2_V0.1", "transcript.txt")
     lines = open(content_path).read().splitlines()
     files = [line.split()[0] for line in lines]
     tmp = []
 
     lines3 = open(content_path3).read().splitlines()
     lines4 = open(content_path4).read().splitlines()
+    lines5 = open(content_path5).read().splitlines()
 
     for line in lines3:
         m = re.match(r"^(?P<fileid>.*).mp3", line)
@@ -213,12 +254,19 @@ def create_speaker():
             content = "global {}".format("global_{}".format(fileid.replace("_","")))
             tmp.append(content)
 
+    for line in lines5:
+        m = re.match(r"^(?P<fileid>.*).mp3", line)
+        if m:
+            fileid = m.group("fileid")
+            content = "global {}".format("global_{}".format(fileid.replace("_","")))
+            tmp.append(content)
+
     for file_id in files:
         speaker_id = file_id.split("_")[0]
         content = "{} {}".format(speaker_id, file_id)
         tmp.append(content)
 
-        # Merge vivos test to train dir
+    # Merge vivos test to train dir
     lines2 = open(content_path2).read().splitlines()
     files2 = [line.split()[0] for line in lines2]
 
@@ -263,7 +311,6 @@ finally:
     create_train_waves()
     create_test_waves()
     create_train_text()
-
     create_test_text()
     create_gender()
     create_speaker()
