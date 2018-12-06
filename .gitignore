@@ -1,7 +1,9 @@
 .idea
 data/vivos/raw/
 data/vivos/corpus/
-data/open_fpt/raw/
+data/open_fpt/raw/FPTOpenSpeechData_Set001_V0.1
+data/open_fpt/raw/FPTOpenSpeechData_Set002_Part1_V0.1
+data/open_fpt/raw/FPTOpenSpeechData_Set002_Part2_V0.1
 **/tmp/
 **/analyze/
 /experiment/diadiem/tmp/
