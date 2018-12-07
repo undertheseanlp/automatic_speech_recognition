@@ -102,7 +102,10 @@ class KaldiSpeechRecognition:
         utterances = [line.split("|")[0] for line in lines]
         speakers_files = {}
         for utterance in utterances:
-            speaker = u_s[utterance]
+            try:
+                speaker = u_s[utterance]
+            except:
+                pass
             if speaker not in speakers_files:
                 speakers_files[speaker] = []
             speakers_files[speaker].append(utterance)
@@ -215,7 +218,9 @@ class KaldiSpeechRecognition:
         lines = open(in_file).read().splitlines()[:N]
         output = []
         for line in lines:
-            fileid, word = line.split("|")
+            index = line.find("|")
+            fileid = line[:index]
+            word = line[index + 1:]
             speaker_id, utterance_id = fileid.split("_")
             content = "{}-{} {}".format(speaker_id, utterance_id, word)
             output.append(content)
