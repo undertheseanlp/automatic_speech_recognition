@@ -110,6 +110,8 @@ echo
 
 START=$(date +%s);
 utils/mkgraph.sh --mono data/lang exp/mono exp/mono/graph || exit 1
+steps/decode.sh --config conf/decode.config --nj 1 --cmd "$decode_cmd" \
+  exp/mono/graph data/test exp/mono/decode
 END=$(date +%s);
 MONO_DECODING_TIME=$((END - START))
 
@@ -139,6 +141,8 @@ echo
 
 START=$(date +%s);
 utils/mkgraph.sh data/lang exp/tri1 exp/tri1/graph || exit 1
+steps/decode.sh --config conf/decode.config --nj 1 --cmd "$decode_cmd" \
+  exp/tri1/graph data/test exp/tri1/decode
 END=$(date +%s);
 TRI1_DECODING_TIME=$((END - START))
 
@@ -168,6 +172,8 @@ echo
 
 START=$(date +%s);
 utils/mkgraph.sh data/lang exp/tri2a exp/tri2a/graph || exit 1
+steps/decode.sh --config conf/decode.config --nj 1 --cmd "$decode_cmd" \
+  exp/tri2a/graph data/test exp/tri2a/decode
 END=$(date +%s);
 TRI2A_DECODING_TIME=$((END - START))
 
