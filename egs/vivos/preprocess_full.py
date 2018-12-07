@@ -72,7 +72,7 @@ def create_train_waves():
             # TODO - Convert mp3 into wav with sox to mono
             subprocess.call(['ffmpeg', '-i', real_file_path, '-acodec', 'pcm_s16le', '-ac', '1', '-ar', '16000',
                              des_file_path])
-        print("Converted open_fpt {:0.2f}%".format(progress / convert_total * 100))
+        print("Processed open_fpt {:0.2f}%".format(progress / convert_total * 100))
         pass
 
     for root, dirs, files in walk(waves_folder):
