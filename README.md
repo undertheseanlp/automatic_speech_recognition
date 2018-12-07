@@ -86,6 +86,19 @@ Output folder sẽ nằm trong kaldi_folder/egs/uts_{tmp_number} với tmp_numbe
 
 ## Kết quả thử nghiệm 
 
+Huấn luyện trên tập dữ liệu VIVOS - OpenFPT, test trên tập VLSP 2018
+
+<table>
+ <tr>
+   <th>Mô hình</td>
+   <th>WER</td>
+ </tr>
+  <tr>
+    <td>GMM: MFCC + delta + LDA + MLTT</td>
+    <td>75.27%</td>
+ </tr>
+</table>
+
 Huấn luyện trên tập dữ liệu VIVOS, test trên tập VLSP 2018 
 
 <table>
