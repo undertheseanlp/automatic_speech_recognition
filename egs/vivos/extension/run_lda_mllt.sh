@@ -123,7 +123,7 @@ steps/align_si.sh --nj $nj --cmd "$train_cmd" \
 END=$(date +%s);
 MONO_ALIGNMENT_TIME=$((END - START))
 
-echo
+echoalign
 echo "===== TRI1 (first triphone pass) TRAINING ====="
 echo
 
