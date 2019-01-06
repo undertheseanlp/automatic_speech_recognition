@@ -93,7 +93,7 @@ def predict(kaldi_folder, wav_file, model_path, method="delta", utils_path=None)
                                   --utt2spk=ark:transcriptions/utt2spk \
                                   scp:experiment/cmvn.scp \
                                   scp:transcriptions/feats.scp ark:- | \
-                                  {}/src/featbin/add-deltas  ark:- ark:- |' 'ark:|gzip -c > experiment/lat.JOB.gz'" \
+                                  {}/src/featbin/add-deltas  ark:- ark:- |' 'ark,t:transcriptions/lattices.ark' 'ark:|gzip -c > experiment/lat.gz'" \
                   .format(model, kaldi_folder, kaldi_folder, kaldi_folder)
         os.system(command)
     elif method == "lda_mllt":
@@ -114,12 +114,15 @@ def predict(kaldi_folder, wav_file, model_path, method="delta", utils_path=None)
     else:
         raise Exception("The given method {} is not supported yet".format(method))
 
-    os.system("cd {}/predict; {}/src/latbin/lattice-best-path \
+    os.system("cd {}/predict; {}/src/latbin/lattice-best-path"
+              " \
                       --word-symbol-table=experiment/triphones_deldel/graph/words.txt \
                       ark:transcriptions/lattices.ark \
                       ark,t:transcriptions/one-best.tra" \
               .format(model, kaldi_folder))
-    os.system("cd {}/predict; {}/int2sym.pl -f 2- {}/predict/experiment/triphones_deldel/graph/words.txt transcriptions/one-best.tra \
+
+    os.system("cd {}/predict; {}/int2sym.pl"
+              " -f 2- {}/predict/experiment/triphones_deldel/graph/words.txt transcriptions/one-best.tra \
                       > {}/predict/transcriptions/one-best-hypothesis.txt; echo $(<{}/predict/transcriptions/one-best-hypothesis.txt);" \
               .format(model, utils_path, model, model, model))
 
